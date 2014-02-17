@@ -22,9 +22,8 @@
 namespace oat\taoCe\actions;
 
 /**
- * Sample controller
- *
- * @author Open Assessment Technologies SA
+ * Just to override the paths and load the specific client side code
+ * @author Bertrand Chevrier <bertrand@taotesting.com>
  * @package taoCe
  * @subpackage actions
  * @license GPL-2.0
@@ -33,76 +32,31 @@ namespace oat\taoCe\actions;
 class Main extends \tao_actions_Main {
 
     /**
-     * The user service
-     * @var tao_models_classes_UserService 
+     * Wrapper to the main action: update the first time property and redirect
+     * @return void
      */
-    private $userService;
-    
-    /**
-     * initialize the services
-     */
-    public function __construct(){
+    public function index(){
         
-        parent::__construct();
-        $this->userService = \tao_models_classes_UserService::singleton();
-    }
-
-    /**
-     * A possible entry point to tao
-     */
-    public function index() {
-        
-        parent::index();
-        
-        $user = $this->userService->getCurrentUser();
-        $firsttime = $this->userService->isFirstTimeInTao($user);
-        if($firsttime == false || $this->hasRequestParameter('nosplash')){
-            $this->userService->becomeVeteran($user);
-        }
-
-        $defaultExtIds = array('items', 'tests', 'subjects', 'groups', 'delivery', 'results');
-        $defaultExtensions = array();
-        $additionalExtensions = array();
-        foreach ($this->service->getAllStructures() as $i => $structure) {
-            if ($structure['data']['visible'] == 'true') {
-                $data = $structure['data'];
-                if (in_array((string) $structure['id'], $defaultExtIds)) {
-                    $defaultExtensions[strval($structure['id'])] = array(
-                        'id' => (string) $structure['id'],
-                        'name' => (string) $data['name'],
-                        'extension' => $structure['extension'],
-                        'description' => (string) $data->description
-                    );
-                } else {
-                    $additionalExtensions[$i] = array(
-                        'id' => (string) $structure['id'],
-                        'name' => (string) $data['name'],
-                        'extension' => $structure['extension'],
-                        'description' => (string) $data->description
-                    );
-                }
-
-                //Test if access
-                $access = false;
-                foreach ($data->sections->section as $section) {
-                    list($ext, $mod, $act) = explode('/', trim((string) $section['url'], '/'));
-                    if (\tao_models_classes_accessControl_AclProxy::hasAccess($ext, $mod, $act)) {
-                        $access = true;
-                        break;
-                    }
-                }
-                if (in_array((string) $structure['id'], $defaultExtIds)) {
-                    $defaultExtensions[strval($structure['id'])]['enabled'] = $access;
-                } else {
-                    $additionalExtensions[$i]['enabled'] = $access;
-                }
+        //redirect to the usual tao/Main/index
+        if($this->hasRequestParameter('ext') || $this->hasRequestParameter('structure')){
+            
+            //but before update the first time property
+            $user = $this->userService->getCurrentUser();
+            if($this->hasRequestParameter('nosplash')){
+                $this->userService->becomeVeteran($user);
+            } else {
+                $this->userService->becomeVeteran($user, true);
             }
+            
+            //@todo use forward on cross-extension forward is supported
+            $this->redirect(_url('index', 'Main', 'tao', array(
+                'ext' => $this->getRequestParameter('ext'),
+                'structure' => $this->getRequestParameter('structure')
+            )));
+
+        } else {
+            //render the index but with the taoCe URL used by client side routes
+            parent::index();
         }
-
-        $this->setData('extensions', array_merge($defaultExtensions, $additionalExtensions));
-        $this->setData('defaultExtensions', $defaultExtensions);
-        $this->setData('additionalExtensions', $additionalExtensions);
     }
-
-    
 }

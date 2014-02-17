@@ -1,4 +1,4 @@
-<h1>Items</h1> 
+<h1>Delivery</h1> 
 
 <p>In this part you can create, design and store a series of items that will be combined into tests.</p>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE extension SYSTEM "../doc/structures.dtd">
 <structures>
-	<structure id="taoCe_main" name="taoCe" visible="false">
-		<description />
-	</structure>
+    <toolbar>
+        <action id="help" icon="icon-help" level="7" js="controller/home" title="Help"></action>
+    </toolbar>
 </structures>

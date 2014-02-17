@@ -17,7 +17,7 @@
                            <a href="#" 
                               class="block pentagon<? if(!$extensions['items']['enabled']): ?> disabled<? endif ?>" 
                               data-module-name="items"
-                              data-url="<?=_url('index', null, null, array('structure' => $extensions['items']['id'], 'ext' => $extensions['items']['extension']))?>">
+                              data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'items', 'ext' => $extensions['items']['extension']))?>">
                                <span class="icon-item"></span>
                                <?=__($extensions['items']['name'])?>
                            </a>
@@ -26,7 +26,7 @@
                            <a href="#" 
                               class="block pentagon <? if(!$extensions['subjects']['enabled']): ?> disabled<? endif ?>" 
                               data-module-name="subjects"
-                              data-url="<?=_url('index', null, null, array('structure' => $extensions['subjects']['id'], 'ext' => $extensions['subjects']['extension']))?>">
+                              data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'subjects', 'ext' => $extensions['subjects']['extension']))?>">
                                <span class="icon-test-taker"></span>
                                <?=__($extensions['subjects']['name'])?>
                            </a>
@@ -37,7 +37,7 @@
                            <a href="#" 
                               class="block pentagon<? if(!$extensions['tests']['enabled']): ?> disabled<? endif ?>" 
                               data-module-name="tests"
-                              data-url="<?=_url('index', null, null, array('structure' => $extensions['tests']['id'], 'ext' => $extensions['tests']['extension']))?>">
+                              data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'tests', 'ext' => $extensions['tests']['extension']))?>">
                                <span class="icon-test"></span>
                                <?=__($extensions['tests']['name'])?>
                            </a>
@@ -46,7 +46,7 @@
                            <a href="#" 
                               class="block pentagon<? if(!$extensions['groups']['enabled']): ?> disabled<? endif ?>" 
                               data-module-name="groups"
-                              data-url="<?=_url('index', null, null, array('structure' => $extensions['groups']['id'], 'ext' => $extensions['groups']['extension']))?>">
+                              data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'groups', 'ext' => $extensions['groups']['extension']))?>">
                                <span class="icon-test-takers"></span>
                                <?=__($extensions['groups']['name'])?>
                            </a>
@@ -57,7 +57,7 @@
                            <a href="#" 
                               class="block pentagon wide<? if(!$extensions['delivery']['enabled']): ?> disabled<? endif ?>" 
                               data-module-name="delivery"
-                              data-url="<?=_url('index', null, null, array('structure' => $extensions['delivery']['id'], 'ext' => $extensions['delivery']['extension']))?>">
+                              data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'delivery', 'ext' => $extensions['delivery']['extension']))?>">
                                <span class="icon-delivery"></span>
                                <?=__($extensions['delivery']['name'])?>
                            </a>
@@ -68,7 +68,7 @@
                            <a href="#" 
                               class="block wide<? if(!$extensions['results']['enabled']): ?> disabled<? endif ?>"  
                               data-module-name="results"
-                              data-url="<?=_url('index', null, null, array('structure' => $extensions['results']['id'], 'ext' => $extensions['results']['extension']))?>">
+                              data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'results', 'ext' => $extensions['results']['extension']))?>">
                                <span class="icon-result"></span>
                                <?=__($extensions['results']['name'])?>
                            </a>
@@ -82,7 +82,9 @@
                     <?foreach(get_data('extensions') as $extension): ?>
                         <div class="module-desc" data-module="<?=$extension['id']?>">
                             <span class="icon"></span>
-                            <? include 'splash/' . $extension['name'] . '.tpl' ?> 
+                            <p>
+                            <? include 'splash/' . $extension['id'] . '.tpl' ?> 
+                            </p>
                         </div>
                     <?endforeach?>
                 </div>
@@ -91,7 +93,7 @@
                     foreach(get_data('additionalExtensions') as $extension):
                 ?>
                 <?if(!$moreShowed) echo '<span class="more">More:</span>';?>
-                    <a href="#" class="module new-module" data-module-name="<?=$extension['id']?>" data-url="<?=_url('index', null, null, array('structure' => $extension['id'], 'ext' => $extension['extension']))?>">
+                    <a href="#" class="module new-module" data-module-name="<?=$extension['id']?>" data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => $extension['id'], 'ext' => $extension['extension']))?>">
                         <span class="icon-extension"></span>
                         <?=__($extension['name'])?>
                     </a>
@@ -104,7 +106,7 @@
         <div class="modal-footer clearfix">
             <div class="checkbox-wrapper">
                 <label class="checkbox">
-                    <input id="nosplash" type="checkbox" />
+                    <input id="nosplash" type="checkbox" <? if(get_data('firstTime') == false): ?>checked="checked"<? endif ?> />
                     <span class="icon-checkbox"></span>
                     <?=__('Do not show this window when TAO opens.')?>
                 </label>

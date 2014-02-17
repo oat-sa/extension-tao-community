@@ -1,3 +1,4 @@
+
 /**
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -20,10 +21,15 @@
 
 //@see http://forge.taotesting.com/projects/tao/wiki/Front_js
 define(function(){
+    'use strict';
+
     return {
-        'Main' : {
-            'actions' : {
-                'index' : 'controller/main'
+        'Home' : {
+            'css' : 'home.css'
+        },
+        'Main':{
+            'actions': {
+                'index' : 'controller/home'
             }
         }
     };
