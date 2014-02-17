@@ -79,7 +79,7 @@
                     <div class="module-desc default">
                         <span><?=__('Select an icon on the left to learn more about this step.')?><span/>
                     </div>
-                    <?foreach(get_data('extensions') as $extension): ?>
+                    <?foreach(get_data('defaultExtensions') as $extension): ?>
                         <div class="module-desc" data-module="<?=$extension['id']?>">
                             <span class="icon"></span>
                             <p>
