@@ -25,7 +25,6 @@
 /* Splash screen styles */
 .splash-screen-wrapper {
   position: absolute;
-  top: 60px;
   left: 0; }
 
 .splash-screen-wrapper #modal-close {
