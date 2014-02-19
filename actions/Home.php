@@ -21,6 +21,8 @@
 
 namespace oat\taoCe\actions;
 
+use oat\tao\models\classes\menu\MenuService;
+
 /**
  * The Home controller provides actions for the Home screen of the Community Edition
  *
@@ -63,35 +65,34 @@ class Home extends \tao_actions_CommonModule {
         //load the extension data
         $defaultExtensions = array();
         $additionalExtensions = array();
-        foreach ($this->service->getAllStructures() as $i => $structure) {
-            if ($structure['data']['visible'] == 'true') {
-                $data = $structure['data'];
-                if (in_array((string) $structure['id'], $defaultExtIds)) {
-                    $defaultExtensions[strval($structure['id'])] = array(
-                        'id' => (string) $structure['id'],
-                        'name' => (string) $data['name'],
-                        'extension' => $structure['extension'],
-                        'description' => (string) $data->description
+        foreach (MenuService::getAllStructures() as $i => $structure) {
+            if ($structure->isVisible()) {
+                if (in_array((string) $structure->getId(), $defaultExtIds)) {
+                    $defaultExtensions[strval($structure->getId())] = array(
+                        'id' => $structure->getId(),
+                        'name' => $structure->getName(),
+                        'extension' => $structure->getExtension(),
+                        'description' => $structure->getDescription()
                     );
                 } else {
                     $additionalExtensions[$i] = array(
-                        'id' => (string) $structure['id'],
-                        'name' => (string) $data['name'],
-                        'extension' => $structure['extension']
+                        'id' => $structure->getId(),
+                        'name' => $structure->getName(),
+                        'extension' => $structure->getExtension()
                     );
                 }
 
                 //Test if access
                 $access = false;
-                foreach ($data->sections->section as $section) {
-                    list($ext, $mod, $act) = explode('/', trim((string) $section['url'], '/'));
+                foreach ($structure->getSections() as $section) {
+                    list($ext, $mod, $act) = explode('/', trim((string) $section->getUrl(), '/'));
                     if (\tao_models_classes_accessControl_AclProxy::hasAccess($ext, $mod, $act)) {
                         $access = true;
                         break;
                     }
                 }
-                if (in_array((string) $structure['id'], $defaultExtIds)) {
-                    $defaultExtensions[strval($structure['id'])]['enabled'] = $access;
+                if (in_array((string) $structure->getId(), $defaultExtIds)) {
+                    $defaultExtensions[strval($structure->getId())]['enabled'] = $access;
                 } else {
                     $additionalExtensions[$i]['enabled'] = $access;
                 }
