@@ -42,18 +42,6 @@ return array(
     'routes' => array(
         '/taoCe' => 'oat\\taoCe\\actions'
     ),    
-    'entryPoints' => array( 
-    	array(
-            'id' => 'backofficeCe',
-            'ext' => 'taoCe',
-            'mod' => 'Main',
-            'act' => 'index',
-            'title' => __('Test Developers and Administrators'),
-            'desc' => __('Create items, manage item and test banks, organize cohorts and deliveries, prepare reports, set up workflows.'),
-            'label' => __('TAO Back Office'),
-            'overwrites' => array('backoffice')
-        )
-    ),
 	'constants' => array(
 	    # views directory
 	    "DIR_VIEWS" => dirname(__FILE__).DIRECTORY_SEPARATOR."views".DIRECTORY_SEPARATOR,
