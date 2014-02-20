@@ -65,34 +65,34 @@ class Home extends \tao_actions_CommonModule {
         //load the extension data
         $defaultExtensions = array();
         $additionalExtensions = array();
-        foreach (MenuService::getAllStructures() as $i => $structure) {
-            if ($structure->isVisible()) {
-                if (in_array((string) $structure->getId(), $defaultExtIds)) {
-                    $defaultExtensions[strval($structure->getId())] = array(
-                        'id' => $structure->getId(),
-                        'name' => $structure->getName(),
-                        'extension' => $structure->getExtension(),
-                        'description' => $structure->getDescription()
+        foreach (MenuService::getAllPerspectives() as $i => $perspective) {
+            if ($perspective->isVisible()) {
+                if (in_array((string) $perspective->getId(), $defaultExtIds)) {
+                    $defaultExtensions[strval($perspective->getId())] = array(
+                        'id' => $perspective->getId(),
+                        'name' => $perspective->getName(),
+                        'extension' => $perspective->getExtension(),
+                        'description' => $perspective->getDescription()
                     );
                 } else {
                     $additionalExtensions[$i] = array(
-                        'id' => $structure->getId(),
-                        'name' => $structure->getName(),
-                        'extension' => $structure->getExtension()
+                        'id' => $perspective->getId(),
+                        'name' => $perspective->getName(),
+                        'extension' => $perspective->getExtension()
                     );
                 }
 
                 //Test if access
                 $access = false;
-                foreach ($structure->getSections() as $section) {
+                foreach ($perspective->getSections() as $section) {
                     list($ext, $mod, $act) = explode('/', trim((string) $section->getUrl(), '/'));
                     if (\tao_models_classes_accessControl_AclProxy::hasAccess($ext, $mod, $act)) {
                         $access = true;
                         break;
                     }
                 }
-                if (in_array((string) $structure->getId(), $defaultExtIds)) {
-                    $defaultExtensions[strval($structure->getId())]['enabled'] = $access;
+                if (in_array((string) $perspective->getId(), $defaultExtIds)) {
+                    $defaultExtensions[strval($perspective->getId())]['enabled'] = $access;
                 } else {
                     $additionalExtensions[$i]['enabled'] = $access;
                 }
