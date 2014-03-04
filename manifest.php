@@ -26,9 +26,22 @@ return array(
     'license' => 'GPL-2.0',
     'version' => '1.0.0',
 	'author' => 'Open Assessment Technologies SA',
-	'requires' => array('taoItems' => '>=2.4','taoTests' => '>=2.4','taoSubjects' => '>=2.4','taoGroups' => '>=2.4','taoResults' => '>=2.4','taoDelivery' => '>=2.4'),
-	// for compatibility
-	'dependencies' => array('taoItems','taoTests','taoSubjects','taoGroups','taoResults','taoDelivery'),
+	'requires' => array(
+	   'tao' => '>-2.6',
+	   'funcAcl' => '*',
+	   'filemanager' => '*',
+	   'taoItems' => '>=2.4',
+	       'taoQTI' => '*',
+	       'taoOpenWebItem' => '*',
+       'taoTests' => '>=2.4',
+           'taoQtiTest' => '*',
+           'taoWfTest' => '*',
+       'taoSubjects' => '>=2.4',
+       'taoGroups' => '>=2.4',
+       'taoDelivery' => '>=2.4',
+           'taoSimpleDelivery' => '*',
+       'taoResults' => '>=2.4'
+    ),
 	'managementRole' => 'http://www.tao.lu/Ontologies/generis.rdf#taoCeManager',
     'acl' => array(
         array('grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext'=>'taoCe','mod' => 'Main', 'act' => 'index')),
