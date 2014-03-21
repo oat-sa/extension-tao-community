@@ -31,7 +31,7 @@ return array(
 	   'funcAcl' => '*',
 	   'filemanager' => '*',
 	   'taoItems' => '>=2.4',
-	       'taoQTI' => '*',
+	       'taoQtiItem' => '*',
 	       'taoOpenWebItem' => '*',
        'taoTests' => '>=2.4',
            'taoQtiTest' => '*',
