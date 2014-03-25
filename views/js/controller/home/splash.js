@@ -33,12 +33,16 @@ define(['jquery', 'helpers', 'taoCe/controller/home/custom-scrollbar'], function
        * Initialize the splash screen
        */
       init: function (){
-         
+         var isHomePage = helpers._url('index', 'Main', 'taoCe')===window.location.href;        
+        
          //Url to redirect after closing
          this.redirectUrl = '';
-         
+
+         //overwrites main styles        
          $('.splash-screen-wrapper').css('display', 'block');
-         
+         $('.splash-modal').css('height', '650px');
+         $('.desc').css('overflow', 'hidden');
+
          /**
           * Place lock icon for disabled modules
           */
@@ -62,7 +66,7 @@ define(['jquery', 'helpers', 'taoCe/controller/home/custom-scrollbar'], function
          /**
           * Open modal window immediately
           */
-         $('#splash-screen').modal({disableOverlayClose: true});
+         $('#splash-screen').modal({disableClosing: isHomePage});
 
          this.initNav();
          this.initModulesNav();
