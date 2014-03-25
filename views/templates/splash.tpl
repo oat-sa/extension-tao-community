@@ -82,9 +82,7 @@
                     <?foreach(get_data('defaultExtensions') as $extension): ?>
                         <div class="module-desc" data-module="<?=$extension['id']?>">
                             <span class="icon"></span>
-                            <p>
                             <? include 'splash/' . $extension['id'] . '.tpl' ?> 
-                            </p>
                         </div>
                     <?endforeach?>
                 </div>
@@ -112,7 +110,7 @@
                 </label>
                 <span class="note"><?=__('Note: You can access this overview whenever you need via the Help icon.')?></span>
             </div>
-            <button id="splash-close-btn" class="btn-info" type="button" disabled="disabled"><span class="icon-save"></span><?=__('Close & Start using TAO!')?></button>
+            <button id="splash-close-btn" class="btn-info" type="button" disabled="disabled"><?=__('Go to ')?><span class="module-name"><?=__('selection')?></span></button>
         </div>
     </div>
 </div>

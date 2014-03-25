@@ -33,31 +33,40 @@ define(['jquery', 'helpers', 'taoCe/controller/home/custom-scrollbar'], function
        * Initialize the splash screen
        */
       init: function (){
-         var isHomePage = helpers._url('index', 'Main', 'taoCe')===window.location.href;        
+         
+        var $splashScreen = $('#splash-screen');
+        var $splashWrapper = $('.splash-screen-wrapper');
+        var $splashDesc = $('.desc', $splashScreen);
+        var $splashDiagram = $('.diagram', $splashScreen);
+        var isHomePage = helpers._url('index', 'Main', 'taoCe')===window.location.href;        
         
          //Url to redirect after closing
          this.redirectUrl = '';
 
          //overwrites main styles        
-         $('.splash-screen-wrapper').css('display', 'block');
-         $('.splash-modal').css('height', '650px');
-         $('.desc').css('overflow', 'hidden');
+         $splashWrapper.css('display', 'block');
+
+        if(!isHomePage){
+            $('.modal-footer', $splashScreen).hide();
+        } else {
+            $('.modal-footer', $splashScreen).show();
+        }
 
          /**
           * Place lock icon for disabled modules
           */
-         $('[data-module-name]' , '.diagram').each(function(){
+         $('[data-module-name]' , $splashDiagram).each(function(){
              var $this = $(this);
              
              if($this.hasClass('disabled')){
                  $this.prepend('<span class="icon-lock"></span>');
              }
          });
-         
+
          /**
           * Initialize custom scrollbar for the description
           */
-         $('.desc').customScrollbar({
+         $splashDesc.customScrollbar({
             updateOnWindowResize: true,
             skin: 'gray-skin',
             hScroll: false
@@ -66,7 +75,7 @@ define(['jquery', 'helpers', 'taoCe/controller/home/custom-scrollbar'], function
          /**
           * Open modal window immediately
           */
-         $('#splash-screen').modal({disableClosing: isHomePage});
+         $splashScreen.modal({disableClosing: isHomePage});
 
          this.initNav();
          this.initModulesNav();
@@ -100,7 +109,7 @@ define(['jquery', 'helpers', 'taoCe/controller/home/custom-scrollbar'], function
                 selectedModuleName = selectedEl.data('module-name');
                 splashObj.redirectUrl = selectedEl.data('url');
                 
-            $('#splash-close-btn').removeAttr('disabled');
+            $('#splash-close-btn').removeAttr('disabled').find('.module-name').text(selectedEl.text());
                 
             if(!selectedEl.hasClass('new-module')){
                var selectedClass = selectedEl.hasClass('groups')?$('.test-takers').find('span').first().attr('class'):selectedEl.find('span').first().attr('class');

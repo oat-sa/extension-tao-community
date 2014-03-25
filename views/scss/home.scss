@@ -42,7 +42,8 @@
 
 .modal.splash-modal {
 	padding: 75px 0 0 0;
-    min-width: 900px; 
+    min-width: 900px;
+    min-height: 650px; 
 }
 
 .modal-title {
@@ -207,19 +208,26 @@
         }
 
         .desc {
-            background-color: $uiClickableDefaultBg;
+            border: solid 10px $uiClickableDefaultBg;
+            background-color: $uiGeneralContentBg;
             margin-left: 280px;
             min-height: 100%;
             height: 460px;
             margin-bottom: 20px;
 
-            .module-desc {
-                padding: 10px;
-                display: none;
+            
 
+            .module-desc {
+                padding: 5px;
+                display: none;
+                
                 &.default {
-                    color: $textColor + 40;
+                    @include font-size(35);
+                    color: $darkBrown;
+                    text-align: center;
+                    font-style: italic;
                     display: block;
+                    margin-top: 150px;
                 }
 
                 span[class*="icon-"] {
@@ -229,8 +237,13 @@
                     width: 37px;
                     height: 46px;
                     position: absolute;
-                    right: 10px;
+                    right: 20px;
                     top: 20px;
+                }
+
+                h1 {
+                    font-weight: bold; 
+                    @include font-size(28);
                 }
             }
         }
