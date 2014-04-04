@@ -25,7 +25,7 @@ namespace oat\taoCe\actions;
  * Just to override the paths and load the specific client side code
  * @author Bertrand Chevrier <bertrand@taotesting.com>
  * @package taoCe
- * @subpackage actions
+ 
  * @license GPL-2.0
  *
  */

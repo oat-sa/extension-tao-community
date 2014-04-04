@@ -28,7 +28,7 @@ use oat\tao\models\classes\menu\MenuService;
  *
  * @author Bertrand Chevrier <bertrand@taotesting.com>
  * @package taoCe
- * @subpackage actions
+ 
  * @license GPL-2.0
  *
  */
