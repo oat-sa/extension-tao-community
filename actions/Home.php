@@ -22,6 +22,7 @@
 namespace oat\taoCe\actions;
 
 use oat\tao\models\classes\menu\MenuService;
+use tao_models_classes_accessControl_AclProxy;
 
 /**
  * The Home controller provides actions for the Home screen of the Community Edition
@@ -86,7 +87,7 @@ class Home extends \tao_actions_CommonModule {
                 $access = false;
                 foreach ($perspective->getSections() as $section) {
                     list($ext, $mod, $act) = explode('/', trim((string) $section->getUrl(), '/'));
-                    if (\tao_models_classes_accessControl_AclProxy::hasAccess($act, $mod, $ext)) {
+                    if (tao_models_classes_accessControl_AclProxy::hasAccess($act, $mod, $ext)) {
                         $access = true;
                         break;
                     }
