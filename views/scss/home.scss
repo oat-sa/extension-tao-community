@@ -186,23 +186,18 @@
                     color: $textHighlight;
                 }
 
-                &.disabled:hover, &.disabled span:before {
+                &.disabled, &.disabled:hover, &.disabled span:before {
                     color: $darkBrown !important;
-                    background: $uiClickableDefaultBg;
+                    background: $uiClickableDefaultBg !important;
+                    opacity: .9;
                 }
                 
                 &.disabled:hover:after {
                     border-color: $uiClickableDefaultBg transparent transparent transparent !important;
                 }
                 
-                .icon-lock {
-                    position: absolute;
-                    right: 15px;
-                    top: 10px;
-                }
-                
                 .icon-lock:before {
-                    @include font-size(20);
+                    @include font-size(40);
                 }
             }
         }

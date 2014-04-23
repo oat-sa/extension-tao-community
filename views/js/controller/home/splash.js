@@ -59,6 +59,9 @@ define(['jquery', 'helpers', 'taoCe/controller/home/custom-scrollbar'], function
              var $this = $(this);
              
              if($this.hasClass('disabled')){
+                
+
+                 $this.find('span').remove();
                  $this.prepend('<span class="icon-lock"></span>');
              }
          });
