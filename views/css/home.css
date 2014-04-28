@@ -45,15 +45,17 @@ DO NOT EDIT!     * *      '-'-'\_      /'._.'
 .splash-screen-wrapper {
   position: absolute;
   top: 0;
-  left: 0; }
+  height: 0;
+  left: 0;
+  right: 0; }
 
-/* line 43, ../scss/home.scss */
+/* line 45, ../scss/home.scss */
 .modal.splash-modal {
   padding: 75px 0 0 0;
   min-width: 900px;
   min-height: 650px; }
 
-/* line 49, ../scss/home.scss */
+/* line 51, ../scss/home.scss */
 .modal-title {
   background-color: #ba122b;
   -webkit-border-radius: 0 3px 3px 0;
@@ -70,61 +72,61 @@ DO NOT EDIT!     * *      '-'-'\_      /'._.'
   -webkit-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3); }
 
-/* line 62, ../scss/home.scss */
+/* line 64, ../scss/home.scss */
 .modal-nav.plain {
   background-color: #f3f1ef;
   width: 100%;
   display: none !important; }
-  /* line 67, ../scss/home.scss */
+  /* line 69, ../scss/home.scss */
   .modal-nav.plain li {
     float: left; }
-    /* line 70, ../scss/home.scss */
+    /* line 72, ../scss/home.scss */
     .modal-nav.plain li.active a {
       background-color: #a3a9b1;
       color: #222222; }
-    /* line 75, ../scss/home.scss */
+    /* line 77, ../scss/home.scss */
     .modal-nav.plain li:hover a {
       background-color: #3e7da7;
       color: white; }
-    /* line 80, ../scss/home.scss */
+    /* line 82, ../scss/home.scss */
     .modal-nav.plain li a {
       line-height: 20px;
       display: block;
       padding: 5px 15px;
       color: #222222; }
 
-/* line 89, ../scss/home.scss */
+/* line 91, ../scss/home.scss */
 .modal-content {
   margin: 0 20px; }
-  /* line 92, ../scss/home.scss */
+  /* line 94, ../scss/home.scss */
   .modal-content .panels {
     display: none; }
-    /* line 95, ../scss/home.scss */
+    /* line 97, ../scss/home.scss */
     .modal-content .panels .icon {
       font-size: 40px;
       line-height: 50px;
       margin: 0;
       padding: 0; }
-    /* line 102, ../scss/home.scss */
+    /* line 104, ../scss/home.scss */
     .modal-content .panels > p {
       font-size: 20px;
       margin-bottom: 20px;
       line-height: 20px; }
-    /* line 108, ../scss/home.scss */
+    /* line 110, ../scss/home.scss */
     .modal-content .panels .diagram {
       height: 460px;
       width: 280px;
       margin-bottom: 20px;
       position: absolute;
       left: 0; }
-      /* line 115, ../scss/home.scss */
+      /* line 117, ../scss/home.scss */
       .modal-content .panels .diagram .col-6 {
         margin: 0;
         width: 50%; }
-      /* line 120, ../scss/home.scss */
+      /* line 122, ../scss/home.scss */
       .modal-content .panels .diagram .grid-row {
         width: 100%; }
-      /* line 124, ../scss/home.scss */
+      /* line 126, ../scss/home.scss */
       .modal-content .panels .diagram .block {
         width: 120px;
         height: 100px;
@@ -136,14 +138,14 @@ DO NOT EDIT!     * *      '-'-'\_      /'._.'
         color: #6f6359;
         float: right;
         margin-bottom: 30px; }
-        /* line 135, ../scss/home.scss */
+        /* line 137, ../scss/home.scss */
         .modal-content .panels .diagram .block.test-takers {
           height: 120px;
           margin-bottom: 0; }
-        /* line 140, ../scss/home.scss */
+        /* line 142, ../scss/home.scss */
         .modal-content .panels .diagram .block.pentagon {
           height: 90px; }
-          /* line 142, ../scss/home.scss */
+          /* line 144, ../scss/home.scss */
           .modal-content .panels .diagram .block.pentagon:after {
             content: '';
             width: 0;
@@ -154,13 +156,13 @@ DO NOT EDIT!     * *      '-'-'\_      /'._.'
             border-width: 20px 60px 0px 60px;
             top: 90px;
             left: 0; }
-          /* line 154, ../scss/home.scss */
+          /* line 156, ../scss/home.scss */
           .modal-content .panels .diagram .block.pentagon.wide:after {
             border-width: 20px 130px 0px 130px; }
-        /* line 159, ../scss/home.scss */
+        /* line 161, ../scss/home.scss */
         .modal-content .panels .diagram .block.wide {
           width: 260px; }
-        /* line 163, ../scss/home.scss */
+        /* line 165, ../scss/home.scss */
         .modal-content .panels .diagram .block span:before {
           display: block;
           font-size: 40px;
@@ -168,33 +170,33 @@ DO NOT EDIT!     * *      '-'-'\_      /'._.'
           padding: 20px 0 5px 0;
           line-height: 1;
           color: #6f6359; }
-        /* line 171, ../scss/home.scss */
+        /* line 173, ../scss/home.scss */
         .modal-content .panels .diagram .block span {
           width: 100%;
           display: block; }
-        /* line 176, ../scss/home.scss */
+        /* line 178, ../scss/home.scss */
         .modal-content .panels .diagram .block:hover, .modal-content .panels .diagram .block.active {
           background: #3e7da7;
           color: white !important; }
-        /* line 181, ../scss/home.scss */
+        /* line 183, ../scss/home.scss */
         .modal-content .panels .diagram .block:hover:after, .modal-content .panels .diagram .block.active:after {
           border-color: #3e7da7 transparent transparent transparent; }
-        /* line 185, ../scss/home.scss */
+        /* line 187, ../scss/home.scss */
         .modal-content .panels .diagram .block:hover span:before, .modal-content .panels .diagram .block.active span:before {
           color: white; }
-        /* line 189, ../scss/home.scss */
+        /* line 191, ../scss/home.scss */
         .modal-content .panels .diagram .block.disabled, .modal-content .panels .diagram .block.disabled:hover, .modal-content .panels .diagram .block.disabled span:before {
           color: #6f6359 !important;
           background: #f3f1ef !important;
           opacity: .9; }
-        /* line 195, ../scss/home.scss */
+        /* line 197, ../scss/home.scss */
         .modal-content .panels .diagram .block.disabled:hover:after {
           border-color: #f3f1ef transparent transparent transparent !important; }
-        /* line 199, ../scss/home.scss */
+        /* line 201, ../scss/home.scss */
         .modal-content .panels .diagram .block .icon-lock:before {
           font-size: 40px;
           font-size: 4rem; }
-    /* line 205, ../scss/home.scss */
+    /* line 207, ../scss/home.scss */
     .modal-content .panels .desc {
       border: solid 10px #f3f1ef;
       background-color: white;
@@ -202,11 +204,11 @@ DO NOT EDIT!     * *      '-'-'\_      /'._.'
       min-height: 100%;
       height: 460px;
       margin-bottom: 20px; }
-      /* line 215, ../scss/home.scss */
+      /* line 217, ../scss/home.scss */
       .modal-content .panels .desc .module-desc {
         padding: 5px;
         display: none; }
-        /* line 219, ../scss/home.scss */
+        /* line 221, ../scss/home.scss */
         .modal-content .panels .desc .module-desc.default {
           font-size: 35px;
           font-size: 3.5rem;
@@ -215,7 +217,7 @@ DO NOT EDIT!     * *      '-'-'\_      /'._.'
           font-style: italic;
           display: block;
           margin-top: 150px; }
-        /* line 228, ../scss/home.scss */
+        /* line 230, ../scss/home.scss */
         .modal-content .panels .desc .module-desc span[class*="icon-"] {
           color: #494f57;
           font-size: 40px;
@@ -226,99 +228,99 @@ DO NOT EDIT!     * *      '-'-'\_      /'._.'
           position: absolute;
           right: 20px;
           top: 20px; }
-        /* line 239, ../scss/home.scss */
+        /* line 241, ../scss/home.scss */
         .modal-content .panels .desc .module-desc h1 {
           font-weight: bold;
           font-size: 28px;
           font-size: 2.8rem; }
-    /* line 246, ../scss/home.scss */
+    /* line 248, ../scss/home.scss */
     .modal-content .panels .more {
       display: block;
       font-weight: bold;
       margin-bottom: 5px; }
-    /* line 252, ../scss/home.scss */
+    /* line 254, ../scss/home.scss */
     .modal-content .panels .icon-extension {
       font-size: 15px;
       line-height: 15px;
       margin: 0;
       padding: 0; }
-    /* line 260, ../scss/home.scss */
+    /* line 262, ../scss/home.scss */
     .modal-content .panels .new-module {
       display: inline-block;
       line-height: 20px;
       margin: 0 10px 5px 0;
       cursor: pointer;
       color: #494f57; }
-      /* line 267, ../scss/home.scss */
+      /* line 269, ../scss/home.scss */
       .modal-content .panels .new-module:hover, .modal-content .panels .new-module.active {
         color: #3e7da7; }
 
-/* line 274, ../scss/home.scss */
+/* line 276, ../scss/home.scss */
 .modal-footer {
   margin: 15px 20px; }
-  /* line 277, ../scss/home.scss */
+  /* line 279, ../scss/home.scss */
   .modal-footer .checkbox-wrapper {
     font-size: 13px;
     float: left; }
-    /* line 281, ../scss/home.scss */
+    /* line 283, ../scss/home.scss */
     .modal-footer .checkbox-wrapper label {
       margin: 0; }
-    /* line 285, ../scss/home.scss */
+    /* line 287, ../scss/home.scss */
     .modal-footer .checkbox-wrapper .note {
       font-size: 13px;
       font-style: italic;
       display: block;
       margin-left: 25px; }
-  /* line 293, ../scss/home.scss */
+  /* line 295, ../scss/home.scss */
   .modal-footer .btn-info {
     float: right; }
 
-/* line 298, ../scss/home.scss */
+/* line 300, ../scss/home.scss */
 .scrollable {
   position: relative; }
-  /* line 301, ../scss/home.scss */
+  /* line 303, ../scss/home.scss */
   .scrollable:focus {
     outline: 0; }
-  /* line 305, ../scss/home.scss */
+  /* line 307, ../scss/home.scss */
   .scrollable .viewport {
     position: relative;
     overflow: hidden; }
-    /* line 309, ../scss/home.scss */
+    /* line 311, ../scss/home.scss */
     .scrollable .viewport .overview {
       position: absolute;
       width: 100%; }
-  /* line 315, ../scss/home.scss */
+  /* line 317, ../scss/home.scss */
   .scrollable .scroll-bar {
     display: none; }
-    /* line 318, ../scss/home.scss */
+    /* line 320, ../scss/home.scss */
     .scrollable .scroll-bar.vertical {
       position: absolute;
       right: 0;
       height: 100%; }
-      /* line 323, ../scss/home.scss */
+      /* line 325, ../scss/home.scss */
       .scrollable .scroll-bar.vertical .thumb {
         width: 100%;
         min-height: 10px;
         margin: 0 1px;
         width: 14px; }
-    /* line 331, ../scss/home.scss */
+    /* line 333, ../scss/home.scss */
     .scrollable .scroll-bar .thumb {
       position: absolute; }
-  /* line 336, ../scss/home.scss */
+  /* line 338, ../scss/home.scss */
   .scrollable.gray-skin {
     padding-right: 17px; }
-    /* line 339, ../scss/home.scss */
+    /* line 341, ../scss/home.scss */
     .scrollable.gray-skin .scroll-bar {
       border-left: 1px solid #e0e0e0;
       background-color: #fff; }
-      /* line 343, ../scss/home.scss */
+      /* line 345, ../scss/home.scss */
       .scrollable.gray-skin .scroll-bar.vertical {
         width: 16px; }
-      /* line 347, ../scss/home.scss */
+      /* line 349, ../scss/home.scss */
       .scrollable.gray-skin .scroll-bar .thumb {
         background-color: #c7c7c7; }
 
-/* line 354, ../scss/home.scss */
+/* line 356, ../scss/home.scss */
 .not-selectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
