@@ -1,28 +1,35 @@
-<h1>Tests</h1> 
+<?php use oat\tao\helpers\Template; ?>
+<h1><?=__('Tests')?></h1>
 
-<p>In this part you can create, design and store a series of items that will be combined into tests.</p>
+<p><?=__('Build and manage tests using items that you have previously created or imported.')?></p>
 
-<h2>Create QTI 2.1 items</h2>
+<h2><?=__('Create QTI Tests')?></h2>
 
-<p>Easily build and customize simple or complex items thanks to our Item editor.</p>
-<p>You can choose from the 16 different types of interactions -questions- that are supported, like:</p>
-<ul>
-    <li>Single choice</li>
-    <li>Multiple choice</li>
-    <li>Text entry</li>
-    <li>Slider</li>
-    <li>Hotspot, etc.</li>
-</ul>
-<p>You also can add media content to your item.</p>
-<p>And define any feedbacks given to your test-takers</p>
+<p><?=__('You can create tests in compliance with the QTI 2.1 standard. A QTI test is structured as follows:')?><br />
+&nbsp;&nbsp;<em><?=__('Test')?> &gt; <?=__('Test part(s)')?> &gt; <?=__('Test section(s)')?> &gt; <?=__('Item(s)')?></em>
+</p>
 
+<p><?=__('For example:')?>
+    <img src="<?=Template::img('qtitest.png', 'taoCe')?>" alt="<?=__('QTI Test Structure')?>"  /><br />
+    <em><?=__('Tips: "Simple” tests without any hierarchy are also available. Note that Open Web Items (OWI) can be delivered in simple test mode only.')?></em>
+</p>
 
-<h2>Import / Export</h2>
+<p><?=__('To create a QTI test:')?>
+    <ul>
+        <li><?=__('Build your test by dragging and dropping the selected items into the test pane.')?></li>
+        <li><?=__('Determine the order of your items. Items can be displayed either randomly or in a specific order.')?></li>
+    </ul>
+</p>
 
-<p>You can import any items already created if they are compliant with the QTI 2.1 standard.</p>
-<p>Reversely, you can also export the items build with TAO and reuse them in other compliant tool.</p>
-<p>If QTI does not fulfill your needs, go beyond the standard limitation and import costumed items with the Open Web Item format.</p>
+<h2><?=__('Define the Test Parameters')?></h2>
 
-<h2>Preview how your item will run.</h2>
+<p><?=__('You can specify test settings such as:')?>
+    <ul>
+        <li><?=__('Time limit')?></li>
+        <li><?=__('Order of items – sequential or random')?></li>
+    </ul>
+</p>
 
-<p>In the Preview mode you can see how your item will be displayed to the test-taker according the device it will be delivered to (computer or tablet).</p>
+<h2><?=__('Import / Export Tests')?></h2>
+
+<p><?=__('You can import tests created with any external tool that is QTI compliant. The items will be automatically added to the Items Library. Conversely, your QTI tests can be exported out of TAO for use with any QTI-compliant delivery engine.')?></p>

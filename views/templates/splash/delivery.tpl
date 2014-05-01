@@ -1,28 +1,18 @@
-<h1>Delivery</h1> 
+<h1>Deliveries</h1>
 
-<p>In this part you can create, design and store a series of items that will be combined into tests.</p>
+<p><?=__('Control how to publish and deliver tests.')?></p> 
 
-<h2>Create QTI 2.1 items</h2>
+<h2><?=__('Publish')?></h2>
 
-<p>Easily build and customize simple or complex items thanks to our Item editor.</p>
-<p>You can choose from the 16 different types of interactions -questions- that are supported, like:</p>
+<p><?=__('Select the test you want to deliver to your group(s) of test-takers. Publish it to make it available online.')?></p>
+
+<h2><?=__('Define a Delivery')?></h2>
+
 <ul>
-    <li>Single choice</li>
-    <li>Multiple choice</li>
-    <li>Text entry</li>
-    <li>Slider</li>
-    <li>Hotspot, etc.</li>
+    <li><?=__('Select the delivery dates.')?></li>
+    <li><?=__('Specify how many times test-takers are allowed to repeat a test.')?></li>
+    <li><?=__('Select the group(s) that will take the test. You can exclude individual test-takers even if they are part of the group.')?></li>
 </ul>
-<p>You also can add media content to your item.</p>
-<p>And define any feedbacks given to your test-takers</p>
 
+<p><?=__('Be aware that any subsequent modification to the test content will not be taken into account until you publish the test again and create a new delivery.')?></p> 
 
-<h2>Import / Export</h2>
-
-<p>You can import any items already created if they are compliant with the QTI 2.1 standard.</p>
-<p>Reversely, you can also export the items build with TAO and reuse them in other compliant tool.</p>
-<p>If QTI does not fulfill your needs, go beyond the standard limitation and import costumed items with the Open Web Item format.</p>
-
-<h2>Preview how your item will run.</h2>
-
-<p>In the Preview mode you can see how your item will be displayed to the test-taker according the device it will be delivered to (computer or tablet).</p>

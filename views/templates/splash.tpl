@@ -77,7 +77,7 @@
                 </div>
                 <div class="desc">
                     <div class="module-desc default">
-                        <span><?=__('Select an icon on the left to learn more about this step.')?><span/>
+                        <span><?=__('Select an icon on the left to find out more.')?><span/>
                     </div>
                     <?foreach(get_data('defaultExtensions') as $extension): ?>
                         <div class="module-desc" data-module="<?=$extension['id']?>">
@@ -106,9 +106,9 @@
                 <label class="checkbox">
                     <input id="nosplash" type="checkbox" <? if(get_data('firstTime') == false): ?>checked="checked"<? endif ?> />
                     <span class="icon-checkbox"></span>
-                    <?=__('Do not show this window when TAO opens.')?>
+                    <?=__('Do not show this window again when TAO opens.')?>
                 </label>
-                <span class="note"><?=__('Note: You can access this overview whenever you need via the Help icon.')?></span>
+                <span class="note"><?=__('Note: You can access this overview at any time via the Help button.')?></span>
             </div>
             <button id="splash-close-btn" class="btn-info" type="button" disabled="disabled"><?=__('Go to ')?><span class="module-name"><?=__('selection')?></span></button>
         </div>

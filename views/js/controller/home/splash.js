@@ -34,10 +34,10 @@ define(['jquery', 'helpers', 'taoCe/controller/home/custom-scrollbar'], function
        */
       init: function (){
          
-        var $splashScreen = $('#splash-screen');
+        this.$splashScreen = $('#splash-screen');
         var $splashWrapper = $('.splash-screen-wrapper');
-        var $splashDesc = $('.desc', $splashScreen);
-        var $splashDiagram = $('.diagram', $splashScreen);
+        var $splashDesc = $('.desc', this.$splashScreen);
+        var $splashDiagram = $('.diagram', this.$splashScreen);
         var isHomePage = helpers._url('index', 'Main', 'taoCe')===window.location.href;        
         
          //Url to redirect after closing
@@ -47,9 +47,9 @@ define(['jquery', 'helpers', 'taoCe/controller/home/custom-scrollbar'], function
          $splashWrapper.css('display', 'block');
 
         if(!isHomePage){
-            $('.modal-footer', $splashScreen).hide();
+            $('.modal-footer', this.$splashScreen).hide();
         } else {
-            $('.modal-footer', $splashScreen).show();
+            $('.modal-footer', this.$splashScreen).show();
         }
 
          /**
@@ -78,7 +78,7 @@ define(['jquery', 'helpers', 'taoCe/controller/home/custom-scrollbar'], function
          /**
           * Open modal window immediately
           */
-         $splashScreen.modal({disableClosing: isHomePage});
+         this.$splashScreen.modal({disableClosing: isHomePage});
 
          this.initNav();
          this.initModulesNav();
@@ -89,7 +89,7 @@ define(['jquery', 'helpers', 'taoCe/controller/home/custom-scrollbar'], function
        * Initialize a listener for the navigation tab buttons
        */
       initNav: function(){
-         $('.modal-nav a').on('click', function(){
+         $('.modal-nav a', this.$splashScreen).on('click', function(){
             var selectedEl = $(this),
                 selectedPanelId = selectedEl.data('panel');
 
@@ -107,7 +107,7 @@ define(['jquery', 'helpers', 'taoCe/controller/home/custom-scrollbar'], function
       initModulesNav: function(){
          var splashObj = this;
          
-         $('[data-module-name]').not('.disabled').on('click', function(){
+         $('[data-module-name]', this.$splashScreen).not('.disabled').on('click', function(){
             var selectedEl = $(this),
                 selectedModuleName = selectedEl.data('module-name');
                 splashObj.redirectUrl = selectedEl.data('url');
@@ -137,8 +137,21 @@ define(['jquery', 'helpers', 'taoCe/controller/home/custom-scrollbar'], function
        */
       initCloseButton: function() {
           var splashObj = this;
-      
-          $('#splash-close-btn').on('click', function(e){
+          var $closeButton = $('#splash-close-btn');
+    
+          //trigger the close by keypress enter 
+          $(document).on('keypress', function(e){
+               if(e.which === 13){
+                   $closeButton.trigger('click'); 
+               } 
+          });
+
+          //clean unbind
+          this.$splashScreen.on('closed.modal', function(){
+                $(document).off('keypress');
+          });
+ 
+          $closeButton.on('click', function(e){
               e.preventDefault();
               
               //if the checkbox is checked, then add and set the additional GET parameter 'nosplash'
