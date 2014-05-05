@@ -11,7 +11,7 @@
 
 <p><?=__('For example:')?>
     <img src="<?=Template::img('qtitest.png', 'taoCe')?>" alt="<?=__('QTI Test Structure')?>"  /><br />
-    <em><?=__('Tips: "Simple” tests without any hierarchy are also available. Note that Open Web Items (OWI) can be delivered in simple test mode only.')?></em>
+    <em><?=__('Hint: "Simple” tests without any hierarchy are also available. Note that Open Web Items (OWI) can be delivered in simple test mode only.')?></em>
 </p>
 
 <p><?=__('To create a QTI test:')?>
