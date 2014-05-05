@@ -108,7 +108,7 @@
                     <span class="icon-checkbox"></span>
                     <?=__('Do not show this window again when TAO opens.')?>
                 </label>
-                <span class="note"><?=__('Note: You can access this overview at any time via the Help button.')?></span>
+                <span class="note"><?=__('Hint: You can access this overview at any time via the Help button.')?></span>
             </div>
             <button id="splash-close-btn" class="btn-info" type="button" disabled="disabled"><?=__('Go to ')?><span class="module-name"><?=__('selection')?></span></button>
         </div>
