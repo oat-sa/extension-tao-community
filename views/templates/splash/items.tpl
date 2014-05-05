@@ -4,7 +4,7 @@
 
 <h2><?=__('Create Items')?></h2>
 
-<p><?=__('Choose from 16 different interaction types, including:')?>
+<p><?=__('Choose from 17 different interaction types, including:')?>
     <ul>
         <li><?=__('Single choice')?></li>
         <li><?=__('Multiple choice')?></li>
