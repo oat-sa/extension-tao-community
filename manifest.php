@@ -20,9 +20,9 @@
  */               
 
 return array(
-    'id' => 'taoCe',
-	'name' => 'taoCe',
-	'description' => 'Community Edition ',
+    'name' => 'taoCe',
+	'label' => 'Community Edition',
+	'description' => 'the Community Edition extension',
     'license' => 'GPL-2.0',
     'version' => '1.0.0',
 	'author' => 'Open Assessment Technologies SA',
