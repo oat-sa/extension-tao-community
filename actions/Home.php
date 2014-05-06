@@ -21,7 +21,7 @@
 
 namespace oat\taoCe\actions;
 
-use oat\tao\models\classes\menu\MenuService;
+use oat\tao\model\menu\MenuService;
 use tao_models_classes_accessControl_AclProxy;
 
 /**
