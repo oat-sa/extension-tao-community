@@ -29,7 +29,6 @@ return array(
 	'requires' => array(
 	   'tao' => '>=2.6',
 	   'funcAcl' => '*',
-	   'filemanager' => '*',
 	   'taoItems' => '>=2.4',
 	       'taoQtiItem' => '*',
 	       'taoOpenWebItem' => '*',
