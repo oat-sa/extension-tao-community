@@ -21,6 +21,8 @@
 
 namespace oat\taoCe\actions;
 
+use oat\tao\helpers\TaoCe;
+
 /**
  * Just to override the paths and load the specific client side code
  * @author Bertrand Chevrier <bertrand@taotesting.com>
@@ -41,11 +43,10 @@ class Main extends \tao_actions_Main {
         if($this->hasRequestParameter('ext') || $this->hasRequestParameter('structure')){
             
             //but before update the first time property
+            
             $user = $this->userService->getCurrentUser();
             if($this->hasRequestParameter('nosplash')){
-                $this->userService->becomeVeteran($user);
-            } else {
-                $this->userService->becomeVeteran($user, true);
+                TaoCe::becomeVeteran();
             }
             
             //@todo use forward on cross-extension forward is supported

@@ -23,6 +23,7 @@ namespace oat\taoCe\actions;
 
 use oat\tao\model\menu\MenuService;
 use tao_models_classes_accessControl_AclProxy;
+use oat\tao\helpers\TaoCe;
 
 /**
  * The Home controller provides actions for the Home screen of the Community Edition
@@ -36,19 +37,12 @@ use tao_models_classes_accessControl_AclProxy;
 class Home extends \tao_actions_CommonModule {
 
     /**
-     * The user service
-     * @var tao_models_classes_UserService 
-     */
-    private $userService;
-    
-    /**
      * initialize the services
      */
     public function __construct(){
         
         parent::__construct();
         $this->service = \tao_models_classes_TaoService::singleton();
-        $this->userService = \tao_models_classes_UserService::singleton();
     }
 
     /**
@@ -60,8 +54,7 @@ class Home extends \tao_actions_CommonModule {
         $defaultExtIds = array('items', 'tests', 'subjects', 'groups', 'delivery', 'results');
         
         //check if the user is a noob
-        $user = $this->userService->getCurrentUser();
-        $this->setData('firstTime', $this->userService->isFirstTimeInTao($user));
+        $this->setData('firstTime', TaoCe::isFirstTimeInTao());
         
         //load the extension data
         $defaultExtensions = array();
