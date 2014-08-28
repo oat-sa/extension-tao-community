@@ -38,8 +38,7 @@ return array(
         'taoGroups' => '>=2.4',
         'taoDelivery' => '>=2.4',
         'taoSimpleDelivery' => '*',
-        'taoResults' => '>=2.4',
-        'qtiItemPci' => '>=0.1'
+        'taoResults' => '>=2.4'
     ),
     'managementRole' => 'http://www.tao.lu/Ontologies/generis.rdf#taoCeManager',
     'acl' => array(
