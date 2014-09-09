@@ -34,7 +34,7 @@ return array(
         'taoTests' => '>=2.4',
         'taoQtiTest' => '*',
         'taoWfTest' => '*',
-        'taoSubjects' => '>=2.4',
+        'taoTestTaker' => '>=2.4',
         'taoGroups' => '>=2.4',
         'taoDelivery' => '>=2.4',
         'taoSimpleDelivery' => '*',
