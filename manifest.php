@@ -30,6 +30,7 @@ return array(
         'funcAcl' => '*',
         'taoItems' => '>=2.4',
         'taoQtiItem' => '*',
+        'qtiItemPci' => '*',
         'taoOpenWebItem' => '*',
         'taoTests' => '>=2.4',
         'taoQtiTest' => '*',
