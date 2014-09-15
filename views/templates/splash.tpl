@@ -24,11 +24,11 @@
                         </div>
                         <div class="col-6">
                            <a href="#" 
-                              class="block pentagon <? if(!$extensions['subjects']['enabled']): ?> disabled<? endif ?>" 
-                              data-module-name="subjects"
-                              data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'subjects', 'ext' => $extensions['subjects']['extension']))?>">
+                              class="block pentagon <? if(!$extensions['TestTaker']['enabled']): ?> disabled<? endif ?>" 
+                              data-module-name="TestTaker"
+                              data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'TestTaker', 'ext' => $extensions['TestTaker']['extension']))?>">
                                <span class="icon-test-taker"></span>
-                               <?=__($extensions['subjects']['name'])?>
+                               <?=__($extensions['TestTaker']['name'])?>
                            </a>
                         </div>
                     </div>
