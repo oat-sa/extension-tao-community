@@ -24,6 +24,7 @@ namespace oat\taoCe\actions;
 use oat\tao\model\menu\MenuService;
 use tao_models_classes_accessControl_AclProxy;
 use oat\tao\helpers\TaoCe;
+use oat\tao\model\menu\Perspective;
 
 /**
  * The Home controller provides actions for the Home screen of the Community Edition
@@ -51,7 +52,7 @@ class Home extends \tao_actions_CommonModule {
     public function splash() {
         
         //the list of extensions the splash provides an explanation for.
-        $defaultExtIds = array('items', 'tests', 'subjects', 'groups', 'delivery', 'results');
+        $defaultExtIds = array('items', 'tests', 'TestTaker', 'groups', 'delivery', 'results');
         
         //check if the user is a noob
         $this->setData('firstTime', TaoCe::isFirstTimeInTao());
@@ -59,37 +60,35 @@ class Home extends \tao_actions_CommonModule {
         //load the extension data
         $defaultExtensions = array();
         $additionalExtensions = array();
-        foreach (MenuService::getAllPerspectives() as $i => $perspective) {
-            if ($perspective->isVisible()) {
-                if (in_array((string) $perspective->getId(), $defaultExtIds)) {
-                    $defaultExtensions[strval($perspective->getId())] = array(
-                        'id' => $perspective->getId(),
-                        'name' => $perspective->getName(),
-                        'extension' => $perspective->getExtension(),
-                        'description' => $perspective->getDescription()
-                    );
-                } else {
-                    $additionalExtensions[$i] = array(
-                        'id' => $perspective->getId(),
-                        'name' => $perspective->getName(),
-                        'extension' => $perspective->getExtension()
-                    );
-                }
+        foreach (MenuService::getPerspectivesByGroup(Perspective::GROUP_DEFAULT) as $i => $perspective) {
+            if (in_array((string) $perspective->getId(), $defaultExtIds)) {
+                $defaultExtensions[strval($perspective->getId())] = array(
+                    'id' => $perspective->getId(),
+                    'name' => $perspective->getName(),
+                    'extension' => $perspective->getExtension(),
+                    'description' => $perspective->getDescription()
+                );
+            } else {
+                $additionalExtensions[$i] = array(
+                    'id' => $perspective->getId(),
+                    'name' => $perspective->getName(),
+                    'extension' => $perspective->getExtension()
+                );
+            }
 
-                //Test if access
-                $access = false;
-                foreach ($perspective->getChildren() as $section) {
-                    list($ext, $mod, $act) = explode('/', trim((string) $section->getUrl(), '/'));
-                    if (tao_models_classes_accessControl_AclProxy::hasAccess($act, $mod, $ext)) {
-                        $access = true;
-                        break;
-                    }
+            //Test if access
+            $access = false;
+            foreach ($perspective->getChildren() as $section) {
+                list($ext, $mod, $act) = explode('/', trim((string) $section->getUrl(), '/'));
+                if (tao_models_classes_accessControl_AclProxy::hasAccess($act, $mod, $ext)) {
+                    $access = true;
+                    break;
                 }
-                if (in_array((string) $perspective->getId(), $defaultExtIds)) {
-                    $defaultExtensions[strval($perspective->getId())]['enabled'] = $access;
-                } else {
-                    $additionalExtensions[$i]['enabled'] = $access;
-                }
+            }
+            if (in_array((string) $perspective->getId(), $defaultExtIds)) {
+                $defaultExtensions[strval($perspective->getId())]['enabled'] = $access;
+            } else {
+                $additionalExtensions[$i]['enabled'] = $access;
             }
         }
 
