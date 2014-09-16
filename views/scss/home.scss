@@ -48,6 +48,10 @@
     min-height: 650px; 
 }
 
+.splash-content-wrap {
+    overflow: auto;
+}
+
 .modal-title {
     background-color: $logoRed;
     @include border-right-radius(3px);
