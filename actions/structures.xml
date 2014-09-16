@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE extension SYSTEM "../../tao/doc/structures.dtd">
+<!DOCTYPE structures SYSTEM "../../tao/doc/structures.dtd">
 <structures>
     <toolbar>
         <toolbaraction id="help" icon="icon-help" level="100" js="controller/home" title="Help"></toolbaraction>
