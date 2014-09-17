@@ -79,8 +79,7 @@ class Home extends \tao_actions_CommonModule {
             //Test if access
             $access = false;
             foreach ($perspective->getChildren() as $section) {
-                list($ext, $mod, $act) = explode('/', trim((string) $section->getUrl(), '/'));
-                if (tao_models_classes_accessControl_AclProxy::hasAccess($act, $mod, $ext)) {
+                if (tao_models_classes_accessControl_AclProxy::hasAccess($section->getAction(), $section->getController(), $section->getExtensionId())) {
                     $access = true;
                     break;
                 }
