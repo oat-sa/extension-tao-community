@@ -11,12 +11,12 @@
             <div class="modal-content">
                 <div class="panels" data-panel-id="overview" style="display: block;">
                     <p><?=__('Discover how easy it is to create an assessment with TAO!')?></p>
-                    <? $extensions = get_data('defaultExtensions')?>
+                    <?php $extensions = get_data('defaultExtensions')?>
                     <div class="diagram">
                         <div class="grid-row">
                             <div class="col-6">
                                 <a href="#"
-                                   class="block pentagon<? if(!$extensions['items']['enabled']): ?> disabled<? endif ?>"
+                                   class="block pentagon<?php if(!$extensions['items']['enabled']): ?> disabled<?php endif ?>"
                                    data-module-name="items"
                                    data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'items', 'ext' => $extensions['items']['extension']))?>">
                                     <span class="icon-item"></span>
@@ -25,7 +25,7 @@
                             </div>
                             <div class="col-6">
                                 <a href="#"
-                              class="block pentagon <? if(!$extensions['TestTaker']['enabled']): ?> disabled<? endif ?>" 
+                              class="block pentagon <?php if(!$extensions['TestTaker']['enabled']): ?> disabled<?php endif ?>" 
                               data-module-name="TestTaker"
                               data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'TestTaker', 'ext' => $extensions['TestTaker']['extension']))?>">
                                     <span class="icon-test-taker"></span>
@@ -36,7 +36,7 @@
                         <div class="grid-row">
                             <div class="col-6">
                                 <a href="#"
-                                   class="block pentagon<? if(!$extensions['tests']['enabled']): ?> disabled<? endif ?>"
+                                   class="block pentagon<?php if(!$extensions['tests']['enabled']): ?> disabled<?php endif ?>"
                                    data-module-name="tests"
                                    data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'tests', 'ext' => $extensions['tests']['extension']))?>">
                                     <span class="icon-test"></span>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="col-6">
                                 <a href="#"
-                                   class="block pentagon<? if(!$extensions['groups']['enabled']): ?> disabled<? endif ?>"
+                                   class="block pentagon<?php if(!$extensions['groups']['enabled']): ?> disabled<?php endif ?>"
                                    data-module-name="groups"
                                    data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'groups', 'ext' => $extensions['groups']['extension']))?>">
                                     <span class="icon-test-takers"></span>
@@ -56,7 +56,7 @@
                         <div class="grid-row">
                             <div class="col-12">
                                 <a href="#"
-                                   class="block pentagon wide<? if(!$extensions['delivery']['enabled']): ?> disabled<? endif ?>"
+                                   class="block pentagon wide<?php if(!$extensions['delivery']['enabled']): ?> disabled<?php endif ?>"
                                    data-module-name="delivery"
                                    data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'delivery', 'ext' => $extensions['delivery']['extension']))?>">
                                     <span class="icon-delivery"></span>
@@ -67,7 +67,7 @@
                         <div class="grid-row">
                             <div class="col-12">
                                 <a href="#"
-                                   class="block wide<? if(!$extensions['results']['enabled']): ?> disabled<? endif ?>"
+                                   class="block wide<?php if(!$extensions['results']['enabled']): ?> disabled<?php endif ?>"
                                    data-module-name="results"
                                    data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'results', 'ext' => $extensions['results']['extension']))?>">
                                     <span class="icon-result"></span>
@@ -80,23 +80,23 @@
                         <div class="module-desc default">
                         <span><?=__('Select an icon on the left to find out more.')?><span/>
                         </div>
-                        <?foreach(get_data('defaultExtensions') as $extension): ?>
+                        <?php foreach(get_data('defaultExtensions') as $extension): ?>
                             <div class="module-desc" data-module="<?=$extension['id']?>">
                                 <span class="icon"></span>
-                                <? include 'splash/' . $extension['id'] . '.tpl' ?>
+                                <?php include 'splash/' . $extension['id'] . '.tpl' ?>
                             </div>
-                        <?endforeach?>
+                        <?php endforeach?>
                     </div>
                     <?
                     $moreShowed = false;
                     foreach(get_data('additionalExtensions') as $extension):
                         ?>
-                        <?if(!$moreShowed) echo '<span class="more">More:</span>';?>
+                        <?php if(!$moreShowed) echo '<span class="more">More:</span>';?>
                         <a href="#" class="module new-module" data-module-name="<?=$extension['id']?>" data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => $extension['id'], 'ext' => $extension['extension']))?>">
                             <span class="icon-extension"></span>
                             <?=__($extension['name'])?>
                         </a>
-                        <?      $moreShowed = true;
+                        <?php      $moreShowed = true;
                     endforeach?>
                 </div>
                 <div class="panels" data-panel-id="videos">
@@ -105,7 +105,7 @@
             <div class="modal-footer clearfix">
                 <div class="checkbox-wrapper">
                     <label class="checkbox">
-                        <input id="nosplash" type="checkbox" <? if(get_data('firstTime') == false): ?>checked="checked"<? endif ?> />
+                        <input id="nosplash" type="checkbox" <?php if(get_data('firstTime') == false): ?>checked="checked"<?php endif ?> />
                         <span class="icon-checkbox"></span>
                         <?=__('Do not show this window again when TAO opens.')?>
                     </label>
