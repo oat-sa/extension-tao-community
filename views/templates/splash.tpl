@@ -87,7 +87,7 @@
                             </div>
                         <?php endforeach?>
                     </div>
-                    <?
+                    <?php
                     $moreShowed = false;
                     foreach(get_data('additionalExtensions') as $extension):
                         ?>
