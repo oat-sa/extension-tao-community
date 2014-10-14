@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     sass.taoce.files[root + 'css/home.css'] = root + 'scss/home.scss';
 
     watch.taocesass = {
-        files : [root + 'views/scss/home.scss'],
+        files : [root + 'views/scss/**/*.scss'],
         tasks : ['sass:taoce', 'notify:taocesass'],
         options : {
             debounceDelay : 1000
