@@ -46,6 +46,8 @@ return array(
         array('grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoCe', 'mod' => 'Main', 'act' => 'index')),
         array('grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoCe', 'mod' => 'Home'))
     ),
+    'uninstall' => array(
+    ),
     'routes' => array(
         '/taoCe' => 'oat\\taoCe\\actions'
     ),
