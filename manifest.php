@@ -26,7 +26,7 @@ return array(
     'version' => '1.0.0',
     'author' => 'Open Assessment Technologies SA',
     'requires' => array(
-        'tao' => '>=2.6',
+        'tao' => '>=2.7.0',
         'funcAcl' => '*',
         'taoItems' => '>=2.4',
         'taoQtiItem' => '*',
@@ -39,7 +39,9 @@ return array(
         'taoGroups' => '>=2.4',
         'taoDelivery' => '>=2.4',
         'taoSimpleDelivery' => '*',
-        'taoResults' => '>=2.4'
+        'taoOutcomeRdf' => '*',
+        'taoOutcomeRds' => '*',
+        'taoOutcomeUi' => '*'
     ),
     'managementRole' => 'http://www.tao.lu/Ontologies/generis.rdf#taoCeManager',
     'acl' => array(
