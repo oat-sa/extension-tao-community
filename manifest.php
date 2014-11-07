@@ -39,9 +39,7 @@ return array(
         'taoGroups' => '>=2.4',
         'taoDelivery' => '>=2.4',
         'taoSimpleDelivery' => '*',
-        'taoOutcomeRdf' => '*',
-        'taoOutcomeRds' => '*',
-        'taoOutcomeUi' => '*'
+        'taoResults' => '>=2.4'
     ),
     'managementRole' => 'http://www.tao.lu/Ontologies/generis.rdf#taoCeManager',
     'acl' => array(
