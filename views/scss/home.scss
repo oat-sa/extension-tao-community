@@ -45,12 +45,10 @@
 .modal.splash-modal {
 	padding: 75px 0 0 0;
     min-width: 900px;
-    min-height: 650px; 
+    min-height: 650px;
+    position: absolute;
 }
 
-.splash-content-wrap {
-    overflow: auto;
-}
 
 .modal-title {
     background-color: $logoRed;
