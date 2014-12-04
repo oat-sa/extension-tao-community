@@ -47,6 +47,11 @@ return array(
         array('grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoCe', 'mod' => 'Main', 'act' => 'index')),
         array('grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoCe', 'mod' => 'Home'))
     ),
+    'install' => array(
+        'php' => array(
+            dirname(__FILE__) . '/scripts/install/setDefaultResultServer.php',
+        )
+    ),
     'uninstall' => array(
     ),
     'routes' => array(
