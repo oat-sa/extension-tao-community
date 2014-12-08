@@ -56,9 +56,14 @@ class Updater extends \common_ext_ExtensionUpdater
     const VARIABLENORMALMAXIMUMPROPERTYURI = 'http://www.tao.lu/Ontologies/TAOResult.rdf#normalMaximum';
     const VARIABLENORMALMINIMUMPROPERTYURI = 'http://www.tao.lu/Ontologies/TAOResult.rdf#normalMinimum';
     const RELATEDITEMRESULTPROPERTYURI = 'http://www.tao.lu/Ontologies/TAOResult.rdf#relatedItemResult';
+    const RDFRESULTSERVERINSTANCEURI = 'http://www.tao.lu/Ontologies/TAOResult.rdf#taoResultServer';
+    const RDFRESULTSERVERMODELINSTANCEURI = 'http://www.tao.lu/Ontologies/TAOResult.rdf#taoResultServerModel';
+    const DELIVERYCLASSURI = 'http://www.tao.lu/Ontologies/TAODelivery.rdf#Delivery';
+    const DELIVERYRESULTSERVERPROPERTYURI = 'http://www.tao.lu/Ontologies/TAODelivery.rdf#DeliveryResultServer';
+    const RDSRESULTSERVERINSTANCEURI = 'http://www.tao.lu/Ontologies/taoOutcomeRds.rdf#RdsResultStorage';
     
     /**
-     * Perform update.
+     * Perform update from $currentVersion to $versionUpdatedTo.
      * 
      * @param string $currentVersion
      * @return string $versionUpdatedTo
@@ -72,10 +77,16 @@ class Updater extends \common_ext_ExtensionUpdater
         // old taoResults extension gets uninistalled and taoOutcomeRds becomes
         // the new default result storage mechanism.
         if ($currentVersion == '1.0.0') {
-
             self::migrateFrom100To110();
-            
             $currentVersion = '1.1.0';
+        }
+        
+        // migrate from 1.1.0 to 1.1.1
+        // RDF based result server removal and assignment of deliveries
+        // to RDS implementation.
+        if ($currentVersion == '1.1.0') {
+            self::migrateFrom110to111();
+            $currentVersion = '1.1.1';
         }
         
         return $currentVersion;
@@ -83,6 +94,10 @@ class Updater extends \common_ext_ExtensionUpdater
     
     /**
      * Implementation of migration from taoCe 1.0.0 to 1.1.0.
+     * 
+     * Migrating from 1.0.0 to 1.1.0 consists of transforming
+     * old RDF based results into RDBMS based results using
+     * the 'taoOutcomeRds' extension.
      */
     static private function migrateFrom100To110()
     {
@@ -93,18 +108,38 @@ class Updater extends \common_ext_ExtensionUpdater
             // The extension cannot be trully uninistalled
             // because it is missing the 'uninstall' entry
             // in its manifest.
-            common_Logger::i("Uninstalling extension 'taoResults'...");
+            common_Logger::i("Unregistering extension 'taoResults'...");
         
             $taoResults = $extManager->getExtensionById('taoResults');
             $extManager->unregisterExtension($taoResults);
         
-            common_Logger::i("Extension 'taoResults' uninstalled.");
+            common_Logger::i("Extension 'taoResults' unregistered.");
         }
         
         // 2. Migrate results to outcomeRds.
         common_Logger::i("Migrating old 'taoResults' result data to 'taoOutcomeRds'...");
         self::resultsMigration();
         common_Logger::i("Migration of old 'taoResults' result data to 'taoOutcomeRds' done.");
+    }
+    
+    /**
+     * Implementation of migration from taoCe 1.1.0 to 1.1.1.
+     * 
+     * Migrating from 1.1.0 to 1.1.1 consists of removing old
+     * RDF based result servers/models and re-assign existing
+     * deliveries to the 'taoOutcomeRds' result server implementation.
+     */
+    static private function migrateFrom110to111()
+    {
+        // 1. Remove old references from outcomeRdf.
+        common_Logger::i("Disabling old Result Server Implementations...");
+        self::disableRdfResultServers();
+        common_Logger::i("Old Result Server Implementations disabled.");
+        
+        // 2. Assigning existing Deliveries to OutcomeRds Result Server.
+        common_Logger::i("Assigning Deliveries to OutcomeRds Result Server.");
+        self::assignDeliveriesToRds();
+        common_Logger::i("Deliveries assigned to OutcomeRds Result Server.");
     }
     
     /**
@@ -312,5 +347,37 @@ class Updater extends \common_ext_ExtensionUpdater
         }
         
         return $newVariable;
+    }
+    
+    /**
+     * Remove Old RDF Result Server from Ontology.
+     */
+    static private function disableRdfResultServers()
+    {
+        $rdfResultServerResource = new core_kernel_classes_Resource(self::RDFRESULTSERVERINSTANCEURI);
+        $rdfResultServerModelResource = new core_kernel_classes_Resource(self::RDFRESULTSERVERMODELINSTANCEURI);
+        
+        // Remove RDF Delivery Server.
+        if ($rdfResultServerResource->exists() === true) {
+            $rdfResultServerResource->delete();
+        }
+        
+        // Remove RDF Delivery Server Model.
+        if ($rdfResultServerModelResource->exists() === true) {
+            $rdfResultServerModelResource->delete();
+        }
+    }
+    
+    /**
+     * Re-assign existing Deliveries to RDS Result Server.
+     */
+    static private function assignDeliveriesToRds()
+    {
+        // Retrieve all deliveries.
+        $deliveryClass = new \core_kernel_classes_Class(self::DELIVERYCLASSURI);
+        $deliveryResultServerProperty = new \core_kernel_classes_Property(self::DELIVERYRESULTSERVERPROPERTYURI);
+        foreach ($deliveryClass->getInstances(true) as $delivery) {
+            $delivery->editPropertyValues($deliveryResultServerProperty, self::RDSRESULTSERVERINSTANCEURI);
+        }
     }
 }
