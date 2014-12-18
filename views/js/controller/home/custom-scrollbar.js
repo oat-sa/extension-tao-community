@@ -1,3 +1,4 @@
+define(['jquery'], function(jQuery){
 (function ($) {
 
   $.fn.customScrollbar = function (options, args) {
@@ -809,3 +810,4 @@
   }
 
 })(jQuery);
+});
