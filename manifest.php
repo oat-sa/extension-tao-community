@@ -37,7 +37,6 @@ return array(
         'taoTestLinear' => '*',
         'taoTestTaker' => '*',
         'taoGroups' => '*',
-        'taoSimpleDelivery' => '*',
         'taoOutcomeUi' => '*',
         'taoOutcomeRds' => '*'
     ),
