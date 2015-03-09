@@ -34,7 +34,6 @@ return array(
         'taoOpenWebItem' => '*',
         'taoTests' => '*',
         'taoQtiTest' => '*',
-        'taoTestLinear' => '*',
         'taoTestTaker' => '*',
         'taoGroups' => '*',
         'taoOutcomeUi' => '*',
