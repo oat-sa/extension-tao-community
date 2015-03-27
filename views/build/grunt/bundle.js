@@ -7,11 +7,12 @@ module.exports = function(grunt) {
     var root        = grunt.option('root');
     var libs        = grunt.option('mainlibs');
     var ext         = require(root + '/tao/views/build/tasks/helpers/extensions')(grunt, root);
+    var out         = 'output';
 
     /**
      * Remove bundled and bundling files
      */
-    clean.taocebundle = ['output',  root + '/taoCe/views/js/controllers.min.js'];
+    clean.taocebundle = [out];
     
     /**
      * Compile tao files into a bundle 
@@ -19,7 +20,7 @@ module.exports = function(grunt) {
     requirejs.taocebundle = {
         options: {
             baseUrl : '../js',
-            dir : 'output',
+            dir : out,
             mainConfigFile : './config/requirejs.build.js',
             paths : { 'taoCe' : root + '/taoCe/views/js' },
             modules : [{
@@ -35,8 +36,8 @@ module.exports = function(grunt) {
      */
     copy.taocebundle = {
         files: [
-            { src: ['output/taoCe/controller/routes.js'],  dest: root + '/taoCe/views/js/controllers.min.js' },
-            { src: ['output/taoCe/controller/routes.js.map'],  dest: root + '/taoCe/views/js/controllers.min.js.map' }
+            { src: [out + '/taoCe/controller/routes.js'],  dest: root + '/taoCe/views/js/controllers.min.js' },
+            { src: [out + '/taoCe/controller/routes.js.map'],  dest: root + '/taoCe/views/js/controllers.min.js.map' }
         ]
     };
 
