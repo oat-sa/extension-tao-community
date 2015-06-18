@@ -89,6 +89,10 @@ class Updater extends \common_ext_ExtensionUpdater
             $currentVersion = '1.1.1';
         }
         
+        if ($currentVersion == '1.1.1') {
+            $currentVersion = '1.1.2';
+        }
+
         return $currentVersion;
     }
     
