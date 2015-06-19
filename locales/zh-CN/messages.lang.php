@@ -383,7 +383,6 @@ $GLOBALS['__l10n']["Specify how many times test-takers are allowed to repeat a t
 $GLOBALS['__l10n']["Store, manage, and analyze test results with ease."]="方便存储，管理和分析考試结果。";
 $GLOBALS['__l10n']["Success"]="完成";
 $GLOBALS['__l10n']["Supported export formats"]="支援的导出格式";
-$GLOBALS['__l10n']["Supported import formats"]="支援的导入格式";
 $GLOBALS['__l10n']["Take or continue a test."]="开始或继续参加一个考试。";
 $GLOBALS['__l10n']["TAO Back Office"]="TAO后台";
 $GLOBALS['__l10n']["TAO Delivery Server"]="TAO递送服务器";
@@ -402,7 +401,6 @@ $GLOBALS['__l10n']["Text - Long - HTML editor"]="文字-长- HTML编辑器";
 $GLOBALS['__l10n']["Text - Short - Field"]="文字-短-栏位";
 $GLOBALS['__l10n']["Text entry"]="文字输入";
 $GLOBALS['__l10n']["The column "]="栏";
-$GLOBALS['__l10n']["The format of this field is not valid."]="这个栏位的格式是无效的。";
 $GLOBALS['__l10n']["The image resizes along with its container, e.g. 50% means half of the container size not half of the picture size."]="图片会依据容器而自动调整大小，例如缩小50％会使容器尺寸缩成一半，而不是图片缩成一半。";
 $GLOBALS['__l10n']["The lock has been released"]="锁已被释放";
 $GLOBALS['__l10n']["The uploaded file is too large"]="上传的文件过大";
@@ -446,7 +444,6 @@ $GLOBALS['__l10n']["Upload a new content"]="上传新的内容";
 $GLOBALS['__l10n']["Upload File"]="上传文件";
 $GLOBALS['__l10n']["Upload into:"]="上传至：";
 $GLOBALS['__l10n']["Upload the file to version"]="上传文件到版本";
-$GLOBALS['__l10n']["URL"]="URL网址";
 $GLOBALS['__l10n']["Use default value"]="使用默认值";
 $GLOBALS['__l10n']["Use Groups to Manage Test-Takers"]="使用群组来管理考生";
 $GLOBALS['__l10n']["User"]="用户";
@@ -469,11 +466,9 @@ $GLOBALS['__l10n']["You can also add rich media content to your items, such as p
 $GLOBALS['__l10n']["You can create tests in compliance with the QTI 2.1 standard. A QTI test is structured as follows:"]="你可以创建符合QTI 2.1标准的考試。 一个QTI考試的结构如下：";
 $GLOBALS['__l10n']["You can import tests created with any external tool that is QTI compliant. The items will be automatically added to the Items Library. Conversely, your QTI tests can be exported out of TAO for use with any QTI-compliant delivery engine."]="你可以汇入用任何符合QTI的外部工具所创建的考試。 该题目将被自动加入题目库。 相反地，你的QTI考試可以用任何符合QTI递送的发动机汇出TAO。";
 $GLOBALS['__l10n']["You can specify test settings such as:"]="你可以指定考試的设定如：";
-$GLOBALS['__l10n']["You can use * as a wildcard"]="您可以使用*作为通配符";
 $GLOBALS['__l10n']["You cannot delete the root node"]="您不能删除根节点";
 $GLOBALS['__l10n']["You currently have no access to the platform"]="您目前无权进入平台";
 $GLOBALS['__l10n']["You don't have sufficient permissions to access"]="您没有足够的权限进入";
 $GLOBALS['__l10n']["You must activate JavaScript in your browser to run this application."]="您必须在浏览器中启用JavaScript才可以应用该程序。";
-$GLOBALS['__l10n']["You've not the required rights to edit this resource."]="你没有需要的权限来编辑这个资源。";
 
 ?>

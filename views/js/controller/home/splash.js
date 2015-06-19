@@ -17,7 +17,7 @@
  *
  *
  */
-define(['jquery', 'helpers', 'taoCe/controller/home/custom-scrollbar'], function ($, helpers) {
+define(['jquery', 'helpers', 'util/url', 'taoCe/controller/home/custom-scrollbar'], function ($, helpers, urlUtil) {
     'use strict';
 
 
@@ -40,7 +40,9 @@ define(['jquery', 'helpers', 'taoCe/controller/home/custom-scrollbar'], function
             var $splashWrapper = $('.splash-screen-wrapper');
             var $splashDesc = $('.desc', this.$splashScreen);
             var $splashDiagram = $('.diagram', this.$splashScreen);
-            var isHomePage = helpers._url('index', 'Main', 'taoCe') === window.location.href;
+            var parsedLocation = urlUtil.parse(window.location.href);
+            var parsedIndex = urlUtil.parse(helpers._url('index', 'Main', 'taoCe'));
+            var isHomePage = parsedIndex.path === parsedLocation.path;
 
             //Url to redirect after closing
             this.redirectUrl = '';
