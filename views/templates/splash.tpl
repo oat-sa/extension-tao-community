@@ -80,10 +80,14 @@
                         <div class="module-desc default">
                         <span><?=__('Select an icon on the left to find out more.')?><span/>
                         </div>
-                        <?php foreach(get_data('defaultExtensions') as $extension): ?>
+                        <?php foreach(array_merge(get_data('defaultExtensions'), get_data('additionalExtensions')) as $extension): ?>
                             <div class="module-desc" data-module="<?=$extension['id']?>">
                                 <span class="icon"></span>
-                                <?php include 'splash/' . $extension['id'] . '.tpl' ?>
+                                <?php 
+                                    if(file_exists(__DIR__ . DIRECTORY_SEPARATOR . 'splash/' . $extension['id'] . '.tpl')) {
+                                        include 'splash/' . $extension['id'] . '.tpl';
+                                    }
+                                ?>
                             </div>
                         <?php endforeach?>
                     </div>
