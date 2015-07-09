@@ -31,7 +31,6 @@ return array(
         'taoItems' => '*',
         'taoQtiItem' => '*',
         'qtiItemPci' => '*',
-        'taoOpenWebItem' => '*',
         'taoTests' => '*',
         'taoQtiTest' => '*',
         'taoTestTaker' => '*',
