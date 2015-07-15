@@ -24,6 +24,8 @@ namespace oat\taoCe\scripts\update;
 use \core_kernel_classes_Resource;
 use \common_ext_ExtensionsManager;
 use \common_Logger;
+use oat\tao\model\entryPoint\EntryPointService;
+use oat\taoCe\model\entryPoint\TaoCeEntrypoint;
 
 /**
  * TAO Community Edition Updater.
@@ -91,6 +93,11 @@ class Updater extends \common_ext_ExtensionUpdater
         
         if ($currentVersion == '1.1.1') {
             $currentVersion = '1.1.2';
+        }
+        
+        if ($currentVersion == '1.1.2') {
+            EntryPointService::getRegistry()->registerEntryPoint(new TaoCeEntrypoint());
+            $currentVersion = '1.1.3';
         }
 
         return $currentVersion;
