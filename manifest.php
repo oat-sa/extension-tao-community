@@ -23,7 +23,7 @@ return array(
     'label' => 'Community Edition',
     'description' => 'the Community Edition extension',
     'license' => 'GPL-2.0',
-    'version' => '1.1.2',
+    'version' => '1.1.3',
     'author' => 'Open Assessment Technologies SA',
     'requires' => array(
         'tao' => '*',
@@ -31,7 +31,6 @@ return array(
         'taoItems' => '*',
         'taoQtiItem' => '*',
         'qtiItemPci' => '*',
-        'taoOpenWebItem' => '*',
         'taoTests' => '*',
         'taoQtiTest' => '*',
         'taoTestTaker' => '*',
@@ -48,7 +47,8 @@ return array(
     'install' => array(
         'php' => array(
             dirname(__FILE__) . '/scripts/install/setDefaultResultServer.php',
-        )
+            dirname(__FILE__) . '/scripts/install/overrideEntryPoint.php',
+    )
     ),
     'uninstall' => array(
     ),
