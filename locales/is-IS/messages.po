@@ -1,17 +1,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TAO v3.1-dev\n"
-"PO-Revision-Date: 2015-06-18T14:59:07\n"
-"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
-"MIME-Version: 1.0\n"
+"PO-Revision-Date: 2015-06-10 15:06+0000\n"
+"Last-Translator: sveinbjorn <sveinbjorn@namsmat.is>\n"
 "Language: is-IS\n"
-"sourceLanguage: en-US\n"
-"targetLanguage: is-IS\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n%10!=1 || n%100==11);\n"
+"X-Generator: Pootle 2.5.1-rc1\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: is-IS\n"
 "X-Poedit-Basepath: ../../\n"
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-POOTLE-MTIME: 1433948805.000000\n"
 
 msgid "Add test-takers to groups to assign tests, and measure group performance. Grouping test-takers enables you to specify populations with particular characteristics. You define these characteristics by adding your own group descriptors."
 msgstr ""
@@ -75,7 +78,7 @@ msgid "Export Test Results"
 msgstr ""
 
 msgid "For example:"
-msgstr ""
+msgstr "Til dæmis:"
 
 msgid "Get started with TAO"
 msgstr ""
@@ -84,11 +87,11 @@ msgid "Go to "
 msgstr ""
 
 msgid "Groups"
-msgstr ""
+msgstr "Hópar"
 
 #, tao-public
 msgid "Help"
-msgstr ""
+msgstr "Hjálp"
 
 msgid "Hint: \"Simple” tests without any hierarchy are also available. Note that Open Web Items (OWI) can be delivered in simple test mode only."
 msgstr ""
@@ -103,46 +106,46 @@ msgid "If your needs go beyond what the QTI standard allows, you can develop pow
 msgstr ""
 
 msgid "Import / Export Tests"
-msgstr ""
+msgstr "Flytja inn / Flytja út próf"
 
 msgid "Import and Export Items"
-msgstr ""
+msgstr "Flytja inn / Flytja út atriði"
 
 msgid "Import any items that are compliant with the QTI (Question and Test Interoperability) 2.1 standard."
 msgstr ""
 
 msgid "Import test-takers"
-msgstr ""
+msgstr "Flytja inn próftaka"
 
 msgid "In addition to creating test-takers individually by manually entering their corresponding data, you can mass-create test-taker records by importing them from a CSV file."
 msgstr ""
 
 msgid "In TAO, tests are assigned to groups."
-msgstr ""
+msgstr "Í TAO er prófum úthlutað til hópa."
 
 msgid "Item(s)"
-msgstr ""
+msgstr "Atriði"
 
 msgid "Items"
-msgstr ""
+msgstr "Atriði"
 
 msgid "Manage Reports"
-msgstr ""
+msgstr "Skýrslustjórnun"
 
 msgid "Multiple choice"
-msgstr ""
+msgstr "Fjölval"
 
 msgid "Order of items – sequential or random"
 msgstr ""
 
 msgid "Overview"
-msgstr ""
+msgstr "Yfirlit"
 
 msgid "Preview Items"
-msgstr ""
+msgstr "Forskoða atriði"
 
 msgid "Publish"
-msgstr ""
+msgstr "Birta"
 
 msgid "QTI Test Structure"
 msgstr ""
@@ -151,7 +154,7 @@ msgid "Register your test-takers, manage their personal data, and assign them to
 msgstr ""
 
 msgid "Results"
-msgstr ""
+msgstr "Niðurstöður"
 
 msgid "See how your items will appear to the test-taker before running the test. Previews are available for both desktop or mobile devices."
 msgstr ""
@@ -231,4 +234,3 @@ msgstr ""
 
 msgid "You can specify test settings such as:"
 msgstr ""
-
