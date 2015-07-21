@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v3.1-dev\n"
-"PO-Revision-Date: 2015-06-18T14:59:07\n"
+"Project-Id-Version: TAO v3.1.0-sprint03\n"
+"PO-Revision-Date: 2015-07-21T16:13:24\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: zh-TW\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Add test-takers to groups to assign tests, and measure group performance. Grouping test-takers enables you to specify populations with particular characteristics. You define these characteristics by adding your own group descriptors."
-msgstr "加入考生以群組來分配考試，并測量群組的表現。分組考生可以讓你指定有特定特征的人群。你可以通過加入你自己群組的描述來定義這些特征。"
+msgstr "加入考生到群組來分配考試，并測量群組的表現。分組考生可以讓你指定有特定特征的人群。你可以通過加入你自己群組的描述來定義這些特征。"
 
 msgid "Be aware that any subsequent modification to the test content will not be taken into account until you publish the test again and create a new delivery."
 msgstr "要知道，任何後續修改的測試內容，在你再次發布了測試並建立一個新的遞送之前將不會被考慮。"
@@ -43,10 +43,6 @@ msgstr "建立和定義考生記錄"
 msgid "Create Items"
 msgstr "建立題目"
 
-#, tao-public
-msgid "Create items, manage item and test banks, organize cohorts and deliveries, prepare reports, set up workflows."
-msgstr "建立題目，管理題目和題庫，組織班級和遞送，準備報告，建立工作流程。"
-
 msgid "Create QTI Tests"
 msgstr "建立QTI測試"
 
@@ -54,7 +50,7 @@ msgid "Create, preview and organize individual items before including them in yo
 msgstr "在把他們列入你的測試之前，建立預覽和組織單個題目。"
 
 msgid "Default properties of the test-takers are their name and the language of the test interface. You can customize these records by adding any data you need, such as date of birth, gender, etc."
-msgstr "考生的默認屬性是他們的名字和測試界面的語言。你可以通過加入你所需要的任何數據，如出生日期，性別，等等來定制這些記錄。"
+msgstr "考生的預設屬性是他們的名字和測試界面的語言。你可以通過加入你所需要的任何數據，如出生日期，性別，等等來定制這些記錄。"
 
 msgid "Define a Delivery"
 msgstr "定義一個遞送"
@@ -182,10 +178,6 @@ msgstr "指定考生們被允許重複一個考試的次數。"
 
 msgid "Store, manage, and analyze test results with ease."
 msgstr "方便存儲，管理和分析考試結果。"
-
-#, tao-public
-msgid "TAO Back Office"
-msgstr "TAO 後台"
 
 msgid "Test"
 msgstr "考試"
