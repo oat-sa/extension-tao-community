@@ -1,20 +1,17 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v3.1-dev\n"
-"PO-Revision-Date: 2015-06-10 15:06+0000\n"
-"Last-Translator: sveinbjorn <sveinbjorn@namsmat.is>\n"
-"Language: is-IS\n"
+"Project-Id-Version: TAO v3.1.0-sprint03\n"
+"PO-Revision-Date: 2015-07-21T16:13:24\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n%10!=1 || n%100==11);\n"
-"X-Generator: Pootle 2.5.1-rc1\n"
+"Language: is-IS\n"
 "sourceLanguage: en-US\n"
 "targetLanguage: is-IS\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: ../../\n"
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-POOTLE-MTIME: 1433948805.000000\n"
 
 msgid "Add test-takers to groups to assign tests, and measure group performance. Grouping test-takers enables you to specify populations with particular characteristics. You define these characteristics by adding your own group descriptors."
 msgstr ""
@@ -44,10 +41,6 @@ msgid "Create and define test-taker records"
 msgstr ""
 
 msgid "Create Items"
-msgstr ""
-
-#, tao-public
-msgid "Create items, manage item and test banks, organize cohorts and deliveries, prepare reports, set up workflows."
 msgstr ""
 
 msgid "Create QTI Tests"
@@ -186,10 +179,6 @@ msgstr ""
 msgid "Store, manage, and analyze test results with ease."
 msgstr ""
 
-#, tao-public
-msgid "TAO Back Office"
-msgstr ""
-
 msgid "Test"
 msgstr ""
 
@@ -234,3 +223,4 @@ msgstr ""
 
 msgid "You can specify test settings such as:"
 msgstr ""
+
