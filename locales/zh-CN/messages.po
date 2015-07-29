@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v3.1-dev\n"
-"PO-Revision-Date: 2015-06-18T14:59:07\n"
+"Project-Id-Version: TAO v3.1.0-sprint03\n"
+"PO-Revision-Date: 2015-07-21T16:13:24\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: zh-CN\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Add test-takers to groups to assign tests, and measure group performance. Grouping test-takers enables you to specify populations with particular characteristics. You define these characteristics by adding your own group descriptors."
-msgstr "添加考生以群组来分配考试，并测量群组的表现。 分组考生可以让你指定有特定特征的人群。 你可以通过添加你自己群组的描述来定义这些特征。"
+msgstr "添加考生到群组来分配考试，并测量群组的表现。 分组考生可以让你指定有特定特征的人群。 你可以通过添加你自己群组的描述来定义这些特征。"
 
 msgid "Be aware that any subsequent modification to the test content will not be taken into account until you publish the test again and create a new delivery."
 msgstr "要知道，任何后续修改的测试内容，在你再次发布了测试并创建一个新的递送之前将不会被考虑。"
@@ -43,10 +43,6 @@ msgstr "创建和定义考生记录"
 msgid "Create Items"
 msgstr "创建题目"
 
-#, tao-public
-msgid "Create items, manage item and test banks, organize cohorts and deliveries, prepare reports, set up workflows."
-msgstr "创建题目，管理题目和题库，组织班级和递送，准备报告，建立工作流程。"
-
 msgid "Create QTI Tests"
 msgstr "创建QTI测试"
 
@@ -69,7 +65,7 @@ msgid "Discover how easy it is to create an assessment with TAO!"
 msgstr "您会发现创建一个TAO的考试是很容易的！"
 
 msgid "Do not show this window again when TAO opens."
-msgstr "当TAO打开时不要再显示该窗口。"
+msgstr "当TAO打开时不要再显示这个窗口。"
 
 msgid "Export Test Results"
 msgstr "导出测试结果"
@@ -94,7 +90,7 @@ msgid "Hint: \"Simple” tests without any hierarchy are also available. Note th
 msgstr "提示:\"简单\"的没有等级的考试也可以使用。 注意开放网页题目(OWI)只能在简单的测试模式下被递送。"
 
 msgid "Hint: You can access this overview at any time via the Help button."
-msgstr "提示:你可以通过求助的按钮随时访问该概述。"
+msgstr "提示:你可以通过求助的按钮随时访问这个概述。"
 
 msgid "Hotspot"
 msgstr "热点"
@@ -182,10 +178,6 @@ msgstr "指定考生们被允许重复一个考试的次数。"
 
 msgid "Store, manage, and analyze test results with ease."
 msgstr "方便存储，管理和分析考試结果。"
-
-#, tao-public
-msgid "TAO Back Office"
-msgstr "TAO后台"
 
 msgid "Test"
 msgstr "考试"

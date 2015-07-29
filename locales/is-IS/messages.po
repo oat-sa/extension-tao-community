@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v3.1-dev\n"
-"PO-Revision-Date: 2015-06-18T14:59:07\n"
+"Project-Id-Version: TAO v3.1.0-sprint03\n"
+"PO-Revision-Date: 2015-07-21T16:13:24\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: is-IS\n"
@@ -43,10 +43,6 @@ msgstr ""
 msgid "Create Items"
 msgstr ""
 
-#, tao-public
-msgid "Create items, manage item and test banks, organize cohorts and deliveries, prepare reports, set up workflows."
-msgstr ""
-
 msgid "Create QTI Tests"
 msgstr ""
 
@@ -75,7 +71,7 @@ msgid "Export Test Results"
 msgstr ""
 
 msgid "For example:"
-msgstr ""
+msgstr "Til dæmis:"
 
 msgid "Get started with TAO"
 msgstr ""
@@ -84,11 +80,11 @@ msgid "Go to "
 msgstr ""
 
 msgid "Groups"
-msgstr ""
+msgstr "Hópar"
 
 #, tao-public
 msgid "Help"
-msgstr ""
+msgstr "Hjálp"
 
 msgid "Hint: \"Simple” tests without any hierarchy are also available. Note that Open Web Items (OWI) can be delivered in simple test mode only."
 msgstr ""
@@ -103,46 +99,46 @@ msgid "If your needs go beyond what the QTI standard allows, you can develop pow
 msgstr ""
 
 msgid "Import / Export Tests"
-msgstr ""
+msgstr "Flytja inn / Flytja út próf"
 
 msgid "Import and Export Items"
-msgstr ""
+msgstr "Flytja inn / Flytja út atriði"
 
 msgid "Import any items that are compliant with the QTI (Question and Test Interoperability) 2.1 standard."
 msgstr ""
 
 msgid "Import test-takers"
-msgstr ""
+msgstr "Flytja inn próftaka"
 
 msgid "In addition to creating test-takers individually by manually entering their corresponding data, you can mass-create test-taker records by importing them from a CSV file."
 msgstr ""
 
 msgid "In TAO, tests are assigned to groups."
-msgstr ""
+msgstr "Í TAO er prófum úthlutað til hópa."
 
 msgid "Item(s)"
-msgstr ""
+msgstr "Atriði"
 
 msgid "Items"
-msgstr ""
+msgstr "Atriði"
 
 msgid "Manage Reports"
-msgstr ""
+msgstr "Skýrslustjórnun"
 
 msgid "Multiple choice"
-msgstr ""
+msgstr "Fjölval"
 
 msgid "Order of items – sequential or random"
 msgstr ""
 
 msgid "Overview"
-msgstr ""
+msgstr "Yfirlit"
 
 msgid "Preview Items"
-msgstr ""
+msgstr "Forskoða atriði"
 
 msgid "Publish"
-msgstr ""
+msgstr "Birta"
 
 msgid "QTI Test Structure"
 msgstr ""
@@ -151,7 +147,7 @@ msgid "Register your test-takers, manage their personal data, and assign them to
 msgstr ""
 
 msgid "Results"
-msgstr ""
+msgstr "Niðurstöður"
 
 msgid "See how your items will appear to the test-taker before running the test. Previews are available for both desktop or mobile devices."
 msgstr ""
@@ -181,10 +177,6 @@ msgid "Specify how many times test-takers are allowed to repeat a test."
 msgstr ""
 
 msgid "Store, manage, and analyze test results with ease."
-msgstr ""
-
-#, tao-public
-msgid "TAO Back Office"
 msgstr ""
 
 msgid "Test"
