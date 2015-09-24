@@ -32,6 +32,7 @@ define(['jquery', 'taoCe/controller/home/custom-scrollbar'], function ($) {
 
         /**
          * Initialize the splash screen
+         * @param {Boolean} [isHomePage = false] - less options if not used as an entry splash
          */
         init: function (isHomePage) {
 
