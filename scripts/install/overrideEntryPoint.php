@@ -19,5 +19,12 @@
  */
 use oat\tao\model\entryPoint\EntryPointService;
 use oat\taoCe\model\entryPoint\TaoCeEntrypoint;
+use oat\oatbox\service\ServiceManager;
 
-EntryPointService::getRegistry()->registerEntryPoint(new TaoCeEntrypoint());
+$serviceManager = ServiceManager::getServiceManager();
+$entryPointService = $serviceManager->get(EntryPointService::SERVICE_ID);
+
+// replace delivery server
+$entryPointService->overrideEntryPoint('backoffice', new TaoCeEntrypoint());
+
+$serviceManager->register(EntryPointService::SERVICE_ID, $entryPointService);
