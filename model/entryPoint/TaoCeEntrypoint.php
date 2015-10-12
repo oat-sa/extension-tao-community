@@ -22,13 +22,13 @@
 namespace oat\taoCe\model\entryPoint;
 
 use oat\oatbox\Configurable;
-use oat\tao\model\entryPoint\BackOfficeEntrypoint;
+use oat\taoBackOffice\model\entryPoint\BackOfficeEntryPoint;
 
 /**
  * Overrides the BackOffice Entrypoint
  * @author bout
  */
-class TaoCeEntrypoint extends BackOfficeEntrypoint
+class TaoCeEntrypoint extends BackOfficeEntryPoint
 {
 
     public function getUrl() {
