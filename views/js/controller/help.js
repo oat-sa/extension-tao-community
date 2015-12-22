@@ -1,4 +1,3 @@
-<?php
 /**
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,21 +17,11 @@
  *
  *
  */
+define([
+    'lodash',
+    'taoCe/controller/home'
+], function(_, homeController){
+    'use strict';
 
-namespace oat\taoCe\model\entryPoint;
-
-use oat\oatbox\Configurable;
-use oat\taoBackOffice\model\entryPoint\BackOfficeEntryPoint;
-
-/**
- * Overrides the BackOffice Entrypoint
- * @author bout
- */
-class TaoCeEntrypoint extends BackOfficeEntryPoint
-{
-
-    public function getUrl() {
-        return _url("index", "Main", "taoCe");
-    }
-
-}
+    return _.defaults({ entrySplash : false }, homeController);
+});
