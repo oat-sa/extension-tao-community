@@ -73,34 +73,33 @@ class Updater extends \common_ext_ExtensionUpdater
     public function update($initialVersion) 
     {
         
-        $currentVersion = $initialVersion;
-
         // migrate from 1.0.0 to 1.1.0
         // old taoResults extension gets uninistalled and taoOutcomeRds becomes
         // the new default result storage mechanism.
-        if ($currentVersion == '1.0.0') {
+        if ($this->isVersion('1.0.0')) {
             self::migrateFrom100To110();
-            $currentVersion = '1.1.0';
+            $this->setVersion('1.1.0');
         }
         
         // migrate from 1.1.0 to 1.1.1
         // RDF based result server removal and assignment of deliveries
         // to RDS implementation.
-        if ($currentVersion == '1.1.0') {
+        if ($this->isVersion('1.1.0')) {
             self::migrateFrom110to111();
-            $currentVersion = '1.1.1';
+            $this->setVersion('1.1.1');
         }
         
-        if ($currentVersion == '1.1.1') {
-            $currentVersion = '1.1.2';
-        }
-        
-        if ($currentVersion == '1.1.2') {
+         
+        if ($this->isBetween('1.1.1', '1.1.3')) {
             EntryPointService::getRegistry()->registerEntryPoint(new TaoCeEntrypoint());
-            $currentVersion = '1.1.3';
+            $this->setVersion('1.1.3');
         }
 
-        return $currentVersion;
+        if ($this->isVersion('1.1.3')) {
+            $this->setVersion('1.2');
+        }
+
+        return null;
     }
     
     /**
