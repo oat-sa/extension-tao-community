@@ -98,8 +98,8 @@ class Updater extends \common_ext_ExtensionUpdater
         if ($this->isBetween('1.1.3', '1.2.1')) {
             $this->setVersion('1.2.2');
         }
-
-        return null;
+        
+        $this->skip('1.2.2', '1.3.0');
     }
     
     /**
