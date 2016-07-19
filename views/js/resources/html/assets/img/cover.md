@@ -1,0 +1,1 @@
+![Tao User Guide](img-cover.png)
