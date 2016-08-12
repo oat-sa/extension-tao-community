@@ -57,11 +57,11 @@
     "minimum-stability" : "dev",
     "require": {
         "oat-sa/oatbox-extension-installer": "dev-master",
-        "oat-sa/extension-tao-delivery-rdf": "~1.7.0"
+        "oat-sa/extension-tao-delivery-rdf": "~1.7.1"
     },
     "autoload" : {
         "psr-4" : {
             "oat\\taoCe\\" : ""
         }
-    } 
+    }
 }
