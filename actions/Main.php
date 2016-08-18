@@ -60,4 +60,14 @@ class Main extends \tao_actions_Main {
             parent::index();
         }
     }
+
+    public function rootEntry()
+    {
+        $this->i++;
+        if (\common_session_SessionManager::isAnonymous()) {
+            $this->redirect(_url('login', 'Main', 'tao'));
+        } else {
+            $this->redirect(_url('entry', 'Main', 'tao'));
+        }
+    }
 }

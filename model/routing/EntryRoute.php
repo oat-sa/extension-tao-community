@@ -16,35 +16,27 @@
  *
  * Copyright (c) 2016 (original work) Open Assessment Technologies SA;
  *
- *
  */
-namespace oat\tao\model\routing;
+
+namespace oat\taoCe\model\routing;
+
+use oat\tao\model\routing\Route;
 
 /**
- *
+ * Route represents request to the root of tao
+ * 
  * @author Aleh Hutnikau, <hutnikau@1pt.com>
  */
-class NamespaceRoute extends Route
+class EntryRoute extends Route
 {
-    const OPTION_NAMESPACE = 'namespace';
-    
-    public function resolve($relativeUrl) {
-        $slash = strpos($relativeUrl, '/');
-        if ($slash !== false && substr($relativeUrl, 0, $slash) == $this->getId()) {
-	        $config = $this->getConfig();
-	        $namespace = $config[self::OPTION_NAMESPACE];
-	        $rest = substr($relativeUrl, $slash+1);
-	        if (!empty($rest)) {
-                $parts = explode('/', $rest, 3);
-                $controller = rtrim($namespace, '\\').'\\'.$parts[0];
-                //todo
-                $method = isset($parts[1]) ? $parts[1] : DEFAULT_ACTION_NAME;
-                return $controller.'@'.$method;
-            } elseif (defined('DEFAULT_MODULE_NAME') && defined('DEFAULT_ACTION_NAME')) {
-                $controller = rtrim($namespace, '\\').'\\'.DEFAULT_MODULE_NAME;
-                $method = DEFAULT_ACTION_NAME;
-                return $controller.'@'.$method;
-            }
+    /**
+     * @param $relativeUrl
+     * @return string
+     */
+    public function resolve($relativeUrl)
+    {
+        if ($relativeUrl === '') {
+            return 'oat\\taoCe\\actions\\Main@rootEntry';
         }
         return null;
     }

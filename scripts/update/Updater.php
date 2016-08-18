@@ -100,6 +100,16 @@ class Updater extends \common_ext_ExtensionUpdater
         }
         
         $this->skip('1.2.2', '1.6.1');
+
+        if ($this->isVersion('1.6.1')) {
+            $anonymousUserRole = new \core_kernel_classes_Resource(INSTANCE_ROLE_ANONYMOUS);
+            $baseUserRole = new \core_kernel_classes_Resource('http://www.tao.lu/Ontologies/TAO.rdf#BaseUserRole');
+            $accessService = \funcAcl_models_classes_AccessService::singleton();
+            $accessService->grantActionAccess($baseUserRole, 'taoCe', 'Main', 'rootEntry');
+            $accessService->grantActionAccess($anonymousUserRole, 'taoCe', 'Main', 'rootEntry');
+
+            $this->setVersion('1.7.0');
+        }
     }
     
     /**
