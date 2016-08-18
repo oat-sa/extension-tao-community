@@ -24,7 +24,7 @@ use oat\tao\model\routing\Route;
 
 /**
  * Route represents request to the root of tao
- * 
+ *
  * @author Aleh Hutnikau, <hutnikau@1pt.com>
  */
 class EntryRoute extends Route

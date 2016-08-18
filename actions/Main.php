@@ -61,9 +61,11 @@ class Main extends \tao_actions_Main {
         }
     }
 
+    /**
+     * Action used to redirect request made to root of tao.
+     */
     public function rootEntry()
     {
-        $this->i++;
         if (\common_session_SessionManager::isAnonymous()) {
             $this->redirect(_url('login', 'Main', 'tao'));
         } else {
