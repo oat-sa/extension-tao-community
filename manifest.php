@@ -23,7 +23,7 @@ return array(
     'label' => 'Community Edition',
     'description' => 'the Community Edition extension',
     'license' => 'GPL-2.0',
-    'version' => '1.6.2',
+    'version' => '1.7.0',
     'author' => 'Open Assessment Technologies SA',
     'requires' => array(
         'tao' => '*',
@@ -43,7 +43,8 @@ return array(
     'managementRole' => 'http://www.tao.lu/Ontologies/generis.rdf#taoCeManager',
     'acl' => array(
         array('grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoCe', 'mod' => 'Main', 'act' => 'index')),
-        array('grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoCe', 'mod' => 'Home'))
+        array('grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoCe', 'mod' => 'Home')),
+        array('grant', 'http://www.tao.lu/Ontologies/generis.rdf#AnonymousRole', array('ext'=>'taoCe', 'mod' => 'Main', 'act' => 'rootEntry')),
     ),
     'install' => array(
         'php' => array(
@@ -54,6 +55,7 @@ return array(
     'uninstall' => array(
     ),
     'routes' => array(
+        '' => ['class' => 'oat\\taoCe\\model\\routing\\EntryRoute'],
         '/taoCe' => 'oat\\taoCe\\actions'
     ),
     'constants' => array(
