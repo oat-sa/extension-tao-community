@@ -26,6 +26,8 @@ use \common_ext_ExtensionsManager;
 use \common_Logger;
 use oat\tao\model\entryPoint\EntryPointService;
 use oat\taoCe\model\entryPoint\TaoCeEntrypoint;
+use oat\tao\model\accessControl\func\AccessRule;
+use oat\tao\model\accessControl\func\AclProxy;
 
 /**
  * TAO Community Edition Updater.
@@ -99,7 +101,14 @@ class Updater extends \common_ext_ExtensionUpdater
             $this->setVersion('1.2.2');
         }
         
-        $this->skip('1.2.2', '1.7.0');
+        $this->skip('1.2.2', '1.6.2');
+
+        if ($this->isVersion('1.6.2')) {
+            AclProxy::applyRule(new AccessRule('grant', INSTANCE_ROLE_ANONYMOUS,
+                ['ext'=>'taoCe', 'mod' => 'Main', 'act' => 'rootEntry']));
+
+            $this->setVersion('1.7.0');
+        }
     }
     
     /**
