@@ -26,6 +26,7 @@ use \common_ext_ExtensionsManager;
 use \common_Logger;
 use oat\tao\model\entryPoint\EntryPointService;
 use oat\taoCe\model\entryPoint\TaoCeEntrypoint;
+use oat\taoDeliveryRdf\model\guest\GuestAccess;
 
 /**
  * TAO Community Edition Updater.
@@ -100,6 +101,16 @@ class Updater extends \common_ext_ExtensionUpdater
         }
         
         $this->skip('1.2.2', '1.3.1');
+
+        // add guest login
+        if ($this->isVersion('1.3.1')) {
+
+            $entryPointService = $this->getServiceManager()->get(EntryPointService::SERVICE_ID);
+            $entryPointService->addEntryPoint(new GuestAccess(), EntryPointService::OPTION_PRELOGIN);
+            $this->getServiceManager()->register(EntryPointService::SERVICE_ID, $entryPointService);
+
+            $this->setVersion('1.3.2');
+        }
     }
     
     /**
