@@ -25,9 +25,10 @@ use \core_kernel_classes_Resource;
 use \common_ext_ExtensionsManager;
 use \common_Logger;
 use oat\tao\model\entryPoint\EntryPointService;
-use oat\taoCe\model\entryPoint\TaoCeEntrypoint;
 use oat\tao\model\accessControl\func\AccessRule;
 use oat\tao\model\accessControl\func\AclProxy;
+use oat\taoCe\model\entryPoint\TaoCeEntrypoint;
+use oat\taoDeliveryRdf\model\guest\GuestAccess;
 
 /**
  * TAO Community Edition Updater.
@@ -110,6 +111,16 @@ class Updater extends \common_ext_ExtensionUpdater
             $this->setVersion('1.7.0');
         }
         $this->skip('1.7.0', '1.7.1');
+
+        // add guest login
+        if ($this->isVersion('1.7.1')) {
+
+            $entryPointService = $this->getServiceManager()->get(EntryPointService::SERVICE_ID);
+            $entryPointService->addEntryPoint(new GuestAccess(), EntryPointService::OPTION_PRELOGIN);
+            $this->getServiceManager()->register(EntryPointService::SERVICE_ID, $entryPointService);
+
+            $this->setVersion('1.8.0');
+        }
     }
     
     /**
@@ -125,7 +136,7 @@ class Updater extends \common_ext_ExtensionUpdater
         $extManager = common_ext_ExtensionsManager::singleton();
         
         if ($extManager->isInstalled('taoResults') === true) {
-            // The extension cannot be trully uninistalled
+            // The extension cannot be truly uninstalled
             // because it is missing the 'uninstall' entry
             // in its manifest.
             common_Logger::i("Unregistering extension 'taoResults'...");
