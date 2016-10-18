@@ -28,13 +28,10 @@ $entryPointService = $serviceManager->get(EntryPointService::SERVICE_ID);
 // replace delivery server
 $entryPointService->overrideEntryPoint('backoffice', new TaoCeEntrypoint());
 
-$serviceManager->register(EntryPointService::SERVICE_ID, $entryPointService);
-
-$serviceManager = ServiceManager::getServiceManager();
-$entryPointService = $serviceManager->get(EntryPointService::SERVICE_ID);
-
 // add guest login
 $entryPointService->addEntryPoint(
     new GuestAccess(),
     EntryPointService::OPTION_PRELOGIN
 );
+
+$serviceManager->register(EntryPointService::SERVICE_ID, $entryPointService);
