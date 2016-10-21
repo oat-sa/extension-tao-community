@@ -19,6 +19,7 @@
  */
 use oat\tao\model\entryPoint\EntryPointService;
 use oat\taoCe\model\entryPoint\TaoCeEntrypoint;
+use oat\taoDeliveryRdf\model\guest\GuestAccess;
 use oat\oatbox\service\ServiceManager;
 
 $serviceManager = ServiceManager::getServiceManager();
@@ -26,5 +27,11 @@ $entryPointService = $serviceManager->get(EntryPointService::SERVICE_ID);
 
 // replace delivery server
 $entryPointService->overrideEntryPoint('backoffice', new TaoCeEntrypoint());
+
+// add guest login
+$entryPointService->addEntryPoint(
+    new GuestAccess(),
+    EntryPointService::OPTION_PRELOGIN
+);
 
 $serviceManager->register(EntryPointService::SERVICE_ID, $entryPointService);
