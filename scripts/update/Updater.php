@@ -32,12 +32,12 @@ use oat\taoDeliveryRdf\model\guest\GuestAccess;
 
 /**
  * TAO Community Edition Updater.
- * 
+ *
  * @author Jérôme Bogaerts <jerome@taotesting.com>
  */
 class Updater extends \common_ext_ExtensionUpdater
 {
-    
+
     const RDFTYPEPROPERTY = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type';
     const GENERISTRUEINSTANCEURI = 'http://www.tao.lu/Ontologies/generis.rdf#True';
     const DELIVERYRESULTCLASSURI = 'http://www.tao.lu/Ontologies/TAOResult.rdf#DeliveryResult';
@@ -66,16 +66,16 @@ class Updater extends \common_ext_ExtensionUpdater
     const DELIVERYCLASSURI = 'http://www.tao.lu/Ontologies/TAODelivery.rdf#Delivery';
     const DELIVERYRESULTSERVERPROPERTYURI = 'http://www.tao.lu/Ontologies/TAODelivery.rdf#DeliveryResultServer';
     const RDSRESULTSERVERINSTANCEURI = 'http://www.tao.lu/Ontologies/taoOutcomeRds.rdf#RdsResultStorage';
-    
+
     /**
      * Perform update from $currentVersion to $versionUpdatedTo.
-     * 
+     *
      * @param string $currentVersion
      * @return string $versionUpdatedTo
      */
-    public function update($initialVersion) 
+    public function update($initialVersion)
     {
-        
+
         // migrate from 1.0.0 to 1.1.0
         // old taoResults extension gets uninistalled and taoOutcomeRds becomes
         // the new default result storage mechanism.
@@ -83,7 +83,7 @@ class Updater extends \common_ext_ExtensionUpdater
             self::migrateFrom100To110();
             $this->setVersion('1.1.0');
         }
-        
+
         // migrate from 1.1.0 to 1.1.1
         // RDF based result server removal and assignment of deliveries
         // to RDS implementation.
@@ -91,8 +91,8 @@ class Updater extends \common_ext_ExtensionUpdater
             self::migrateFrom110to111();
             $this->setVersion('1.1.1');
         }
-        
-         
+
+
         if ($this->isBetween('1.1.1', '1.1.3')) {
             EntryPointService::getRegistry()->registerEntryPoint(new TaoCeEntrypoint());
             $this->setVersion('1.1.3');
@@ -101,7 +101,7 @@ class Updater extends \common_ext_ExtensionUpdater
         if ($this->isBetween('1.1.3', '1.2.1')) {
             $this->setVersion('1.2.2');
         }
-        
+
         $this->skip('1.2.2', '1.6.2');
 
         if ($this->isVersion('1.6.2')) {
@@ -121,13 +121,12 @@ class Updater extends \common_ext_ExtensionUpdater
 
             $this->setVersion('1.8.0');
         }
-
         $this->skip('1.8.0', '1.8.1');
     }
-    
+
     /**
      * Implementation of migration from taoCe 1.0.0 to 1.1.0.
-     * 
+     *
      * Migrating from 1.0.0 to 1.1.0 consists of transforming
      * old RDF based results into RDBMS based results using
      * the 'taoOutcomeRds' extension.
@@ -136,28 +135,28 @@ class Updater extends \common_ext_ExtensionUpdater
     {
         // 1. Unregister old taoResults extension.
         $extManager = common_ext_ExtensionsManager::singleton();
-        
+
         if ($extManager->isInstalled('taoResults') === true) {
             // The extension cannot be truly uninstalled
             // because it is missing the 'uninstall' entry
             // in its manifest.
             common_Logger::i("Unregistering extension 'taoResults'...");
-        
+
             $taoResults = $extManager->getExtensionById('taoResults');
             $extManager->unregisterExtension($taoResults);
-        
+
             common_Logger::i("Extension 'taoResults' unregistered.");
         }
-        
+
         // 2. Migrate results to outcomeRds.
         common_Logger::i("Migrating old 'taoResults' result data to 'taoOutcomeRds'...");
         self::resultsMigration();
         common_Logger::i("Migration of old 'taoResults' result data to 'taoOutcomeRds' done.");
     }
-    
+
     /**
      * Implementation of migration from taoCe 1.1.0 to 1.1.1.
-     * 
+     *
      * Migrating from 1.1.0 to 1.1.1 consists of removing old
      * RDF based result servers/models and re-assign existing
      * deliveries to the 'taoOutcomeRds' result server implementation.
@@ -168,114 +167,114 @@ class Updater extends \common_ext_ExtensionUpdater
         common_Logger::i("Disabling old Result Server Implementations...");
         self::disableRdfResultServers();
         common_Logger::i("Old Result Server Implementations disabled.");
-        
+
         // 2. Assigning existing Deliveries to OutcomeRds Result Server.
         common_Logger::i("Assigning Deliveries to OutcomeRds Result Server.");
         self::assignDeliveriesToRds();
         common_Logger::i("Deliveries assigned to OutcomeRds Result Server.");
     }
-    
+
     /**
      * Implementation of old 'taoResults' results to 'taoOutcomeRds' results.
      */
     static private function resultsMigration()
     {
         $outcomeRds = call_user_func(array('oat\taoOutcomeRds\model\RdsResultStorage', 'singleton'));
-        
+
         $deliveryResultClass = new \core_kernel_classes_Class(self::DELIVERYRESULTCLASSURI);
         $itemResultClass = new \core_kernel_classes_Class(self::ITEMRESULTCLASSURI);
         $variableClass = new \core_kernel_classes_Class(self::VARIABLECLASSURI);
-        
+
         // Retrieve all Delivery Results. Batch by 1.
         $batch = 1;
         $offset = 0;
         $limit = $batch;
-        
+
         $deliveryResults = $deliveryResultClass->getInstances(false, array('offset' => $offset, 'limit' => $limit));
-        
+
         while (count($deliveryResults) > 0) {
-        
+
             common_Logger::i("- Migrating Delivery Results from offset ${offset} to limit ${limit}...");
-        
+
             foreach ($deliveryResults as $deliveryResultUri => $deliveryResult) {
                 $properties = array(
                                 self::DELIVERYIDENTIFIERPROPERTYURI,
                                 self::RESULTOFSUBJECTPROPERTYURI,
                                 self::RESULTOFDELIVERYPROPERTYURI
                 );
-        
+
                 $deliveryResultValues = $deliveryResult->getPropertiesValues($properties);
-        
+
                 $noIdentifier = empty($deliveryResultValues[self::DELIVERYIDENTIFIERPROPERTYURI]);
                 $noSubject = empty($deliveryResultValues[self::RESULTOFSUBJECTPROPERTYURI]);
                 $noDelivery = empty($deliveryResultValues[self::RESULTOFDELIVERYPROPERTYURI]);
-        
+
                 if ($noIdentifier === false && $noSubject === false && $noDelivery === false) {
-        
+
                     $newResultIdentifier = current($deliveryResultValues[self::DELIVERYIDENTIFIERPROPERTYURI])->getUri();
                     $newResultSubject = current($deliveryResultValues[self::RESULTOFSUBJECTPROPERTYURI])->getUri();
                     $newResultDelivery = current($deliveryResultValues[self::RESULTOFDELIVERYPROPERTYURI])->getUri();
-        
+
                     common_Logger::i("-- Migrating Delivery Result with Identifier '${newResultIdentifier}'...");
-        
+
                     // We have a Delivery Result to migrate.
-        
+
                     $outcomeRds->storeRelatedDelivery($newResultIdentifier, $newResultDelivery);
                     $outcomeRds->storeRelatedTestTaker($newResultIdentifier, $newResultSubject);
-        
+
                     // Retrieve all Item Results related to DeliveryResult.
                     $itemResultsPropertyFilters = array(self::RELATEDDELIVERYRESULTURI => $deliveryResultUri);
                     $itemResultsOptions = array('recursive' => false, 'like' => false);
                     $itemResults = $itemResultClass->searchInstances($itemResultsPropertyFilters, $itemResultsOptions);
-        
+
                     foreach ($itemResults as $itemResultUri => $itemResult) {
-        
+
                         $itemResultProperties = array(
                                         self::ITEMIDENTIFIERPROPERTYURI,
                                         self::RELATEDITEMPROPERTYURI,
                                         self::RELATEDTESTPROPERTYURI
                         );
-        
+
                         $itemResultValues = $itemResult->getPropertiesValues($itemResultProperties);
-        
+
                         $noIdentifier = empty($itemResultValues[self::ITEMIDENTIFIERPROPERTYURI]);
                         $noRelatedItem = empty($itemResultValues[self::RELATEDITEMPROPERTYURI]);
                         $noRelatedTest = empty($itemResultValues[self::RELATEDTESTPROPERTYURI]);
-        
+
                         if ($noIdentifier === false && $noRelatedItem === false && $noRelatedTest === false) {
-        
+
                             $newItemResultIdentifier = current($itemResultValues[self::ITEMIDENTIFIERPROPERTYURI]);
                             $newItemResultRelatedItem = current($itemResultValues[self::RELATEDITEMPROPERTYURI])->getUri();
                             $newItemResultRelatedTest = current($itemResultValues[self::RELATEDTESTPROPERTYURI])->getUri();
-        
+
                             common_Logger::i("--- Migrating Item Result with Identifier '${newItemResultIdentifier}'...");
-        
+
                             // Get all Variables related to this Item Result.
                             $variablePropertyFilters = array(self::RELATEDITEMRESULTPROPERTYURI => $itemResultUri);
                             $variableOptions = array('recursive' => true, 'like' => false);
                             $variables = $variableClass->searchInstances($variablePropertyFilters, $variableOptions);
-        
+
                             foreach ($variables as $variableUri => $variable) {
-        
+
                                 $newVariable = self::createVariableObject($variable);
                                 if ($newVariable !== false) {
                                     $outcomeRds->storeItemVariable($newResultIdentifier, $newItemResultRelatedTest, $newItemResultRelatedItem, $newVariable, $newItemResultIdentifier);
                                 }
                             }
-        
+
                         } else {
                             common_Logger::i("Skipping Item Result Result with URI '${itemResultUri}'. Malformed Item Result.");
                         }
-                    }    
-        
+                    }
+
                     // Now let's find test Variables.
                     $variablePropertyFilters = array(self::RELATEDDELIVERYRESULTURI => $deliveryResultUri);
                     $variableOptions = array('recursive' => true, 'like' => false);
                     $variables = $variableClass->searchInstances($variablePropertyFilters, $variableOptions);
-        
+
                     // If we can infer the related test...
                     if (isset($newItemResultRelatedTest) === true) {
-                    
+
                         foreach ($variables as $variableUri => $variable) {
                             $newVariable = self::createVariableObject($variable);
                             if ($newVariable !== false) {
@@ -283,22 +282,22 @@ class Updater extends \common_ext_ExtensionUpdater
                             }
                         }
                     }
-        
+
                 } else {
                     common_Logger::i("Skipping Delivery Result with URI '${deliveryResultUri}'. Malformed Delivery Result.");
                 }
             }
-        
+
             // Retrieve next batch of Delivery Results.
             $limit += $batch;
             $offset += $batch;
             $deliveryResults = $deliveryResultClass->getInstances(false, array('offset' => $offset, 'limit' => $limit));
         }
     }
-    
+
     /**
      * Create Response/OutcomeVariable object from an Ontology $variable.
-     * 
+     *
      * @param core_kernel_classes_Resource $variable
      * @return \taoResultServer_models_classes_ResponseVariable|taoResultServer_models_classes_OutcomeVariable|boolean
      */
@@ -306,7 +305,7 @@ class Updater extends \common_ext_ExtensionUpdater
     {
         $newVariable = false;
         $variableUri = $variable->getUri();
-        
+
         $variableProperties = array(
                         self::VARIABLEIDENTIFIERPROPERTYURI,
                         self::VARIABLECARDINALITYPROPERTYURI,
@@ -318,9 +317,9 @@ class Updater extends \common_ext_ExtensionUpdater
                         self::VARIABLENORMALMINIMUMPROPERTYURI,
                         self::RDFTYPEPROPERTY
         );
-        
+
         $variableValues = $variable->getPropertiesValues($variableProperties);
-        
+
         $noIdentifier = empty($variableValues[self::VARIABLEIDENTIFIERPROPERTYURI]);
         $noCardinality = empty($variableValues[self::VARIABLECARDINALITYPROPERTYURI]) || current($variableValues[self::VARIABLECARDINALITYPROPERTYURI])->__toString() == '';
         $noBasetype = empty($variableValues[self::VARIABLEBASETYPEPROPERTYURI]) || current($variableValues[self::VARIABLEBASETYPEPROPERTYURI])->__toString() == '';
@@ -330,7 +329,7 @@ class Updater extends \common_ext_ExtensionUpdater
         $noVariableType = empty($variableValues[self::RDFTYPEPROPERTY]) || !current($variableValues[self::RDFTYPEPROPERTY]) instanceof \core_kernel_classes_Resource;
         $noNormalMaximum = empty($variableValues[self::VARIABLENORMALMAXIMUMPROPERTYURI]) || current($variableValues[self::VARIABLENORMALMAXIMUMPROPERTYURI])->__toString() == '';
         $noNormalMinimum = empty($variableValues[self::VARIABLENORMALMINIMUMPROPERTYURI]) || current($variableValues[self::VARIABLENORMALMINIMUMPROPERTYURI])->__toString() == '';
-        
+
         if ($noIdentifier === false && $noEpoch === false && $noVariableType === false) {
             $newVariableIdentifier = current($variableValues[self::VARIABLEIDENTIFIERPROPERTYURI]);
             $newVariableType = current($variableValues[self::RDFTYPEPROPERTY])->getUri();
@@ -341,26 +340,26 @@ class Updater extends \common_ext_ExtensionUpdater
             $newVariableValue = ($noValue === true) ? null : base64_decode(current($variableValues[self::VARIABLEVALUEPROPERTYURI])->__toString());
             $newNormalMaximum = ($noNormalMaximum === true) ? null : floatval(current($variableValues[self::VARIABLENORMALMAXIMUMPROPERTYURI])->__toString());
             $newNormalMinimum = ($noNormalMinimum === true) ? null : floatval(current($variableValues[self::VARIABLENORMALMINIMUMPROPERTYURI])->__toString());
-        
+
             if ($newVariableType === self::RESPONSEVARIABLECLASSURI || $newVariableType === self::OUTCOMEVARIABLECLASSURI) {
-        
+
                 // Let's infer whether it's a Response or Outcome Variable.
                 $newVariable = ($newVariableType === self::RESPONSEVARIABLECLASSURI) ? new \taoResultServer_models_classes_ResponseVariable() : new \taoResultServer_models_classes_OutcomeVariable();
                 $newVariable->setIdentifier($newVariableIdentifier);
                 $newVariable->setEpoch($newVariableEpoch);
-        
+
                 if ($newVariableCardinality !== null) {
                     $newVariable->setCardinality($newVariableCardinality);
                 }
-        
+
                 if ($newVariableBasetype !== null) {
                     $newVariable->setBaseType($newVariableBasetype);
                 }
-        
+
                 if ($newVariableCorrectResponse !== null && $newVariable instanceof \taoResultServer_models_classes_ResponseVariable) {
                     $newVariable->setCorrectResponse($newVariableCorrectResponse);
                 }
-        
+
                 if ($newVariableValue !== null) {
                     if ($newVariable instanceof \taoResultServer_models_classes_ResponseVariable) {
                         $newVariable->setCandidateResponse($newVariableValue);
@@ -368,20 +367,20 @@ class Updater extends \common_ext_ExtensionUpdater
                         $newVariable->setValue($newVariableValue);
                     }
                 }
-        
+
                 if ($newNormalMaximum !== null && $newVariable instanceof \taoResultServer_models_classes_OutcomeVariable) {
                     $newVariable->setNormalMaximum($newNormalMaximum);
                 }
-        
+
                 if ($newNormalMinimum !== null && $newVariable instanceof \taoResultServer_models_classes_OutcomeVariable) {
                     $newVariable->setNormalMinimum($normalMinimum);
                 }
             }
         }
-        
+
         return $newVariable;
     }
-    
+
     /**
      * Remove Old RDF Result Server from Ontology.
      */
@@ -389,18 +388,18 @@ class Updater extends \common_ext_ExtensionUpdater
     {
         $rdfResultServerResource = new core_kernel_classes_Resource(self::RDFRESULTSERVERINSTANCEURI);
         $rdfResultServerModelResource = new core_kernel_classes_Resource(self::RDFRESULTSERVERMODELINSTANCEURI);
-        
+
         // Remove RDF Delivery Server.
         if ($rdfResultServerResource->exists() === true) {
             $rdfResultServerResource->delete();
         }
-        
+
         // Remove RDF Delivery Server Model.
         if ($rdfResultServerModelResource->exists() === true) {
             $rdfResultServerModelResource->delete();
         }
     }
-    
+
     /**
      * Re-assign existing Deliveries to RDS Result Server.
      */
