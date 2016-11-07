@@ -67,7 +67,9 @@ class Main extends \tao_actions_Main {
     public function rootEntry()
     {
         if (\common_session_SessionManager::isAnonymous()) {
-            $this->redirect(_url('login', 'Main', 'tao'));
+            /* @var $urlRouteService \oat\tao\model\mvc\DefaultUrlService */
+            $urlRouteService = $this->getServiceManager()->get('tao/urlroute');
+            $this->redirect($urlRouteService->getLoginUrl());
         } else {
             $this->redirect(_url('entry', 'Main', 'tao'));
         }
