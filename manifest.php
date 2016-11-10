@@ -23,7 +23,7 @@ return array(
     'label' => 'Community Edition',
     'description' => 'the Community Edition extension',
     'license' => 'GPL-2.0',
-    'version' => '1.1.2',
+    'version' => '1.8.1',
     'author' => 'Open Assessment Technologies SA',
     'requires' => array(
         'tao' => '*',
@@ -31,28 +31,31 @@ return array(
         'taoItems' => '*',
         'taoQtiItem' => '*',
         'qtiItemPci' => '*',
-        'taoOpenWebItem' => '*',
         'taoTests' => '*',
         'taoQtiTest' => '*',
         'taoTestTaker' => '*',
         'taoGroups' => '*',
         'taoOutcomeUi' => '*',
-        'taoOutcomeRds' => '*'
+        'taoOutcomeRds' => '*',
+        'taoDeliveryRdf' => '*'
     ),
     'update' => 'oat\\taoCe\\scripts\\update\\Updater',
     'managementRole' => 'http://www.tao.lu/Ontologies/generis.rdf#taoCeManager',
     'acl' => array(
         array('grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoCe', 'mod' => 'Main', 'act' => 'index')),
-        array('grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoCe', 'mod' => 'Home'))
+        array('grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoCe', 'mod' => 'Home')),
+        array('grant', 'http://www.tao.lu/Ontologies/generis.rdf#AnonymousRole', array('ext'=>'taoCe', 'mod' => 'Main', 'act' => 'rootEntry')),
     ),
     'install' => array(
         'php' => array(
             dirname(__FILE__) . '/scripts/install/setDefaultResultServer.php',
-        )
+            dirname(__FILE__) . '/scripts/install/overrideEntryPoint.php',
+    )
     ),
     'uninstall' => array(
     ),
     'routes' => array(
+        '' => ['class' => 'oat\\taoCe\\model\\routing\\EntryRoute'],
         '/taoCe' => 'oat\\taoCe\\actions'
     ),
     'constants' => array(
