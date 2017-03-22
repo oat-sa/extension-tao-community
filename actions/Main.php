@@ -67,12 +67,12 @@ class Main extends \tao_actions_Main {
      */
     public function rootEntry()
     {
+        $urlRouteService = $this->getServiceManager()->get(DefaultUrlService::SERVICE_ID);
         if (\common_session_SessionManager::isAnonymous()) {
             /* @var $urlRouteService DefaultUrlService */
-            $urlRouteService = $this->getServiceManager()->get(DefaultUrlService::SERVICE_ID);
             $this->redirect($urlRouteService->getLoginUrl());
         } else {
-            $this->redirect(_url('entry', 'Main', 'tao'));
+            $this->redirect($urlRouteService->getDefaultUrl());
         }
     }
 }
