@@ -23,7 +23,7 @@ return array(
     'label' => 'Community Edition',
     'description' => 'the Community Edition extension',
     'license' => 'GPL-2.0',
-    'version' => '2.0.1',
+    'version' => '3.0.0',
     'author' => 'Open Assessment Technologies SA',
     'requires' => array(
         'tao' => '*',
@@ -64,8 +64,5 @@ return array(
 	    
         #BASE URL (usually the domain root)
         'BASE_URL' => ROOT_URL.'taoCe/',
-        
-        #BASE WWW the web resources path
-        'BASE_WWW' => ROOT_URL.'taoCe/views/'
     )
 );
