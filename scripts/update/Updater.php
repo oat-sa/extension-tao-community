@@ -21,14 +21,15 @@
 
 namespace oat\taoCe\scripts\update;
 
-use \core_kernel_classes_Resource;
-use \common_ext_ExtensionsManager;
 use \common_Logger;
-use oat\tao\model\entryPoint\EntryPointService;
-use oat\tao\model\accessControl\func\AccessRule;
-use oat\tao\model\accessControl\func\AclProxy;
+use \common_ext_ExtensionsManager;
+use \core_kernel_classes_Resource;
 use oat\taoCe\model\entryPoint\TaoCeEntrypoint;
 use oat\taoDeliveryRdf\model\guest\GuestAccess;
+use oat\taoQtiTest\scripts\install\SetNewTestRunner;
+use oat\tao\model\accessControl\func\AccessRule;
+use oat\tao\model\accessControl\func\AclProxy;
+use oat\tao\model\entryPoint\EntryPointService;
 
 /**
  * TAO Community Edition Updater.
@@ -123,6 +124,18 @@ class Updater extends \common_ext_ExtensionUpdater
         }
 
         $this->skip('1.8.0', '3.1.0');
+
+        // add guest login
+        if ($this->isVersion('3.1.0')) {
+
+
+            //set the new test runner 
+            //FIXME this breaks the compatibility, you need to recompile all your deliveries
+            $setNewTestRunner = new SetNewTestRunner();
+            $setNewTestRunner->__invoke([]);
+
+            $this->setVersion('4.0.0');
+        }
     }
 
     /**

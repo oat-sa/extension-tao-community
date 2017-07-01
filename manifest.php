@@ -23,7 +23,7 @@ return array(
     'label' => 'Community Edition',
     'description' => 'the Community Edition extension',
     'license' => 'GPL-2.0',
-    'version' => '3.1.0',
+    'version' => '4.0.0',
     'author' => 'Open Assessment Technologies SA',
     'requires' => array(
         'tao' => '>=9.0.0',
@@ -37,7 +37,8 @@ return array(
         'taoGroups' => '*',
         'taoOutcomeUi' => '*',
         'taoOutcomeRds' => '*',
-        'taoDeliveryRdf' => '*'
+        'taoDeliveryRdf' => '*',
+        'taoTestRunnerPlugins' => '*'
     ),
     'update' => 'oat\\taoCe\\scripts\\update\\Updater',
     'managementRole' => 'http://www.tao.lu/Ontologies/generis.rdf#taoCeManager',
@@ -50,6 +51,7 @@ return array(
         'php' => array(
             dirname(__FILE__) . '/scripts/install/setDefaultResultServer.php',
             dirname(__FILE__) . '/scripts/install/overrideEntryPoint.php',
+            \oat\taoQtiTest\scripts\install\SetNewTestRunner::class,
     )
     ),
     'uninstall' => array(
