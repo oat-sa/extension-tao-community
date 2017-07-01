@@ -132,6 +132,7 @@ class Updater extends \common_ext_ExtensionUpdater
             //set the new test runner 
             //FIXME this breaks the compatibility, you need to recompile all your deliveries
             $setNewTestRunner = new SetNewTestRunner();
+            $setNewTestRunner->setServiceLocator($this->getServiceManager());
             $setNewTestRunner->__invoke([]);
 
             $this->setVersion('4.0.0');
