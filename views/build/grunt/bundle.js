@@ -31,8 +31,8 @@ module.exports = function (grunt) {
      */
     copy.taocebundle = {
         files: [
-            { src: [out + '/taoCe/bundle.js'],     dest: root + '/taoCe/views/js/controllers.min.js' },
-            { src: [out + '/taoCe/bundle.js.map'], dest: root + '/taoCe/views/js/controllers.min.js.map' }
+            { src: [out + '/taoCe/bundle.js'],     dest: root + '/taoCe/views/dist/controllers.min.js' },
+            { src: [out + '/taoCe/bundle.js.map'], dest: root + '/taoCe/views/dist/controllers.min.js.map' }
         ]
     };
 
