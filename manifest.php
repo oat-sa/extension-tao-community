@@ -23,7 +23,7 @@ return array(
     'label' => 'Community Edition',
     'description' => 'the Community Edition extension',
     'license' => 'GPL-2.0',
-    'version' => '3.6.0',
+    'version' => '3.7.0',
     'author' => 'Open Assessment Technologies SA',
     'requires' => array(
         'tao' => '>=9.0.0',
@@ -50,6 +50,7 @@ return array(
         'php' => array(
             dirname(__FILE__) . '/scripts/install/setDefaultResultServer.php',
             dirname(__FILE__) . '/scripts/install/overrideEntryPoint.php',
+            dirname(__FILE__) . '/scripts/install/SetRequireJSBundlesConfig.php',
     )
     ),
     'uninstall' => array(

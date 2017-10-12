@@ -123,6 +123,25 @@ class Updater extends \common_ext_ExtensionUpdater
         }
 
         $this->skip('1.8.0', '3.6.0');
+
+        if ($this->isVersion('3.6.0')) {
+            $ext = common_ext_ExtensionsManager::singleton()->getExtensionById('taoCe');
+            $ext->setConfig('requirejsbundles', array(
+                array(
+                    'name' => 'taocebundle',
+                    'path' => ROOT_URL . 'taoCe/views/dist/controllers.min',
+                    'modules' => array(
+                        'taoCe/controller/help',
+                        'taoCe/controller/home',
+                        'taoCe/controller/home/custom-scrollbar',
+                        'taoCe/controller/home/splash',
+                        'taoCe/controller/routes',
+                    ),
+                ),
+            ));
+
+            $this->setVersion('3.7.0');
+        }
     }
 
     /**
