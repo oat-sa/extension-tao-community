@@ -1,33 +1,28 @@
-module.exports = function(grunt) { 
+module.exports = function (grunt) {
+    'use strict';
 
-    var requirejs   = grunt.config('requirejs') || {};
-    var clean       = grunt.config('clean') || {};
-    var copy        = grunt.config('copy') || {};
-
-    var root        = grunt.option('root');
-    var libs        = grunt.option('mainlibs');
-    var ext         = require(root + '/tao/views/build/tasks/helpers/extensions')(grunt, root);
-    var out         = 'output';
+    var requirejs = grunt.config('requirejs') || {};
+    var clean     = grunt.config('clean') || {};
+    var copy      = grunt.config('copy') || {};
+    var root      = grunt.option('root');
+    var libs      = grunt.option('mainlibs');
+    var ext       = require(root + '/tao/views/build/tasks/helpers/extensions')(grunt, root);
+    var out       = 'output';
 
     /**
      * Remove bundled and bundling files
      */
     clean.taocebundle = [out];
-    
+
     /**
-     * Compile tao files into a bundle 
+     * Compile tao files into a bundle
      */
     requirejs.taocebundle = {
         options: {
-            baseUrl : '../js',
-            dir : out,
-            mainConfigFile : './config/requirejs.build.js',
-            paths : { 'taoCe' : root + '/taoCe/views/js' },
-            modules : [{
-                name: 'taoCe/controller/routes',
-                include : ext.getExtensionsControllers(['taoCe']),
-                exclude : ['mathJax'].concat(libs)
-            }]
+            exclude: ['mathJax'].concat(libs),
+            include: ext.getExtensionsControllers(['taoCe']),
+            out: out + '/taoCe/bundle.js',
+            paths: { taoCe: root + '/taoCe/views/js' },
         }
     };
 
@@ -36,8 +31,8 @@ module.exports = function(grunt) {
      */
     copy.taocebundle = {
         files: [
-            { src: [out + '/taoCe/controller/routes.js'],  dest: root + '/taoCe/views/js/controllers.min.js' },
-            { src: [out + '/taoCe/controller/routes.js.map'],  dest: root + '/taoCe/views/js/controllers.min.js.map' }
+            { src: [out + '/taoCe/bundle.js'],     dest: root + '/taoCe/views/dist/controllers.min.js' },
+            { src: [out + '/taoCe/bundle.js.map'], dest: root + '/taoCe/views/dist/controllers.min.js.map' }
         ]
     };
 

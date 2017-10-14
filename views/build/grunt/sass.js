@@ -1,4 +1,5 @@
-module.exports = function(grunt) { 
+module.exports = function (grunt) {
+    'use strict';
 
     var sass    = grunt.config('sass') || {};
     var watch   = grunt.config('watch') || {};
@@ -19,7 +20,7 @@ module.exports = function(grunt) {
 
     notify.taocesass = {
         options: {
-            title: 'Grunt SASS', 
+            title: 'Grunt SASS',
             message: 'SASS files compiled to CSS'
         }
     };
