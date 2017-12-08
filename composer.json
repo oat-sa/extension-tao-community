@@ -58,8 +58,6 @@
         "oat-sa/oatbox-extension-installer": "dev-master",
         "oat-sa/extension-tao-delivery-rdf": "~3.17.2||dev-develop"
     },
-	"require-dev": {
-	},
     "autoload" : {
         "psr-4" : {
             "oat\\taoCe\\" : ""
