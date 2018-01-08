@@ -23,7 +23,7 @@ return array(
     'label' => 'Community Edition',
     'description' => 'the Community Edition extension',
     'license' => 'GPL-2.0',
-    'version' => '3.11.0',
+    'version' => '3.12.0',
     'author' => 'Open Assessment Technologies SA',
     'requires' => array(
         'tao' => '>=12.21.0',
