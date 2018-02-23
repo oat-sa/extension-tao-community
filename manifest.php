@@ -37,6 +37,7 @@ return array(
         'taoGroups' => '*',
         'taoOutcomeUi' => '*',
         'taoOutcomeRds' => '*',
+        'taoDeliveryRdf' => '*',
     ),
     'update' => 'oat\\taoCe\\scripts\\update\\Updater',
     'managementRole' => 'http://www.tao.lu/Ontologies/generis.rdf#taoCeManager',
