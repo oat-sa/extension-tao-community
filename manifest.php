@@ -23,7 +23,7 @@ return array(
     'label' => 'Community Edition',
     'description' => 'the Community Edition extension',
     'license' => 'GPL-2.0',
-    'version' => '3.15.0',
+    'version' => '3.15.1',
     'author' => 'Open Assessment Technologies SA',
     'requires' => array(
         'tao' => '>=12.21.0',
@@ -38,7 +38,6 @@ return array(
         'taoOutcomeUi' => '*',
         'taoOutcomeRds' => '*',
         'taoDeliveryRdf' => '*',
-        'parccTei' => '*',
     ),
     'update' => 'oat\\taoCe\\scripts\\update\\Updater',
     'managementRole' => 'http://www.tao.lu/Ontologies/generis.rdf#taoCeManager',
