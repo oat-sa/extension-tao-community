@@ -23,7 +23,7 @@ return array(
     'label' => 'Community Edition',
     'description' => 'the Community Edition extension',
     'license' => 'GPL-2.0',
-    'version' => '3.19.0',
+    'version' => '3.20.0',
     'author' => 'Open Assessment Technologies SA',
     'requires' => array(
         'tao' => '>=12.21.0',
@@ -33,6 +33,7 @@ return array(
         'qtiItemPci' => '*',
         'taoTests' => '*',
         'taoQtiTest' => '*',
+        'taoQtiTestPreviewer' => '*',
         'taoTestTaker' => '*',
         'taoGroups' => '*',
         'taoOutcomeUi' => '*',
