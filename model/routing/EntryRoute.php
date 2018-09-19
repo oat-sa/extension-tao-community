@@ -21,6 +21,7 @@
 namespace oat\taoCe\model\routing;
 
 use oat\tao\model\routing\Route;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  * Route represents request to the root of tao
@@ -29,12 +30,9 @@ use oat\tao\model\routing\Route;
  */
 class EntryRoute extends Route
 {
-    /**
-     * @param $relativeUrl
-     * @return string
-     */
-    public function resolve($relativeUrl)
+    public function resolve(ServerRequestInterface $request)
     {
+        $relativeUrl = \tao_helpers_Request::getRelativeUrl($request->getRequestTarget());
         if ($relativeUrl === '') {
             return 'oat\\taoCe\\actions\\Main@rootEntry';
         }
