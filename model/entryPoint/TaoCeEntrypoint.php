@@ -21,7 +21,6 @@
 
 namespace oat\taoCe\model\entryPoint;
 
-use oat\oatbox\Configurable;
 use oat\taoBackOffice\model\entryPoint\BackOfficeEntryPoint;
 
 /**
