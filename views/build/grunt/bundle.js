@@ -21,23 +21,21 @@
  * @author Bertrand Chevrier <bertrand@taotesting.com>
  */
 module.exports = function(grunt) {
-
-    var root        = grunt.option('root');
+    'use strict';
 
     grunt.config.merge({
         bundle : {
             taoce : {
                 options : {
                     extension : 'taoCe',
-                    extensionPath : root + '/taoCe/views/js',
                     outputDir : 'loader',
                     bundles : [{
                         name : 'taoCe',
-                        default : true,
-                        babel: true
+                        default : true
                     }]
                 }
             }
+        }
     });
 
     // bundle task
