@@ -56,7 +56,7 @@
     "minimum-stability" : "dev",
     "require": {
         "oat-sa/oatbox-extension-installer": "~1.1||dev-master",
-        "oat-sa/extension-tao-delivery-rdf": "~6.0.0||dev-*"
+        "oat-sa/extension-tao-delivery-rdf": "~6.0.0||dev-develop||dev-breaking/TAO-4814_atomic-bundles"
     },
     "autoload" : {
         "psr-4" : {
