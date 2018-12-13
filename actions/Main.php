@@ -14,7 +14,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
- * Copyright (c) 2014 (original work) Open Assessment Technologies SA;
+ * Copyright (c) 2014-2018 (original work) Open Assessment Technologies SA;
  *
  *
  */
@@ -32,7 +32,8 @@ use oat\tao\model\mvc\DefaultUrlService;
  * @license GPL-2.0
  *
  */
-class Main extends \tao_actions_Main {
+class Main extends \tao_actions_Main
+{
 
     /**
      * Wrapper to the main action: update the first time property and redirect
