@@ -20,7 +20,7 @@
 
 namespace oat\taoCe\model\routing;
 
-use oat\tao\model\routing\Route;
+use oat\tao\model\routing\AbstractRoute;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
@@ -28,7 +28,7 @@ use Psr\Http\Message\ServerRequestInterface;
  *
  * @author Aleh Hutnikau, <hutnikau@1pt.com>
  */
-class EntryRoute extends Route
+class EntryRoute extends AbstractRoute
 {
     public function resolve(ServerRequestInterface $request)
     {
@@ -37,5 +37,14 @@ class EntryRoute extends Route
             return 'oat\\taoCe\\actions\\Main@rootEntry';
         }
         return null;
+    }
+
+    /**
+     * Get controller namespace prefix
+     * @return string
+     */
+    public static function getControllerPrefix()
+    {
+        return '';
     }
 }
