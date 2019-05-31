@@ -19,19 +19,19 @@
  */
 define([
     'jquery',
-    'helpers',
+    'util/url',
     'taoCe/controller/home/splash'
-], function($, helpers, splash) {
+], function($, urlUtil, splash) {
     'use strict';
 
-    var $mainContainer = $('body');
+    const $mainContainer = $('body');
 
     /**
      * The homeController set up the splash screen.
      *
      * @exports taoCe/controller/home
      */
-    var homeController = {
+    const homeController = {
 
 
         entrySplash : true,
@@ -40,19 +40,21 @@ define([
          * Setup the splash screen: loads it's content and initialize the component.
          */
         start: function start() {
-            var self = this;
 
             //the splash content is loaded only once.
             if ($('#splash-screen', $mainContainer).length === 0) {
-                $.get(helpers._url('splash', 'Home', 'taoCe')).success(function(response) {
-                    var $splash = $(response);
-                    $splash.css('display', 'none');
-                    $mainContainer.append($splash);
 
-                    splash.init(self.entrySplash);
-                });
+                $.get(urlUtil.route('splash', 'Home', 'taoCe'))
+                    .success( response => {
+                        const $splash = $(response);
+                        $splash.css('display', 'none');
+
+                        $mainContainer.append($splash);
+
+                        splash.init(this.entrySplash);
+                    });
             } else {
-                splash.init(self.entrySplash);
+                splash.init(this.entrySplash);
             }
         }
     };
