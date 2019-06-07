@@ -18,10 +18,9 @@
  *
  */
 define([
-    'lodash',
     'taoCe/controller/home'
-], function(_, homeController){
+], function(homeController){
     'use strict';
 
-    return _.defaults({ entrySplash : false }, homeController);
+    return Object.assign({ entrySplash : false }, homeController);
 });
