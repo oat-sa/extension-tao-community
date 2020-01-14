@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -40,7 +41,8 @@ class Home extends \tao_actions_CommonModule
     /**
      * This action renders the template used by the splash screen popup
      */
-    public function splash() {
+    public function splash()
+    {
 
         //the list of extensions the splash provides an explanation for.
         $defaultExtIds = array('items', 'tests', 'TestTaker', 'groups', 'delivery', 'results');

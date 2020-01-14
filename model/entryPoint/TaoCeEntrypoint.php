@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -30,8 +31,8 @@ use oat\taoBackOffice\model\entryPoint\BackOfficeEntryPoint;
 class TaoCeEntrypoint extends BackOfficeEntryPoint
 {
 
-    public function getUrl() {
+    public function getUrl()
+    {
         return _url("index", "Main", "taoCe");
     }
-
 }

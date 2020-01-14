@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -43,12 +44,11 @@ class Main extends \tao_actions_Main
     {
         $this->defaultData();
         //redirect to the usual tao/Main/index
-        if($this->hasRequestParameter('ext') || $this->hasRequestParameter('structure')){
-
+        if ($this->hasRequestParameter('ext') || $this->hasRequestParameter('structure')) {
             //but before update the first time property
 
             $user = $this->getServiceLocator()->get(\tao_models_classes_UserService::SERVICE_ID)->getCurrentUser();
-            if($this->hasRequestParameter('nosplash')){
+            if ($this->hasRequestParameter('nosplash')) {
                 TaoCe::becomeVeteran();
             }
 
@@ -57,7 +57,6 @@ class Main extends \tao_actions_Main
                 'ext' => $this->getRequestParameter('ext'),
                 'structure' => $this->getRequestParameter('structure')
             )));
-
         } else {
             //render the index but with the taoCe URL used by client side routes
             parent::index();
