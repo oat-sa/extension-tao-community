@@ -53,10 +53,10 @@ class Main extends \tao_actions_Main
             }
 
             //@todo use forward on cross-extension forward is supported
-            $this->redirect(_url('index', 'Main', 'tao', array(
+            $this->redirect(_url('index', 'Main', 'tao', [
                 'ext' => $this->getRequestParameter('ext'),
                 'structure' => $this->getRequestParameter('structure')
-            )));
+            ]));
         } else {
             //render the index but with the taoCe URL used by client side routes
             parent::index();
