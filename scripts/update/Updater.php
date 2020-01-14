@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -26,6 +27,7 @@ use oat\tao\model\accessControl\func\AccessRule;
 use oat\tao\model\accessControl\func\AclProxy;
 use oat\tao\model\user\TaoRoles;
 use oat\taoDeliveryRdf\model\guest\GuestAccess;
+
 /**
  * TAO Community Edition Updater.
  *
@@ -48,8 +50,11 @@ class Updater extends \common_ext_ExtensionUpdater
         $this->skip('1.1.3', '1.6.2');
 
         if ($this->isVersion('1.6.2')) {
-            AclProxy::applyRule(new AccessRule('grant', TaoRoles::ANONYMOUS,
-                ['ext'=>'taoCe', 'mod' => 'Main', 'act' => 'rootEntry']));
+            AclProxy::applyRule(new AccessRule(
+                'grant',
+                TaoRoles::ANONYMOUS,
+                ['ext' => 'taoCe', 'mod' => 'Main', 'act' => 'rootEntry']
+            ));
 
             $this->setVersion('1.7.0');
         }
@@ -57,7 +62,6 @@ class Updater extends \common_ext_ExtensionUpdater
 
         // add guest login
         if ($this->isVersion('1.7.1')) {
-
             $entryPointService = $this->getServiceManager()->get(EntryPointService::SERVICE_ID);
             $entryPointService->addEntryPoint(new GuestAccess(), EntryPointService::OPTION_PRELOGIN);
             $this->getServiceManager()->register(EntryPointService::SERVICE_ID, $entryPointService);
@@ -65,6 +69,6 @@ class Updater extends \common_ext_ExtensionUpdater
             $this->setVersion('1.8.0');
         }
 
-        $this->skip('1.8.0', '7.1.0');
+        $this->skip('1.8.0', '7.1.1');
     }
 }

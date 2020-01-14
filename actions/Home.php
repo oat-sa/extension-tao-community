@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -40,31 +41,32 @@ class Home extends \tao_actions_CommonModule
     /**
      * This action renders the template used by the splash screen popup
      */
-    public function splash() {
+    public function splash()
+    {
 
         //the list of extensions the splash provides an explanation for.
-        $defaultExtIds = array('items', 'tests', 'TestTaker', 'groups', 'delivery', 'results');
+        $defaultExtIds = ['items', 'tests', 'TestTaker', 'groups', 'delivery', 'results'];
 
         //check if the user is a noob
         $this->setData('firstTime', TaoCe::isFirstTimeInTao());
 
         //load the extension data
-        $defaultExtensions = array();
-        $additionalExtensions = array();
+        $defaultExtensions = [];
+        $additionalExtensions = [];
         foreach (MenuService::getPerspectivesByGroup(Perspective::GROUP_DEFAULT) as $i => $perspective) {
             if (in_array((string) $perspective->getId(), $defaultExtIds)) {
-                $defaultExtensions[strval($perspective->getId())] = array(
+                $defaultExtensions[strval($perspective->getId())] = [
                     'id' => $perspective->getId(),
                     'name' => $perspective->getName(),
                     'extension' => $perspective->getExtension(),
                     'description' => $perspective->getDescription()
-                );
+                ];
             } else {
-                $additionalExtensions[$i] = array(
+                $additionalExtensions[$i] = [
                     'id' => $perspective->getId(),
                     'name' => $perspective->getName(),
                     'extension' => $perspective->getExtension()
-                );
+                ];
             }
 
             //Test if access

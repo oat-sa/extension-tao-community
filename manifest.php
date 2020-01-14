@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,14 +19,15 @@
  *
  *
  */
-return array(
+
+return [
     'name' => 'taoCe',
     'label' => 'Community Edition',
     'description' => 'the Community Edition extension',
     'license' => 'GPL-2.0',
-    'version' => '7.1.0',
+    'version' => '7.1.1',
     'author' => 'Open Assessment Technologies SA',
-    'requires' => array(
+    'requires' => [
         'tao' => '>=36.1.0',
         'funcAcl' => '*',
         'taoItems' => '*',
@@ -39,31 +41,31 @@ return array(
         'taoOutcomeUi' => '*',
         'taoOutcomeRds' => '*',
         'taoDeliveryRdf' => '*',
-    ),
+    ],
     'update' => 'oat\\taoCe\\scripts\\update\\Updater',
     'managementRole' => 'http://www.tao.lu/Ontologies/generis.rdf#taoCeManager',
-    'acl' => array(
-        array('grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoCe', 'mod' => 'Main', 'act' => 'index')),
-        array('grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', array('ext' => 'taoCe', 'mod' => 'Home')),
-        array('grant', 'http://www.tao.lu/Ontologies/generis.rdf#AnonymousRole', array('ext'=>'taoCe', 'mod' => 'Main', 'act' => 'rootEntry')),
-    ),
-    'install' => array(
-        'php' => array(
+    'acl' => [
+        ['grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', ['ext' => 'taoCe', 'mod' => 'Main', 'act' => 'index']],
+        ['grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', ['ext' => 'taoCe', 'mod' => 'Home']],
+        ['grant', 'http://www.tao.lu/Ontologies/generis.rdf#AnonymousRole', ['ext' => 'taoCe', 'mod' => 'Main', 'act' => 'rootEntry']],
+    ],
+    'install' => [
+        'php' => [
             dirname(__FILE__) . '/scripts/install/setDefaultResultServer.php',
             dirname(__FILE__) . '/scripts/install/overrideEntryPoint.php',
-    )
-    ),
-    'uninstall' => array(
-    ),
-    'routes' => array(
+        ]
+    ],
+    'uninstall' => [
+    ],
+    'routes' => [
         '' => ['class' => 'oat\\taoCe\\model\\routing\\EntryRoute'],
         '/taoCe' => 'oat\\taoCe\\actions'
-    ),
-    'constants' => array(
+    ],
+    'constants' => [
         # views directory
-        "DIR_VIEWS" => dirname(__FILE__).DIRECTORY_SEPARATOR."views".DIRECTORY_SEPARATOR,
+        "DIR_VIEWS" => dirname(__FILE__) . DIRECTORY_SEPARATOR . "views" . DIRECTORY_SEPARATOR,
 
         #BASE URL (usually the domain root)
-        'BASE_URL' => ROOT_URL.'taoCe/',
-    )
-);
+        'BASE_URL' => ROOT_URL . 'taoCe/',
+    ]
+];
