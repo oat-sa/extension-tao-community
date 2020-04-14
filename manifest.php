@@ -25,7 +25,7 @@ return [
     'label' => 'Community Edition',
     'description' => 'the Community Edition extension',
     'license' => 'GPL-2.0',
-    'version' => '8.1.1',
+    'version' => '8.2.0',
     'author' => 'Open Assessment Technologies SA',
     'requires' => [
         'tao' => '>=36.1.0',
@@ -51,7 +51,6 @@ return [
     ],
     'install' => [
         'php' => [
-            dirname(__FILE__) . '/scripts/install/setDefaultResultServer.php',
             dirname(__FILE__) . '/scripts/install/overrideEntryPoint.php',
         ]
     ],
