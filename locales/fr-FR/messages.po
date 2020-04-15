@@ -120,7 +120,7 @@ msgid "Item(s)"
 msgstr "Item(s)"
 
 msgid "Items"
-msgstr "Items"
+msgstr "Articles"
 
 msgid "Manage Reports"
 msgstr "Gérer les rapports"
