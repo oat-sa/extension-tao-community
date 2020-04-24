@@ -53,7 +53,8 @@ class Home extends \tao_actions_CommonModule
         //load the extension data
         $defaultExtensions = [];
         $additionalExtensions = [];
-        foreach (MenuService::getPerspectivesByGroup(Perspective::GROUP_DEFAULT) as $i => $perspective) {
+        $menuService = $this->getServiceLocator()->get(MenuService::SERVICE_ID);
+        foreach ($menuService->getPerspectivesByGroup(Perspective::GROUP_DEFAULT) as $i => $perspective) {
             if (in_array((string) $perspective->getId(), $defaultExtIds)) {
                 $defaultExtensions[strval($perspective->getId())] = [
                     'id' => $perspective->getId(),
