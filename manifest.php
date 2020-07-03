@@ -25,7 +25,7 @@ return [
     'label' => 'Community Edition',
     'description' => 'the Community Edition extension',
     'license' => 'GPL-2.0',
-    'version' => '8.5.0',
+    'version' => '9.0.0',
     'author' => 'Open Assessment Technologies SA',
     'requires' => [
         'tao' => '>=36.1.0',
