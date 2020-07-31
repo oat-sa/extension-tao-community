@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO 3.4.0-sprint112\n"
-"PO-Revision-Date: 2019-10-09T09:02:27\n"
+"Project-Id-Version: TAO 3.4.0-sprint121\n"
+"PO-Revision-Date: 2020-07-31T11:49:34\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: lt-LT\n"
@@ -41,7 +41,7 @@ msgid "Create and define test-taker records"
 msgstr "Sukurti ir nustatyti testo laikytojo įrašus"
 
 msgid "Create Items"
-msgstr "Kurti klausimus"
+msgstr "Kurti testų dalis"
 
 msgid "Create QTI Tests"
 msgstr "Sukurti QTI Testus"
@@ -117,25 +117,25 @@ msgid "In TAO, tests are assigned to groups."
 msgstr "TAO platformoje, testai yra priskiriami grupėms."
 
 msgid "Item(s)"
-msgstr "Klausimas (ai)"
+msgstr "Elementas(-ai)"
 
 msgid "Items"
-msgstr "Klausimai"
+msgstr "Elementai"
 
 msgid "Manage Reports"
 msgstr "Tvarkyti Ataskaitas"
 
 msgid "Multiple choice"
-msgstr "Daugkartinis pasirinkimas"
+msgstr "Daugkartinis variantai"
 
 msgid "Order of items – sequential or random"
-msgstr "Klausimų tvarka – nuosekli ar atsistinktinė"
+msgstr "Elementų tvarka – nuosekli ar atsitiktinė"
 
 msgid "Overview"
 msgstr "Apžvalga"
 
 msgid "Preview Items"
-msgstr "Peržiūrėti klausimus"
+msgstr "Peržiūrėti Elementus"
 
 msgid "Publish"
 msgstr "Paskelbti"
@@ -168,7 +168,7 @@ msgid "selection"
 msgstr "pasirinkimas"
 
 msgid "Single choice"
-msgstr "Vienas pasirinkimas"
+msgstr "Vienas variantas"
 
 msgid "Slider"
 msgstr "Slankiklis"
@@ -183,10 +183,10 @@ msgid "Test"
 msgstr "Testas"
 
 msgid "Test part(s)"
-msgstr "Testo dalis(-ys)"
+msgstr "Testo dalis(–ys)"
 
 msgid "Test section(s)"
-msgstr "Testo skyrius(-iai)"
+msgstr "Testo skyrius(–iai)"
 
 msgid "Test-takers"
 msgstr "Testo laikytojai"
