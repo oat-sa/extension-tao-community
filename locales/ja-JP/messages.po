@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO 3.3.0-sprint95\n"
-"PO-Revision-Date: 2019-02-01T10:17:07\n"
+"Project-Id-Version: TAO 3.4.0-sprint117\n"
+"PO-Revision-Date: 2020-09-22T16:02:17\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: ja-JP\n"
@@ -23,43 +23,43 @@ msgid "Build a custom table with only the specific results data you are interest
 msgstr "関心ある特定の結果のみを指定したカスタムテーブルをつくり、CSVファイルをエクスポートします。"
 
 msgid "Build and manage tests using items that you have previously created or imported."
-msgstr "過去につくった問題やインポートした問題からテストをつくり管理します。"
+msgstr "過去につくった問題アイテムやインポートした問題アイテムからテストをつくり管理します。"
 
 msgid "Build your test by dragging and dropping the selected items into the test pane."
-msgstr "選択した問題をテストパネルにドラッグドロップして、テストをつくります。"
+msgstr "選択した問題アイテムをテストパネルにドラッグドロップして、テストをつくります。"
 
 msgid "Choose from 17 different interaction types, including:"
-msgstr "以下の17種類のQAパターンから選択します。"
+msgstr "以下の17種類の問題パターンから選択します。"
 
 msgid "Control how to publish and deliver tests."
 msgstr "テストの公開と配信を制御します。"
 
 msgid "Conversely, you can also export items from TAO and re-use them in other QTI-compliant tools."
-msgstr "反対に、TAOから問題をエクスポートして、他のQTI互換ツールで再利用できます。"
+msgstr "反対に、TAOから問題アイテムをエクスポートして、他のQTI互換ツールで再利用できます。"
 
 msgid "Create and define test-taker records"
 msgstr "受験者のレコードを定義して作成します。"
 
 msgid "Create Items"
-msgstr "問題の作成"
+msgstr "問題アイテムの作成"
 
 msgid "Create QTI Tests"
 msgstr "QTIテストの作成"
 
 msgid "Create, preview and organize individual items before including them in your tests."
-msgstr "あなたのテストに個々の問題を取り込む前に，問題を作成，プレビュー，構成してください"
+msgstr "あなたのテストに個々の問題アイテムを取り込む前に、問題アイテムを作成、プレビュー、構成してください"
 
 msgid "Default properties of the test-takers are their name and the language of the test interface. You can customize these records by adding any data you need, such as date of birth, gender, etc."
-msgstr "受験者の標準のプロパティは，受験者の名前とテスト画面の言語です。誕生日やジェンダーなど，必要なデータを追加して，レコードをカスタマイズすることができます。"
+msgstr "受験者の標準のプロパティは、受験者の名前とテスト画面の言語です。誕生日やジェンダーなど，必要なデータを追加して，レコードをカスタマイズすることができます。"
 
 msgid "Define a Delivery"
-msgstr "デリバリを定義する"
+msgstr "デリバリーを定義する"
 
 msgid "Define the Test Parameters"
 msgstr "テストパラメータを定義する"
 
 msgid "Determine the order of your items. Items can be displayed either randomly or in a specific order."
-msgstr "問題の順序を決定してください。問題はランダムあるいは指定された順序のいずれかで表示させることができます。"
+msgstr "問題の順序を決定してください。問題アイテムはランダムあるいは指定された順序のいずれかで表示させることができます。"
 
 msgid "Discover how easy it is to create an assessment with TAO!"
 msgstr "TAOでアセスメントを作成するのがどんなに簡単か発見してください！"
@@ -96,7 +96,7 @@ msgid "Hotspot"
 msgstr "ホットスポット"
 
 msgid "If your needs go beyond what the QTI standard allows, you can develop powerful and sophisticated item types using the TAO Open Web Item format."
-msgstr "もし、QTIスタンダードで不十分であれば、TAOのオープンウェブフォーマットを利用することでパワフルでソフィスティケートされた問題を作成できます。"
+msgstr "もし、QTIスタンダードで不十分であれば、TAOのオープンウェブフォーマットを利用することでパワフルでソフィスティケートされた問題アイテムを作成できます。"
 
 msgid "Import / Export Tests"
 msgstr "インポート/エクスポート テスト"
@@ -108,7 +108,7 @@ msgid "Import any items that are compliant with the QTI (Question and Test Inter
 msgstr "QTI (Question and Test Interoperability) 2.1準拠のアイテムをインポートします。"
 
 msgid "Import test-takers"
-msgstr "インポート 受験者"
+msgstr "受験者をインポート"
 
 msgid "In addition to creating test-takers individually by manually entering their corresponding data, you can mass-create test-taker records by importing them from a CSV file."
 msgstr "手動で受験者データを入力することにより、個別に受験者の作成のほかに、CSVファイルからインポートすることによって受験生レコー​​ドを大量に作成することができます。"
@@ -129,7 +129,7 @@ msgid "Multiple choice"
 msgstr "多肢選択"
 
 msgid "Order of items – sequential or random"
-msgstr "項目の順番 - 表示順或はランダム"
+msgstr "項目の順番 - 表示順またはランダム"
 
 msgid "Overview"
 msgstr "概要"
