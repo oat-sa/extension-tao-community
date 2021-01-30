@@ -58,7 +58,7 @@ return [
     ],
     'routes' => [
         '' => ['class' => 'oat\\taoCe\\model\\routing\\EntryRoute'],
-        '/taoCe' => 'oat\\taoCe\\actions'
+        '/taoCe' => 'oat\\taoCe\\controller'
     ],
     'constants' => [
         # views directory

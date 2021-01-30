@@ -15,12 +15,14 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
- * Copyright (c) 2016 (original work) Open Assessment Technologies SA;
- *
+ * Copyright (c) 2016-2021 (original work) Open Assessment Technologies SA;
  */
+
+declare(strict_types=1);
 
 namespace oat\taoCe\model\routing;
 
+use tao_helpers_Request as Request;
 use oat\tao\model\routing\AbstractRoute;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -33,11 +35,11 @@ class EntryRoute extends AbstractRoute
 {
     public function resolve(ServerRequestInterface $request)
     {
-        $relativeUrl = \tao_helpers_Request::getRelativeUrl($request->getRequestTarget());
-        if ($relativeUrl === '') {
-            return 'oat\\taoCe\\actions\\Main@rootEntry';
-        }
-        return null;
+        $relativeUrl = Request::getRelativeUrl($request->getRequestTarget());
+
+        return $relativeUrl === ''
+            ? 'oat\\taoCe\\controller\\Main@rootEntry'
+            : null;
     }
 
     /**
