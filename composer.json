@@ -61,7 +61,7 @@
 		"oat-sa/extension-tao-funcacl" : ">=7.0.0",
 		"oat-sa/extension-tao-backoffice" : ">=6.0.0",
 		"oat-sa/extension-tao-itemqti-pci" : ">=7.0.0",
-		"oat-sa/extension-tao-delivery-rdf" : ">=14.0.0",
+		"oat-sa/extension-tao-delivery-rdf" : ">=14.0.1",
 		"oat-sa/extension-tao-group" : ">=7.0.0",
 		"oat-sa/extension-tao-item" : ">=11.0.0",
 		"oat-sa/extension-tao-outcomerds" : ">=8.0.0",
