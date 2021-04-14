@@ -20,6 +20,9 @@
  *
  */
 
+use oat\taoItems\model\user\TaoItemsRoles;
+use oat\tao\model\accessControl\func\AccessRule;
+
 return [
     'name' => 'taoCe',
     'label' => 'Community Edition',
@@ -32,6 +35,16 @@ return [
         ['grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', ['ext' => 'taoCe', 'mod' => 'Main', 'act' => 'index']],
         ['grant', 'http://www.tao.lu/Ontologies/TAO.rdf#BackOfficeRole', ['ext' => 'taoCe', 'mod' => 'Home']],
         ['grant', 'http://www.tao.lu/Ontologies/generis.rdf#AnonymousRole', ['ext' => 'taoCe', 'mod' => 'Main', 'act' => 'rootEntry']],
+        [
+            AccessRule::GRANT,
+            TaoItemsRoles::ITEM_CLASS_NAVIGATOR,
+            ['ext' => 'taoCe', 'mod' => 'Main', 'act' => 'index'],
+        ],
+        [
+            AccessRule::GRANT,
+            TaoItemsRoles::ITEM_CLASS_NAVIGATOR,
+            ['ext' => 'taoCe', 'mod' => 'Home'],
+        ],
     ],
     'install' => [
         'php' => [
