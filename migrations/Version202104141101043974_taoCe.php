@@ -24,15 +24,16 @@ namespace oat\taoCe\migrations;
 
 use Doctrine\DBAL\Schema\Schema;
 use oat\taoItems\model\user\TaoItemsRoles;
-use oat\tao\model\accessControl\func\AclProxy;
-use oat\tao\model\accessControl\func\AccessRule;
+use oat\tao\scripts\tools\accessControl\ApplyRules;
 use oat\tao\scripts\tools\migrations\AbstractMigration;
 
 final class Version202104141101043974_taoCe extends AbstractMigration
 {
     private const RULES = [
-        ['ext' => 'taoCe', 'mod' => 'Main', 'act' => 'index'],
-        ['ext' => 'taoCe', 'mod' => 'Home'],
+        TaoItemsRoles::ITEM_CLASS_NAVIGATOR => [
+            ['ext' => 'taoCe', 'mod' => 'Main', 'act' => 'index'],
+            ['ext' => 'taoCe', 'mod' => 'Home'],
+        ],
     ];
 
     public function getDescription(): string
@@ -42,24 +43,18 @@ final class Version202104141101043974_taoCe extends AbstractMigration
 
     public function up(Schema $schema): void
     {
-        foreach (self::RULES as $rule) {
-            AclProxy::applyRule($this->createAclRulesForRole(TaoItemsRoles::ITEM_CLASS_NAVIGATOR, $rule));
-        }
+        $applyRules = $this->propagate(new ApplyRules());
+        $applyRules([
+            '--' . ApplyRules::OPTION_RULES, self::RULES,
+        ]);
     }
 
     public function down(Schema $schema): void
     {
-        foreach (self::RULES as $rule) {
-            AclProxy::revokeRule($this->createAclRulesForRole(TaoItemsRoles::ITEM_CLASS_NAVIGATOR, $rule));
-        }
-    }
-
-    private function createAclRulesForRole(string $role, array $rule): AccessRule
-    {
-        return new AccessRule(
-            AccessRule::GRANT,
-            $role,
-            $rule
-        );
+        $applyRules = $this->propagate(new ApplyRules());
+        $applyRules([
+            '--' . ApplyRules::OPTION_REVOKE,
+            '--' . ApplyRules::OPTION_RULES, self::RULES,
+        ]);
     }
 }
