@@ -24,15 +24,17 @@ namespace oat\taoCe\migrations;
 
 use Doctrine\DBAL\Schema\Schema;
 use oat\taoItems\model\user\TaoItemsRoles;
-use oat\tao\scripts\tools\accessControl\ApplyRules;
 use oat\tao\scripts\tools\migrations\AbstractMigration;
+use oat\tao\scripts\tools\accessControl\SetRolesAccess;
 
 final class Version202104141101043974_taoCe extends AbstractMigration
 {
-    private const RULES = [
-        TaoItemsRoles::ITEM_CLASS_NAVIGATOR => [
-            ['ext' => 'taoCe', 'mod' => 'Main', 'act' => 'index'],
-            ['ext' => 'taoCe', 'mod' => 'Home'],
+    private const CONFIG = [
+        SetRolesAccess::CONFIG_RULES => [
+            TaoItemsRoles::ITEM_CLASS_NAVIGATOR => [
+                ['ext' => 'taoCe', 'mod' => 'Main', 'act' => 'index'],
+                ['ext' => 'taoCe', 'mod' => 'Home'],
+            ],
         ],
     ];
 
@@ -43,18 +45,18 @@ final class Version202104141101043974_taoCe extends AbstractMigration
 
     public function up(Schema $schema): void
     {
-        $applyRules = $this->propagate(new ApplyRules());
-        $applyRules([
-            '--' . ApplyRules::OPTION_RULES, self::RULES,
+        $setActionAccessPermissions = $this->propagate(new SetRolesAccess());
+        $setActionAccessPermissions([
+            '--' . SetRolesAccess::OPTION_CONFIG, self::CONFIG,
         ]);
     }
 
     public function down(Schema $schema): void
     {
-        $applyRules = $this->propagate(new ApplyRules());
-        $applyRules([
-            '--' . ApplyRules::OPTION_REVOKE,
-            '--' . ApplyRules::OPTION_RULES, self::RULES,
+        $setActionAccessPermissions = $this->propagate(new SetRolesAccess());
+        $setActionAccessPermissions([
+            '--' . SetRolesAccess::OPTION_REVOKE,
+            '--' . SetRolesAccess::OPTION_CONFIG, self::CONFIG,
         ]);
     }
 }
