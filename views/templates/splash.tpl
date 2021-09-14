@@ -25,7 +25,7 @@
                             </div>
                             <div class="col-6">
                                 <a href="#"
-                              class="block pentagon <?php if(!$extensions['TestTaker']['enabled']): ?> disabled<?php endif ?>" 
+                              class="block pentagon <?php if(!$extensions['TestTaker']['enabled']): ?> disabled<?php endif ?>"
                               data-module-name="TestTaker"
                               data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => 'TestTaker', 'ext' => $extensions['TestTaker']['extension']))?>">
                                     <span class="icon-test-taker"></span>
@@ -92,7 +92,12 @@
                     foreach(get_data('additionalExtensions') as $extension):
                         ?>
                         <?php if(!$moreShowed) echo '<span class="more">More:</span>';?>
-                        <a href="#" class="module new-module" data-module-name="<?=$extension['id']?>" data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => $extension['id'], 'ext' => $extension['extension']))?>">
+                        <a
+                            href="#"
+                            class="module new-module<?php if(!$extension['enabled']): ?> disabled<?php endif ?>"
+                            data-module-name="<?=$extension['id']?>"
+                            data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => $extension['id'], 'ext' => $extension['extension']))?>"
+                        >
                             <span class="icon-extension"></span>
                             <?=__($extension['name'])?>
                         </a>

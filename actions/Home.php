@@ -15,72 +15,65 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
- * Copyright (c) 2014-2018 (original work) Open Assessment Technologies SA;
- *
- *
+ * Copyright (c) 2014-2021 (original work) Open Assessment Technologies SA;
  */
+
+declare(strict_types=1);
 
 namespace oat\taoCe\actions;
 
-use oat\tao\model\menu\MenuService;
-use tao_models_classes_accessControl_AclProxy;
 use oat\tao\helpers\TaoCe;
+use tao_actions_CommonModule;
+use oat\tao\model\menu\MenuService;
 use oat\tao\model\menu\Perspective;
+use tao_models_classes_accessControl_AclProxy;
 
-/**
- * The Home controller provides actions for the Home screen of the Community Edition
- *
- * @author Bertrand Chevrier <bertrand@taotesting.com>
- * @package taoCe
-
- * @license GPL-2.0
- *
- */
-class Home extends \tao_actions_CommonModule
+/** @author Bertrand Chevrier <bertrand@taotesting.com> */
+class Home extends tao_actions_CommonModule
 {
-    /**
-     * This action renders the template used by the splash screen popup
-     */
-    public function splash()
+    /** This action renders the template used by the splash screen popup */
+    public function splash(): void
     {
-
-        //the list of extensions the splash provides an explanation for.
+        // The list of extensions the splash provides an explanation for.
         $defaultExtIds = ['items', 'tests', 'TestTaker', 'groups', 'delivery', 'results'];
 
-        //check if the user is a noob
+        // Check if the user is a noob
         $this->setData('firstTime', TaoCe::isFirstTimeInTao());
 
         //load the extension data
         $defaultExtensions = [];
         $additionalExtensions = [];
-        foreach (MenuService::getPerspectivesByGroup(Perspective::GROUP_DEFAULT) as $i => $perspective) {
-            if (in_array((string) $perspective->getId(), $defaultExtIds)) {
-                $defaultExtensions[strval($perspective->getId())] = [
-                    'id' => $perspective->getId(),
-                    'name' => $perspective->getName(),
-                    'extension' => $perspective->getExtension(),
-                    'description' => $perspective->getDescription()
-                ];
-            } else {
-                $additionalExtensions[$i] = [
-                    'id' => $perspective->getId(),
-                    'name' => $perspective->getName(),
-                    'extension' => $perspective->getExtension()
-                ];
-            }
 
-            //Test if access
+        /** @var Perspective $perspective */
+        foreach (MenuService::getPerspectivesByGroup(Perspective::GROUP_DEFAULT) as $perspective) {
+            $perspectiveId = (string) $perspective->getId();
             $access = false;
+
             foreach ($perspective->getChildren() as $section) {
-                if (tao_models_classes_accessControl_AclProxy::hasAccess($section->getAction(), $section->getController(), $section->getExtensionId())) {
+                $hasAccess = tao_models_classes_accessControl_AclProxy::hasAccess(
+                    $section->getAction(),
+                    $section->getController(),
+                    $section->getExtensionId()
+                );
+
+                if ($hasAccess) {
                     $access = true;
                     break;
                 }
             }
-            if (in_array((string) $perspective->getId(), $defaultExtIds)) {
-                $defaultExtensions[strval($perspective->getId())]['enabled'] = $access;
+
+            $extensionInfo = [
+                'id' => $perspectiveId,
+                'name' => $perspective->getName(),
+                'extension' => $perspective->getExtension(),
+                'enabled' => $access,
+            ];
+
+            if (in_array($perspectiveId, $defaultExtIds, true)) {
+                $extensionInfo['description'] = $perspective->getDescription();
+                $defaultExtensions[$perspectiveId] = $extensionInfo;
             } else {
-                $additionalExtensions[$i]['enabled'] = $access;
+                $additionalExtensions[$perspectiveId] = $extensionInfo;
             }
         }
 
