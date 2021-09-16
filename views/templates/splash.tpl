@@ -94,7 +94,7 @@
                         <?php if(!$moreShowed) echo '<span class="more">More:</span>';?>
                         <a
                             href="#"
-                            class="module new-module<?php if(!$extension['enabled']): ?> disabled<?php endif ?>"
+                            class="module new-module<?= !$extension['enabled'] ? ' disabled' : ''; ?>"
                             data-module-name="<?=$extension['id']?>"
                             data-url="<?=_url('index', 'Main', 'taoCe', array('structure' => $extension['id'], 'ext' => $extension['extension']))?>"
                         >

@@ -40,33 +40,19 @@ class Home extends tao_actions_CommonModule
         // Check if the user is a noob
         $this->setData('firstTime', TaoCe::isFirstTimeInTao());
 
-        //load the extension data
+        // Load the extension data
         $defaultExtensions = [];
         $additionalExtensions = [];
 
         /** @var Perspective $perspective */
         foreach (MenuService::getPerspectivesByGroup(Perspective::GROUP_DEFAULT) as $perspective) {
             $perspectiveId = (string) $perspective->getId();
-            $access = false;
-
-            foreach ($perspective->getChildren() as $section) {
-                $hasAccess = tao_models_classes_accessControl_AclProxy::hasAccess(
-                    $section->getAction(),
-                    $section->getController(),
-                    $section->getExtensionId()
-                );
-
-                if ($hasAccess) {
-                    $access = true;
-                    break;
-                }
-            }
 
             $extensionInfo = [
                 'id' => $perspectiveId,
                 'name' => $perspective->getName(),
                 'extension' => $perspective->getExtension(),
-                'enabled' => $access,
+                'enabled' => $this->hasAccessForAtLeastOneChild($perspective),
             ];
 
             if (in_array($perspectiveId, $defaultExtIds, true)) {
@@ -82,5 +68,22 @@ class Home extends tao_actions_CommonModule
         $this->setData('additionalExtensions', $additionalExtensions);
 
         $this->setView('splash.tpl');
+    }
+
+    private function hasAccessForAtLeastOneChild(Perspective $perspective): bool
+    {
+        foreach ($perspective->getChildren() as $section) {
+            $hasAccess = tao_models_classes_accessControl_AclProxy::hasAccess(
+                $section->getAction(),
+                $section->getController(),
+                $section->getExtensionId()
+            );
+
+            if ($hasAccess) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
