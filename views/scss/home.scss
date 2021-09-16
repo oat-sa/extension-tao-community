@@ -273,7 +273,7 @@
             }
 
             &.disabled, &.disabled:hover {
-                background-color: unset;
+                background-color: unset !important;
                 text-decoration: none;
             }
         }
