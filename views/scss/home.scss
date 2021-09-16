@@ -271,6 +271,11 @@
             &:hover, &.active{
                 color: $uiClickableHoverBg;
             }
+
+            &.disabled, &.disabled:hover {
+                background-color: unset !important;
+                text-decoration: none;
+            }
         }
     }
 }
