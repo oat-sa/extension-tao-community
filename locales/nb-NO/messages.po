@@ -1,0 +1,226 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TAO 2021.10\n"
+"PO-Revision-Date: 2021-10-22T13:17:05\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
+"MIME-Version: 1.0\n"
+"Language: nb-NO\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: nb-NO\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Add test-takers to groups to assign tests, and measure group performance. Grouping test-takers enables you to specify populations with particular characteristics. You define these characteristics by adding your own group descriptors."
+msgstr "Legg til elever i grupper for å tildele prøver, og for å måle gruppens resultater. Ved å gruppere elever kan du spesifisere grupper med spesielle egenskaper. Du definerer disse egenskapene ved å legge til dine egne beskrivelser."
+
+msgid "Be aware that any subsequent modification to the test content will not be taken into account until you publish the test again and create a new delivery."
+msgstr "Vær oppmerksom på at enhver endring av innholdet i en prøve ikke vil bli gjeldende før du publiserer testen på nytt og oppretter en ny levering."
+
+msgid "Build a custom table with only the specific results data you are interested in and export it as a CSV file."
+msgstr "Lag en tilpasset tabell med kun de spesifikke resultatdataene du er interessert i, og eksporter den som en CSV-fil."
+
+msgid "Build and manage tests using items that you have previously created or imported."
+msgstr "Opprett og administrer prøver ved å bruke oppgaver du tidligere har laget eller importert."
+
+msgid "Build your test by dragging and dropping the selected items into the test pane."
+msgstr "Lag prøven ved å dra og slippe de valgte oppgavene i testruten."
+
+msgid "Choose from 17 different interaction types, including:"
+msgstr "Velg mellom 17 forskjellige oppgavetyper, inkludert:"
+
+msgid "Control how to publish and deliver tests."
+msgstr "Kontroller hvordan du publiserer og leverer prøver."
+
+msgid "Conversely, you can also export items from TAO and re-use them in other QTI-compliant tools."
+msgstr "Motsatt kan du også eksportere oppgaver fra TAO og bruke dem på nytt i andre QTI-kompatible verktøy."
+
+msgid "Create and define test-taker records"
+msgstr "Opprett og definer elevdata"
+
+msgid "Create Items"
+msgstr "Lag oppgaver"
+
+msgid "Create QTI Tests"
+msgstr "Lag QTI-prøver"
+
+msgid "Create, preview and organize individual items before including them in your tests."
+msgstr "Lag, forhåndsvis og organiser oppgaver før du inkluderer dem i prøvene dine."
+
+msgid "Default properties of the test-takers are their name and the language of the test interface. You can customize these records by adding any data you need, such as date of birth, gender, etc."
+msgstr "Standardegenskapene til elevene er navn og målform i prøvegrensesnittet. Du kan tilpasse disse postene ved å legge til data du trenger, for eksempel fødselsdato, kjønn, etc."
+
+msgid "Define a Delivery"
+msgstr "Definer en levering"
+
+msgid "Define the Test Parameters"
+msgstr "Definer prøveparameterne"
+
+msgid "Determine the order of your items. Items can be displayed either randomly or in a specific order."
+msgstr "Bestem rekkefølgen på oppgavene dine. Oppgaver kan vises enten tilfeldig eller i en bestemt rekkefølge."
+
+msgid "Discover how easy it is to create an assessment with TAO!"
+msgstr "Oppdag hvor enkelt det er å lage en prøve med TAO!"
+
+msgid "Do not show this window again when TAO opens."
+msgstr "Ikke vis dette vinduet igjen når TAO åpnes."
+
+msgid "Export Test Results"
+msgstr "Eksporter prøveresultater"
+
+msgid "For example:"
+msgstr "For eksempel:"
+
+msgid "Get started with TAO"
+msgstr "Kom i gang med TAO"
+
+msgid "Go to "
+msgstr "Gå til "
+
+msgid "Groups"
+msgstr "Grupper"
+
+#, tao-public
+msgid "Help"
+msgstr "Hjelo"
+
+msgid "Hint: \"Simple” tests without any hierarchy are also available. Note that Open Web Items (OWI) can be delivered in simple test mode only."
+msgstr "Tips: \"Enkle\" prøver uten strengt oppsett er også tilgjengelige. Vær oppmerksom på at Open Web Items (OWI) bare kan leveres i enkel prøvemodus."
+
+msgid "Hint: You can access this overview at any time via the Help button."
+msgstr "Tips: Du kan når som helst få tilgang til denne oversikten via Hjelp-knappen."
+
+msgid "Hotspot"
+msgstr "Hotspot"
+
+msgid "If your needs go beyond what the QTI standard allows, you can develop powerful and sophisticated item types using the TAO Open Web Item format."
+msgstr "Hvis behovene dine går utover det QTI -standarden tillater, kan du utvikle gode og spennende oppgavetyper ved hjelp av TAO Open Web Item-formatet."
+
+msgid "Import / Export Tests"
+msgstr "Importer/eksporter prøver"
+
+msgid "Import and Export Items"
+msgstr "Importer og eksporter oppgaver"
+
+msgid "Import any items that are compliant with the QTI (Question and Test Interoperability) 2.1 standard."
+msgstr "Importer enhver oppgaver som er i samsvar med QTI 2.1 standarden (spørsmål og prøveinteroperabilitet)."
+
+msgid "Import test-takers"
+msgstr "Importer elever"
+
+msgid "In addition to creating test-takers individually by manually entering their corresponding data, you can mass-create test-taker records by importing them from a CSV file."
+msgstr "I tillegg til å opprette elever manuelt, kan en elevgruppe også registreres samlet via import fra en CSV-fil."
+
+msgid "In TAO, tests are assigned to groups."
+msgstr "I TAO tildeles tester grupper."
+
+msgid "Item(s)"
+msgstr "Oppgave(r)"
+
+msgid "Items"
+msgstr "Oppgaver"
+
+msgid "Manage Reports"
+msgstr "Administrer rapporter"
+
+msgid "Multiple choice"
+msgstr "Flervalg"
+
+msgid "Order of items – sequential or random"
+msgstr "Oppgavenes rekkefølge - sekvensiell eller tilfeldig"
+
+msgid "Overview"
+msgstr "Oversikt"
+
+msgid "Preview Items"
+msgstr "Forhåndsvis oppgaver"
+
+msgid "Publish"
+msgstr "Publiser"
+
+msgid "QTI Test Structure"
+msgstr "QTI prøvestruktur"
+
+msgid "Register your test-takers, manage their personal data, and assign them to groups."
+msgstr "Registrer elevene dine, administrer deres persondata og grupper dem."
+
+msgid "Results"
+msgstr "Resultater"
+
+msgid "See how your items will appear to the test-taker before running the test. Previews are available for both desktop or mobile devices."
+msgstr "Sjekk hvordan oppgavene vil vises for elven før du ferdigstiller prøven. Forhåndsvisninger er tilgjengelige for både stasjonære eller mobile enheter."
+
+msgid "Select an icon on the left to find out more."
+msgstr "Velg et ikon til venstre for å finne ut mer."
+
+msgid "Select the delivery dates."
+msgstr "Velg leveringsdatoer."
+
+msgid "Select the group(s) that will take the test. You can exclude individual test-takers even if they are part of the group."
+msgstr "Velg gruppen(e) som skal ta prøven. Du kan utelate enkeltelever selv om de tilhører gruppen."
+
+msgid "Select the test you want to deliver to your group(s) of test-takers. Publish it to make it available online."
+msgstr "Velg prøven du vil kjøre for  elevgruppen(e). Publiser den for å gjøre den tilgjengelig online."
+
+msgid "selection"
+msgstr "utvalg"
+
+msgid "Single choice"
+msgstr "Enkelt valg"
+
+msgid "Slider"
+msgstr "Målelinje"
+
+msgid "Specify how many times test-takers are allowed to repeat a test."
+msgstr "Angi hvor mange ganger elevene har lov til å gjennomføre en prøve."
+
+msgid "Store, manage, and analyze test results with ease."
+msgstr "Lagre, administrer og analyser testresultater enkelt."
+
+msgid "Test"
+msgstr "Prøve"
+
+msgid "Test part(s)"
+msgstr "Prøvedel(er)"
+
+msgid "Test section(s)"
+msgstr "Prøveseksjon(er)"
+
+msgid "Test-takers"
+msgstr "Elever"
+
+msgid "Tests"
+msgstr "Prøver"
+
+msgid "Text entry"
+msgstr "Tekstfelt"
+
+msgid "Time limit"
+msgstr "Tisdbegrensning"
+
+msgid "To create a QTI test:"
+msgstr "Slik oppretter du en QTI-prøve:"
+
+msgid "Use Groups to Manage Test-Takers"
+msgstr "Bruk grupper til å administrere elever"
+
+msgid "Videos"
+msgstr "Videoer"
+
+msgid "View the performance of any individual test-taker – whether it’s on a single test or across a range of tests."
+msgstr "Se resultatet til enhver elev - enten det er på en enkelt prøve eller på tvers av en rekke prøver."
+
+msgid "You can also add rich media content to your items, such as photos, math formulas and video."
+msgstr "Du kan også legge til medieinnhold til oppgavene dine, for eksempel bilder, matematiske formler og video."
+
+msgid "You can create tests in compliance with the QTI 2.1 standard. A QTI test is structured as follows:"
+msgstr "Du kan lage prøver i samsvar med QTI 2.1 standarden. En QTI prøve er strukturert som følger:"
+
+msgid "You can import tests created with any external tool that is QTI compliant. The items will be automatically added to the Items Library. Conversely, your QTI tests can be exported out of TAO for use with any QTI-compliant delivery engine."
+msgstr "Du kan importere prøver som er opprettet med et eksternt verktøy som er QTI kompatibelt. Oppgavene blir automatisk lagt til i oppgavebiblioteket. Motsatt kan QTI-prøvene dine eksporteres fra TAO til bruk i andre QTI-kompatible systemer."
+
+msgid "You can specify test settings such as:"
+msgstr "Du kan angi prøveinnstillinger som:"
+
