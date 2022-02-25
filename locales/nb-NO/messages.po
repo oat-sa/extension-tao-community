@@ -84,7 +84,7 @@ msgstr "Grupper"
 
 #, tao-public
 msgid "Help"
-msgstr "Hjelo"
+msgstr "Hjelp"
 
 msgid "Hint: \"Simple” tests without any hierarchy are also available. Note that Open Web Items (OWI) can be delivered in simple test mode only."
 msgstr "Tips: \"Enkle\" prøver uten strengt oppsett er også tilgjengelige. Vær oppmerksom på at Open Web Items (OWI) bare kan leveres i enkel prøvemodus."
@@ -180,7 +180,7 @@ msgid "Store, manage, and analyze test results with ease."
 msgstr "Lagre, administrer og analyser testresultater enkelt."
 
 msgid "Test"
-msgstr "Prøve"
+msgstr "Oppgavesett"
 
 msgid "Test part(s)"
 msgstr "Prøvedel(er)"
@@ -192,7 +192,7 @@ msgid "Test-takers"
 msgstr "Elever"
 
 msgid "Tests"
-msgstr "Prøver"
+msgstr "Oppgavesett"
 
 msgid "Text entry"
 msgstr "Tekstfelt"
