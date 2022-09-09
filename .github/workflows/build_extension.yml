@@ -24,8 +24,8 @@ jobs:
       with:
         repository: ${{ matrix.repository }}
         releases-only: true 
-      id: extension-tao
+      id: ${{ matrix.repository }}
 
-    - run: echo "extension-tao-community is at version ${{ steps.extension-tao-community.outputs.tag }}"
+    - run: echo "${{ matrix.repository }} is at version ${{ steps.${{ matrix.repository }}.outputs.tag }}"
         #- name: call-workflow-in-another-repo
          #  uses: oat-sa/taocloud-ami-luoss/.github/workflows/build_extensions@feat/FUN-884-automatic-build
