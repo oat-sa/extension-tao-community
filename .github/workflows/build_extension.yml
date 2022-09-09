@@ -11,17 +11,13 @@ on:
   #    - published
   #    - created
 
-jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set env
-        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      - name: Test
-        run: |
-          echo $RELEASE_VERSION
-          echo ${{ env.RELEASE_VERSION }}
+steps:
+  - uses: oprypin/find-latest-tag@v1
+    with:
+      repository: oat-sa/extension-tao-community  # The repository to scan.
+      releases-only: true  # We know that all relevant tags have a GitHub release for them.
+    id: extension-tao-community  # The step ID to refer to later.
+
+  - run: echo "extension-tao-community is at version ${{ steps.extension-tao-community.outputs.tag }}"
       #- name: call-workflow-in-another-repo
       #  uses: oat-sa/taocloud-ami-luoss/.github/workflows/build_extensions@feat/FUN-884-automatic-build
