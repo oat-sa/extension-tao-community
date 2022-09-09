@@ -11,13 +11,17 @@ on:
   #    - published
   #    - created
 
-steps:
-  - uses: oprypin/find-latest-tag@v1
-    with:
-      repository: oat-sa/extension-tao-community  # The repository to scan.
-      releases-only: true  # We know that all relevant tags have a GitHub release for them.
-    id: extension-tao-community  # The step ID to refer to later.
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: oprypin/find-latest-tag@v1
+      with:
+        repository: oat-sa/extension-tao-community  # The repository to scan.
+        releases-only: true  # We know that all relevant tags have a GitHub release for them.
+      id: extension-tao-community  # The step ID to refer to later.
 
-  - run: echo "extension-tao-community is at version ${{ steps.extension-tao-community.outputs.tag }}"
-      #- name: call-workflow-in-another-repo
-      #  uses: oat-sa/taocloud-ami-luoss/.github/workflows/build_extensions@feat/FUN-884-automatic-build
+    - run: echo "extension-tao-community is at version ${{ steps.extension-tao-community.outputs.tag }}"
+        #- name: call-workflow-in-another-repo
+         #  uses: oat-sa/taocloud-ami-luoss/.github/workflows/build_extensions@feat/FUN-884-automatic-build
