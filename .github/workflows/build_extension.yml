@@ -15,12 +15,16 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 2
+      matrix: 
+        repository: ['oat-sa/extension-tao-community', 'oat-sa/extension-tao-funcacl', 'oat-sa/extension-tao-dac-simple']
     steps:
     - uses: oprypin/find-latest-tag@v1
       with:
-        repository: oat-sa/extension-tao-community  # The repository to scan.
-        releases-only: true  # We know that all relevant tags have a GitHub release for them.
-      id: extension-tao-community  # The step ID to refer to later.
+        repository: ${{ matrix.repository }}
+        releases-only: true 
+      id: extension-tao
 
     - run: echo "extension-tao-community is at version ${{ steps.extension-tao-community.outputs.tag }}"
         #- name: call-workflow-in-another-repo
