@@ -11,6 +11,7 @@ on:
   #    - published
   #    - created
 
+
 jobs:
   build:
     name: Build
@@ -25,4 +26,4 @@ jobs:
           echo $RELEASE_VERSION
           echo ${{ env.RELEASE_VERSION }}
       - name: call-workflow-in-another-repo
-        uses: oat-sa/taocloud-ami-luoss/.github/workflows/build_extensions@feat/FUN-884-automatic-build       
+        uses: oat-sa/taocloud-ami-luoss/.github/workflows/build_extensions@feat/FUN-884-automatic-build
