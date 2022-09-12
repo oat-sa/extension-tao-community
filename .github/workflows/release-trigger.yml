@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: trigger
         run: |
-          curl -X POST https://api.github.com/repos/oat-sa/taocloud-ami-luoss/actions/workflows/feat/FUN-884-automatic-build/dispatches \
-          -H 'Accept: application/vnd.github.everest-preview+json' \
-          -u ${{ secrets.GH_TOKEN }} 
+          curl -X POST \
+          -H "Accept: application/vnd.github.v3+json" \
+          -H 'Authorization: token ${{ secrets.GH_TOKEN }}' \
+          https://api.github.com/repos/oat-sa/taocloud-ami-luoss/actions/workflows/build_extensions.yml/dispatches \
+          -d '{"ref":"feat/FUN-884-automatic-build"}'
