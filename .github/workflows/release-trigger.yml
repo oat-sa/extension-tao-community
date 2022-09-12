@@ -22,4 +22,4 @@ jobs:
         # A custom webhook event name.
         event-type: test
         # JSON payload with extra information about the webhook event that your action or worklow may use.
-        client-payload: # optional, default is {}
+        client-payload: {} # optional, default is {}
