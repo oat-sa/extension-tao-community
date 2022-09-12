@@ -8,12 +8,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          path: feat/FUN-884-automatic-build
-      - name: Emit repository_dispatch
+      - name: Release
         uses: oat-sa/taocloud-ami-luoss@feat/FUN-884-automatic-build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          token: ${{ secrets.GH_TOKEN }}
-          repo: taocloud-ami-luoss
-          owner: oat-sa
-          event_type: sample_push 
+          github_token: ${{ secrets.GH_TOKEN }} 
