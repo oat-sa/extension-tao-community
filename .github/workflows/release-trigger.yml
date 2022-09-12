@@ -8,10 +8,16 @@ jobs:
     name: Dispatch to `other-repo `
     runs-on: ubuntu-latest
     steps:
-      - name: trigger
-        run: |
-          curl -X POST \
-          -H "Accept: application/vnd.github.v3+json" \
-          -H 'Authorization: token ${{ secrets.GH_TOKEN }}' \
-          https://api.github.com/repos/oat-sa/ci-action/actions/workflows/build_extensions.yml/dispatches \
-          -d '{"ref":"main"}'
+    - name: Repository Dispatch
+      # You may pin to the exact commit or the version.
+      # uses: peter-evans/repository-dispatch@11ba7d3f32dc7cc919d1c43f1fec1c05260c26b5
+      uses: peter-evans/repository-dispatch@v2.0.0
+      with:
+        # A repo scoped GitHub Personal Access Token
+        token: ${{ secrets.TEST_TOKEN }}
+        # The full name of the repository to send the dispatch.
+        repository: ci-action # optional, default is ${{ github.repository }}
+        # A custom webhook event name.
+        event-type: test
+        # JSON payload with extra information about the webhook event that your action or worklow may use.
+        client-payload: # optional, default is {}
