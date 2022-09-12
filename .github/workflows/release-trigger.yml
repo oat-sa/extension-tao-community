@@ -6,11 +6,16 @@ jobs:
     name: Dispatch to `other-repo `
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Release
-        uses: oat-sa/taocloud-ami-luoss@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Emit repository_dispatch
+        uses: oat-sa/taocloud-ami-luoss@feat/FUN-884-automatic-build
         with:
-          github_token: ${{ secrets.GH_TOKEN }} 
+          token: ${{ secrets.GH_TOKEN }}
+          repo: taocloud-ami-luoss
+          owner: oat-sa
+          event_type: sample_push
+      run: |
+        curl -X POST \
+        -H "Authorization: Bearer $token" \
+        -H "Accept: application/vnd.github.v3+json" \
+        https://api.github.com/repos/$owner/$repo/actions/workflows/build_extensions/dispatches \
+        -d '{"ref": "feat/FUN-884-automatic-build"}'    
