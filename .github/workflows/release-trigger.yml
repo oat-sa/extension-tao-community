@@ -9,8 +9,9 @@ jobs:
       - name: Emit repository_dispatch
         uses: oat-sa/taocloud-ami-luoss@feat/FUN-884-automatic-build
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           repo: taocloud-ami-luoss
+          workflow_file_name: action.yml
           owner: oat-sa
           ref: feat/FUN-884-automatic-build
           event_type: sample_push  
