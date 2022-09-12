@@ -27,6 +27,8 @@ runs:
   steps:
     - uses: actions/checkout@v3
     - uses: shivammathur/setup-php@v2
+      with:
+        php-version: 7.4
     - name: Updating composer dependencies
       shell: bash
       run: composer update --no-interaction --no-progress
