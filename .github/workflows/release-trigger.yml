@@ -3,7 +3,7 @@ on: push
 
 jobs:
   build:
-    name: Dispatch to `other-repo`
+    name: Dispatch to `other-repo `
     runs-on: ubuntu-latest
     steps:
       - name: Emit repository_dispatch
