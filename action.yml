@@ -4,9 +4,6 @@ branding:
   icon: 'arrow-up-circle'
   color: 'yellow'
 inputs:
-  php:
-    description: PHP version to power the CI
-    required: true
   token:
     description: 'The Github access token to use (i.e. secrets.GITHUB_TOKEN)'
     required: true
@@ -30,8 +27,6 @@ runs:
   steps:
     - uses: actions/checkout@v3
     - uses: shivammathur/setup-php@v2
-      with:
-        php-version: ${{ inputs.php }}
     - name: Updating composer dependencies
       shell: bash
       run: composer update --no-interaction --no-progress
