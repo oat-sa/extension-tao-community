@@ -1,0 +1,23 @@
+name: Alert parent repository on push
+on: 
+  push:
+  repository_dispatch:
+
+jobs:
+  build:
+    name: Dispatch to `other-repo `
+    runs-on: ubuntu-latest
+    steps:
+    - name: Repository Dispatch
+      # You may pin to the exact commit or the version.
+      # uses: peter-evans/repository-dispatch@11ba7d3f32dc7cc919d1c43f1fec1c05260c26b5
+      uses: oat-sa/ci-action@main
+      env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      with:
+        # A repo scoped GitHub Personal Access Token
+        token: ${{ secrets.GH_TOKEN }}
+        # The full name of the repository to send the dispatch.
+        repository: ci-action # optional, default is ${{ github.repository }}
+        # A custom webhook event name.
+        event-type: test

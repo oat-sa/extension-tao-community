@@ -1,7 +1,8 @@
 name: Act on release created
 
 # Only trigger, when the Release workflow succeeded
-on:
+on: 
+  push:
   pull_request:
     types: [opened, reopened]
   #release:
@@ -14,15 +15,20 @@ on:
 jobs:
   build:
     name: Build
-    environment: dev_environment
     runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 2
+      matrix: 
+        repository: ['oat-sa/extension-tao-community', 'oat-sa/extension-tao-funcacl', 'oat-sa/extension-tao-dac-simple']
     steps:
-      - uses: actions/checkout@v2
-      - name: Set env
-        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      - name: Test
-        run: |
-          echo $RELEASE_VERSION
-          echo ${{ env.RELEASE_VERSION }}
-      - name: call-workflow-in-another-repo
-        uses: oat-sa/taocloud-ami-luoss/.github/workflows/build_extensions@feat/FUN-884-automatic-build       
+    - uses: oprypin/find-latest-tag@v1
+      with:
+        repository: ${{ matrix.repository }}
+        releases-only: true 
+      id: extension-tao
+
+    - run: echo "${{ matrix.repository }} is at version ${{ steps.extension-tao.outputs.tag }}"
+    #q- run: jq '.packages[] | select(.name == "${{ matrix.repository }}").version' composer.lock
+    #- name: call-workflow-in-another-repo
+    #  uses: oat-sa/taocloud-ami-luoss/.github/workflows/build_extensions@feat/FUN-884-aut
+    #jq '.packages[] | select(.name == "oat-sa/extension-tao-community").version' composer.lock

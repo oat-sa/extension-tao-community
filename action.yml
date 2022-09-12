@@ -1,0 +1,34 @@
+name: 'Dispatch Action'
+description: 'Emit repository dispatch events to trigger other workflows'
+branding:
+  icon: 'arrow-up-circle'
+  color: 'yellow'
+inputs:
+  token:
+    description: 'The Github access token to use (i.e. secrets.GITHUB_TOKEN)'
+    required: true
+  repo:
+    description: 'The name of the repository to dispatch the event to'
+    required: true
+    default: '@'
+  owner:
+    description: 'The owner of the repository to dispatch the event to'
+    default: null
+  event_type:
+    description: 'The type of event to be dispatched'
+    required: true
+  message:
+    description: 'An optional JSON string payload to be dispatched'
+  debug:
+    description: 'Enable verbose logging for debugging your workflow. Not recommended for production'
+    default: 0
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v3
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: 7.4
+    - name: Updating composer dependencies
+      shell: bash
+      run: composer update --no-interaction --no-progress --no-plugins
