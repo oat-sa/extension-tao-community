@@ -1,7 +1,8 @@
 name: Act on release created
 
 # Only trigger, when the Release workflow succeeded
-on:
+on: 
+  push:
   pull_request:
     types: [opened, reopened]
   #release:
@@ -26,6 +27,6 @@ jobs:
         releases-only: true 
       id: extension-tao
 
-    - run: echo "extension-tao is at version ${{ steps.extension-tao.outputs.tag }}"
+    - run: echo "${{ matrix.repository }} is at version ${{ steps.extension-tao.outputs.tag }}"
         #- name: call-workflow-in-another-repo
          #  uses: oat-sa/taocloud-ami-luoss/.github/workflows/build_extensions@feat/FUN-884-automatic-build
