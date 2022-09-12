@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Release
-        uses: oat-sa/taocloud-ami-luoss@feat/FUN-884-automatic-build
+        uses: oat-sa/taocloud-ami-luoss@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
