@@ -13,9 +13,10 @@ jobs:
           repo: taocloud-ami-luoss
           owner: oat-sa
           event_type: sample_push
-      run: |
-        curl -X POST \
-        -H "Authorization: Bearer $token" \
-        -H "Accept: application/vnd.github.v3+json" \
-        https://api.github.com/repos/$owner/$repo/actions/workflows/build_extensions/dispatches \
-        -d '{"ref": "feat/FUN-884-automatic-build"}'    
+      - name: trigger
+        run: |
+          curl -X POST \
+          -H "Authorization: Bearer $token" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/$owner/$repo/actions/workflows/build_extensions/dispatches \
+          -d '{"ref": "feat/FUN-884-automatic-build"}'    
