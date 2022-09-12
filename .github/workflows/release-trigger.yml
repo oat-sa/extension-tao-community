@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          path: feat/FUN-884-automatic-build
       - name: Emit repository_dispatch
         uses: oat-sa/taocloud-ami-luoss@feat/FUN-884-automatic-build
         with:
