@@ -6,10 +6,12 @@ jobs:
     name: Dispatch to `other-repo `
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Emit repository_dispatch
         uses: oat-sa/taocloud-ami-luoss@feat/FUN-884-automatic-build
         with:
           token: ${{ secrets.GH_TOKEN }}
           repo: taocloud-ami-luoss
           owner: oat-sa
-          event_type: sample_push
+          event_type: sample_push 
