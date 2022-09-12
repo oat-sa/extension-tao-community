@@ -7,10 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Emit repository_dispatch
-        uses: oat-sa/extension-tao-community@feat/test-branch
+        uses: oat-sa/taocloud-ami-luoss@feat/FUN-884-automatic-build
         with:
-          # You should create a personal access token and store it in your repository
           token: ${{ secrets.GH_TOKEN }}
-          repo: oat-sa/taocloud-ami-luoss
+          repo: taocloud-ami-luoss
           owner: oat-sa
           event_type: sample_push

@@ -28,5 +28,7 @@ jobs:
       id: extension-tao
 
     - run: echo "${{ matrix.repository }} is at version ${{ steps.extension-tao.outputs.tag }}"
-        #- name: call-workflow-in-another-repo
-         #  uses: oat-sa/taocloud-ami-luoss/.github/workflows/build_extensions@feat/FUN-884-automatic-build
+    #q- run: jq '.packages[] | select(.name == "${{ matrix.repository }}").version' composer.lock
+    #- name: call-workflow-in-another-repo
+    #  uses: oat-sa/taocloud-ami-luoss/.github/workflows/build_extensions@feat/FUN-884-aut
+    #jq '.packages[] | select(.name == "oat-sa/extension-tao-community").version' composer.lock
