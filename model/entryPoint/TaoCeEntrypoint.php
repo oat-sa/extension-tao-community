@@ -30,7 +30,6 @@ use oat\taoBackOffice\model\entryPoint\BackOfficeEntryPoint;
  */
 class TaoCeEntrypoint extends BackOfficeEntryPoint
 {
-
     public function getUrl()
     {
         return _url("index", "Main", "taoCe");

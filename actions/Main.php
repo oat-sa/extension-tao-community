@@ -35,7 +35,6 @@ use oat\tao\model\mvc\DefaultUrlService;
  */
 class Main extends \tao_actions_Main
 {
-
     /**
      * Wrapper to the main action: update the first time property and redirect
      * @return void
