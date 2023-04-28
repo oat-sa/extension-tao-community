@@ -69,7 +69,7 @@
 		"oat-sa/extension-tao-testqti" : ">=41.0.0",
 		"oat-sa/extension-tao-itemqti" : ">=27.0.0",
 		"oat-sa/extension-tao-testtaker" : ">=8.0.0",
-		"oat-sa/extension-tao-testqti-previewer" : ">=3.0.0",
+		"oat-sa/extension-tao-testqti-previewer" : "dev-feature/AUT-2995",
 		"oat-sa/extension-tao-test" : ">=15.0.0"
 	},
     "autoload" : {
