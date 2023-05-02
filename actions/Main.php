@@ -16,28 +16,31 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * Copyright (c) 2014-2018 (original work) Open Assessment Technologies SA;
- *
- *
  */
 
 namespace oat\taoCe\actions;
 
+use common_session_SessionManager;
 use oat\tao\helpers\TaoCe;
 use oat\tao\model\mvc\DefaultUrlService;
+use tao_actions_Main;
+use tao_models_classes_UserService;
 
 /**
  * Just to override the paths and load the specific client side code
+ *
  * @author Bertrand Chevrier <bertrand@taotesting.com>
+ *
  * @package taoCe
 
- * @license GPL-2.0
  *
+ * @license GPL-2.0
  */
-class Main extends \tao_actions_Main
+class Main extends tao_actions_Main
 {
-
     /**
      * Wrapper to the main action: update the first time property and redirect
+     *
      * @return void
      */
     public function index()
@@ -47,7 +50,8 @@ class Main extends \tao_actions_Main
         if ($this->hasRequestParameter('ext') || $this->hasRequestParameter('structure')) {
             //but before update the first time property
 
-            $user = $this->getServiceLocator()->get(\tao_models_classes_UserService::SERVICE_ID)->getCurrentUser();
+            $user = $this->getServiceLocator()->get(tao_models_classes_UserService::SERVICE_ID)->getCurrentUser();
+
             if ($this->hasRequestParameter('nosplash')) {
                 TaoCe::becomeVeteran();
             }
@@ -55,7 +59,7 @@ class Main extends \tao_actions_Main
             //@todo use forward on cross-extension forward is supported
             $this->redirect(_url('index', 'Main', 'tao', [
                 'ext' => $this->getRequestParameter('ext'),
-                'structure' => $this->getRequestParameter('structure')
+                'structure' => $this->getRequestParameter('structure'),
             ]));
         } else {
             //render the index but with the taoCe URL used by client side routes
@@ -69,7 +73,8 @@ class Main extends \tao_actions_Main
     public function rootEntry()
     {
         $this->defaultData();
-        if (\common_session_SessionManager::isAnonymous()) {
+
+        if (common_session_SessionManager::isAnonymous()) {
             /* @var $urlRouteService DefaultUrlService */
             $urlRouteService = $this->getServiceLocator()->get(DefaultUrlService::SERVICE_ID);
             $this->redirect($urlRouteService->getLoginUrl());

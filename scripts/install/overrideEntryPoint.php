@@ -16,13 +16,12 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * Copyright (c) 2015 (original work) Open Assessment Technologies SA;
- *
  */
 
+use oat\oatbox\service\ServiceManager;
 use oat\tao\model\entryPoint\EntryPointService;
 use oat\taoCe\model\entryPoint\TaoCeEntrypoint;
 use oat\taoDeliveryRdf\model\guest\GuestAccess;
-use oat\oatbox\service\ServiceManager;
 
 $serviceManager = ServiceManager::getServiceManager();
 $entryPointService = $serviceManager->get(EntryPointService::SERVICE_ID);
