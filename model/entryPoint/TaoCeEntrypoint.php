@@ -16,8 +16,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * Copyright (c) 2014 (original work) Open Assessment Technologies SA;
- *
- *
  */
 
 namespace oat\taoCe\model\entryPoint;
@@ -26,13 +24,13 @@ use oat\taoBackOffice\model\entryPoint\BackOfficeEntryPoint;
 
 /**
  * Overrides the BackOffice Entrypoint
+ *
  * @author bout
  */
 class TaoCeEntrypoint extends BackOfficeEntryPoint
 {
-
     public function getUrl()
     {
-        return _url("index", "Main", "taoCe");
+        return _url('index', 'Main', 'taoCe');
     }
 }

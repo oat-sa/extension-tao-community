@@ -23,9 +23,9 @@ declare(strict_types=1);
 namespace oat\taoCe\actions;
 
 use oat\tao\helpers\TaoCe;
-use tao_actions_CommonModule;
 use oat\tao\model\menu\MenuService;
 use oat\tao\model\menu\Perspective;
+use tao_actions_CommonModule;
 use tao_models_classes_accessControl_AclProxy;
 
 /** @author Bertrand Chevrier <bertrand@taotesting.com> */
