@@ -16,15 +16,15 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * Copyright (c) 2014 (original work) Open Assessment Technologies SA;
- *
- *
  */
 
 namespace oat\taoCe\scripts\update;
 
-use oat\tao\model\entryPoint\EntryPointService;
+use common_exception_NotImplemented;
+use common_ext_ExtensionUpdater;
 use oat\tao\model\accessControl\func\AccessRule;
 use oat\tao\model\accessControl\func\AclProxy;
+use oat\tao\model\entryPoint\EntryPointService;
 use oat\tao\model\user\TaoRoles;
 use oat\taoDeliveryRdf\model\guest\GuestAccess;
 
@@ -32,20 +32,25 @@ use oat\taoDeliveryRdf\model\guest\GuestAccess;
  * TAO Community Edition Updater.
  *
  * @author Jérôme Bogaerts <jerome@taotesting.com>
+ *
  * @deprecated use migrations instead. See https://github.com/oat-sa/generis/wiki/Tao-Update-Process
  */
-class Updater extends \common_ext_ExtensionUpdater
+class Updater extends common_ext_ExtensionUpdater
 {
     /**
      * Perform update from $currentVersion to $versionUpdatedTo.
      *
      * @param string $currentVersion
+     * @param mixed $initialVersion
+     *
      * @return string $versionUpdatedTo
      */
     public function update($initialVersion)
     {
         if ($this->isBetween('0.0.0', '1.1.3')) {
-            throw new \common_exception_NotImplemented('Updates from versions prior to Tao 3.1 are not longer supported, please update to Tao 3.1 first');
+            throw new common_exception_NotImplemented(
+                'Updates from versions prior to Tao 3.1 are not longer supported, please update to Tao 3.1 first'
+            );
         }
 
         $this->skip('1.1.3', '1.6.2');

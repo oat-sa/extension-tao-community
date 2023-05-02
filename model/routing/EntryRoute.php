@@ -16,13 +16,13 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * Copyright (c) 2016 (original work) Open Assessment Technologies SA;
- *
  */
 
 namespace oat\taoCe\model\routing;
 
 use oat\tao\model\routing\AbstractRoute;
 use Psr\Http\Message\ServerRequestInterface;
+use tao_helpers_Request;
 
 /**
  * Route represents request to the root of tao
@@ -33,15 +33,18 @@ class EntryRoute extends AbstractRoute
 {
     public function resolve(ServerRequestInterface $request)
     {
-        $relativeUrl = \tao_helpers_Request::getRelativeUrl($request->getRequestTarget());
+        $relativeUrl = tao_helpers_Request::getRelativeUrl($request->getRequestTarget());
+
         if ($relativeUrl === '') {
             return 'oat\\taoCe\\actions\\Main@rootEntry';
         }
+
         return null;
     }
 
     /**
      * Get controller namespace prefix
+     *
      * @return string
      */
     public static function getControllerPrefix()
