@@ -127,7 +127,7 @@ msgid "Item(s)"
 msgstr "Item(ns)"
 
 msgid "Items"
-msgstr "itens"
+msgstr "Itens"
 
 msgid "Manage Reports"
 msgstr "Gerenciar relatórios"
@@ -196,7 +196,7 @@ msgid "Test section(s)"
 msgstr "Testar turma(s)"
 
 msgid "Test-takers"
-msgstr "Testar-tomador"
+msgstr "Candidato"
 
 msgid "Tests"
 msgstr "Testes"
