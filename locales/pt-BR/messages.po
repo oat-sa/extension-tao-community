@@ -87,7 +87,7 @@ msgid "Go to "
 msgstr "Ir para "
 
 msgid "Groups"
-msgstr "grupos"
+msgstr "Grupos"
 
 #, tao-public
 msgid "Help"
