@@ -11,6 +11,7 @@ use oat\tao\model\accessControl\func\AclProxy;
 use oat\tao\model\mvc\DefaultUrlService;
 use oat\tao\model\user\TaoRoles;
 use oat\tao\scripts\tools\migrations\AbstractMigration;
+use oat\taoCe\scripts\install\RegisterLoginController;
 
 /**
  * Auto-generated Migration: Please modify to your needs!
@@ -58,17 +59,8 @@ final class Version202306191234263974_taoCe extends AbstractMigration
             )
         );
 
-        $service = $this->getServiceLocator()->get(DefaultUrlService::SERVICE_ID);
-        $loginOption = $service->getOption('login');
-
-        $loginOption['fallback'] = $loginOption;
-        $loginOption['ext'] = 'taoCe';
-        $loginOption['controller'] = 'Login';
-        $loginOption['action'] = 'login';
-
-        $service->setOption('login', $loginOption);
-
-        $this->getServiceLocator()->register(DefaultUrlService::SERVICE_ID, $service);
+        $registerAction = $this->propagate(new RegisterLoginController());
+        $registerAction();
     }
 
 
