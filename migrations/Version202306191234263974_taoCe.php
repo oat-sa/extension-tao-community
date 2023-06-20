@@ -59,8 +59,7 @@ final class Version202306191234263974_taoCe extends AbstractMigration
             )
         );
 
-        $registerAction = $this->propagate(new RegisterLoginController());
-        $registerAction();
+        $this->runAction(new RegisterLoginController());
     }
 
 
