@@ -21,7 +21,7 @@ final class Version202306191234263974_taoCe extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return 'Grant access to Portal Controller';
+        return 'Grant access to Login Controller';
     }
 
     public function up(Schema $schema): void
@@ -46,7 +46,7 @@ final class Version202306191234263974_taoCe extends AbstractMigration
         return new AccessRule(
             AccessRule::GRANT,
             TaoRoles::ANONYMOUS,
-            ['ext' => 'taoCe', 'mod' => 'Portal', 'act' => 'login']
+            ['ext' => 'taoCe', 'mod' => 'Login', 'act' => 'login']
         );
     }
 
@@ -54,7 +54,7 @@ final class Version202306191234263974_taoCe extends AbstractMigration
     {
         $this->addReport(
             Report::createInfo(
-                'Registering Portal Login Controller'
+                'Registering Login Controller'
             )
         );
 
@@ -63,7 +63,7 @@ final class Version202306191234263974_taoCe extends AbstractMigration
 
         $loginOption['fallback'] = $loginOption;
         $loginOption['ext'] = 'taoCe';
-        $loginOption['controller'] = 'Portal';
+        $loginOption['controller'] = 'Login';
         $loginOption['action'] = 'login';
 
         $service->setOption('login', $loginOption);
@@ -76,7 +76,7 @@ final class Version202306191234263974_taoCe extends AbstractMigration
     {
         $this->addReport(
             Report::createInfo(
-                'Unregistering Portal Login Controller'
+                'Unregistering Login Controller'
             )
         );
 

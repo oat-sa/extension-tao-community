@@ -34,7 +34,7 @@ use oat\tao\model\mvc\DefaultUrlService;
  * @license GPL-2.0
  *
  */
-class Portal extends \tao_actions_Main
+class Login extends \tao_actions_Main
 {
 
     /**
@@ -43,8 +43,8 @@ class Portal extends \tao_actions_Main
      */
     public function login()
     {
-        if (isset($_ENV['PORTAL_LOGIN_URL'])) {
-            $this->redirect($_ENV['PORTAL_LOGIN_URL']);
+        if (isset($_ENV['TAO_LOGIN_URL'])) {
+            $this->redirect($_ENV['TAO_LOGIN_URL']);
             return;
         }
 
