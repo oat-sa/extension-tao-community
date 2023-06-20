@@ -18,6 +18,8 @@
  * Copyright (c) 2014 (original work) Open Assessment Technologies SA;
  */
 
+use oat\taoCe\scripts\install\RegisterLoginController;
+
 return [
     'name' => 'taoCe',
     'label' => 'Community Edition',
@@ -66,6 +68,7 @@ return [
     'install' => [
         'php' => [
             dirname(__FILE__) . '/scripts/install/overrideEntryPoint.php',
+            RegisterLoginController::class,
         ],
     ],
     'uninstall' => [
@@ -80,5 +83,5 @@ return [
 
         #BASE URL (usually the domain root)
         'BASE_URL' => ROOT_URL . 'taoCe/',
-    ],
+    ]
 ];
