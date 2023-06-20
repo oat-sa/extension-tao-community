@@ -18,6 +18,8 @@
  * Copyright (c) 2014 (original work) Open Assessment Technologies SA;
  */
 
+use oat\taoCe\scripts\install\MapHelpSectionFeatureFlag;
+
 return [
     'name' => 'taoCe',
     'label' => 'Community Edition',
@@ -57,6 +59,7 @@ return [
     'install' => [
         'php' => [
             dirname(__FILE__) . '/scripts/install/overrideEntryPoint.php',
+            MapHelpSectionFeatureFlag::class
         ],
     ],
     'uninstall' => [
