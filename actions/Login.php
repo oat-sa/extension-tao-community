@@ -20,32 +20,18 @@
  *
  */
 
+declare(strict_types=1);
+
 namespace oat\taoCe\actions;
 
-use common_ext_ExtensionsManager;
-use oat\tao\helpers\TaoCe;
 use oat\tao\model\mvc\DefaultUrlService;
 
-/**
- * Just to override the paths and load the specific client side code
- * @author Bertrand Chevrier <bertrand@taotesting.com>
- * @package taoCe
-
- * @license GPL-2.0
- *
- */
 class Login extends \tao_actions_Main
 {
-
-    /**
-     * Wrapper to the main action: update the first time property and redirect
-     * @return void
-     */
     public function login()
     {
         if (isset($_ENV['TAO_LOGIN_URL'])) {
-            $this->redirect($_ENV['TAO_LOGIN_URL']);
-            return;
+            return $this->redirect($_ENV['TAO_LOGIN_URL']);
         }
 
         $defaultUrlService = $this->getServiceLocator()->get(DefaultUrlService::SERVICE_ID);
