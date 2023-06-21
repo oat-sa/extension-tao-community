@@ -85,5 +85,5 @@ return [
 
         #BASE URL (usually the domain root)
         'BASE_URL' => ROOT_URL . 'taoCe/',
-    ]
+    ],
 ];
