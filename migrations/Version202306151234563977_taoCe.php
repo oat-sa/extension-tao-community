@@ -14,7 +14,7 @@ use oat\taoCe\scripts\install\MapHelpSectionFeatureFlag;
  *
  * phpcs:disable Squiz.Classes.ValidClassName
  */
-final class Version202306151234563976_taoCe extends AbstractMigration
+final class Version202306151234563977_taoCe extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -23,9 +23,7 @@ final class Version202306151234563976_taoCe extends AbstractMigration
 
     public function up(Schema $schema): void
     {
-        $this->propagate(
-            new MapHelpSectionFeatureFlag()
-        )();
+        $this->runAction(new MapHelpSectionFeatureFlag());
     }
 
     public function down(Schema $schema): void
@@ -35,7 +33,6 @@ final class Version202306151234563976_taoCe extends AbstractMigration
             ->getOption(SectionVisibilityFilter::OPTION_FEATURE_FLAG_SECTIONS);
         
         unset($featureFlagSections['help']);
-        
         $sectionVisibilityFilter->setOption(
             SectionVisibilityFilter::OPTION_FEATURE_FLAG_SECTIONS,
             $featureFlagSections
