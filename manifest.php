@@ -19,6 +19,7 @@
  */
 
 use oat\taoCe\scripts\install\RegisterLoginController;
+use oat\taoCe\scripts\install\MapHelpSectionFeatureFlag;
 
 return [
     'name' => 'taoCe',
@@ -69,6 +70,7 @@ return [
         'php' => [
             dirname(__FILE__) . '/scripts/install/overrideEntryPoint.php',
             RegisterLoginController::class,
+            MapHelpSectionFeatureFlag::class,
         ],
     ],
     'uninstall' => [
