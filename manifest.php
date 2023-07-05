@@ -19,6 +19,9 @@
  */
 
 use oat\taoCe\scripts\install\MapHelpSectionFeatureFlag;
+use oat\taoCe\scripts\uninstall\RemoveSectionVisibilityFilterEntry;
+use oat\taoCe\scripts\uninstall\RevertEntryPoint;
+use oat\taoCe\scripts\uninstall\UnregisterLoginController;
 
 return [
     'name' => 'taoCe',
@@ -63,6 +66,11 @@ return [
         ],
     ],
     'uninstall' => [
+        'php' => [
+            UnregisterLoginController::class,
+            RemoveSectionVisibilityFilterEntry::class,
+            RevertEntryPoint::class,
+        ]
     ],
     'routes' => [
         '' => ['class' => 'oat\\taoCe\\model\\routing\\EntryRoute'],
