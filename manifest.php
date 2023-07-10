@@ -18,7 +18,6 @@
  * Copyright (c) 2014 (original work) Open Assessment Technologies SA;
  */
 
-use oat\taoCe\scripts\install\MapHelpSectionFeatureFlag;
 use oat\taoCe\scripts\uninstall\RemoveSectionVisibilityFilterEntry;
 use oat\taoCe\scripts\uninstall\RevertEntryPoint;
 use oat\taoCe\scripts\uninstall\UnregisterLoginController;
@@ -62,7 +61,6 @@ return [
     'install' => [
         'php' => [
             dirname(__FILE__) . '/scripts/install/overrideEntryPoint.php',
-            MapHelpSectionFeatureFlag::class
         ],
     ],
     'uninstall' => [
