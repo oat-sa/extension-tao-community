@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tao-open-source\n"
-"PO-Revision-Date: 2023-06-07 08:06\n"
+"PO-Revision-Date: 2023-12-04 16:23\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: de\n"
@@ -100,7 +100,7 @@ msgid "Hint: You can access this overview at any time via the Help button."
 msgstr "Hinweis: Diese Übersicht kann jederzeit über den Hilfe Button aufgerufen werden."
 
 msgid "Hotspot"
-msgstr ""
+msgstr "Hotspot"
 
 msgid "If your needs go beyond what the QTI standard allows, you can develop powerful and sophisticated item types using the TAO Open Web Item format."
 msgstr "Wenn ihre Anforderungen über den QTI Standard hinausgehen, können Sie leistungsstarke und ausgeklügelte Elementtypen mit dem TAO Open Web Item Format entwickeln."
@@ -187,7 +187,7 @@ msgid "Store, manage, and analyze test results with ease."
 msgstr "Speichern, verwalten und analysieren von Testergebnissen mit Leichtigkeit."
 
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
 msgid "Test part(s)"
 msgstr "Teil(e) des Tests"
@@ -199,7 +199,7 @@ msgid "Test-takers"
 msgstr "Testteilnehmer"
 
 msgid "Tests"
-msgstr ""
+msgstr "Tests"
 
 msgid "Text entry"
 msgstr "Texteingabe"
@@ -214,7 +214,7 @@ msgid "Use Groups to Manage Test-Takers"
 msgstr "Benutzen Sie Gruppen um Testteilnehmer zu verwalten"
 
 msgid "Videos"
-msgstr ""
+msgstr "Videos"
 
 msgid "View the performance of any individual test-taker – whether it’s on a single test or across a range of tests."
 msgstr "Die Leistung jedes individuellen Testteilnehmers betrachten - ob für einen einzelnen Test oder über eine Spanne von Tests."
