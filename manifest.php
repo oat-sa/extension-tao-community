@@ -62,8 +62,7 @@ return [
     'install' => [
         'php' => [
             dirname(__FILE__) . '/scripts/install/overrideEntryPoint.php',
-            MapHelpSectionFeatureFlag::class
-        ],
+            ],
     ],
     'uninstall' => [
         'php' => [
