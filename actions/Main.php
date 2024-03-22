@@ -22,6 +22,7 @@ namespace oat\taoCe\actions;
 
 use common_session_SessionManager;
 use oat\tao\helpers\TaoCe;
+use oat\tao\model\menu\SectionVisibilityByRoleFilter;
 use oat\tao\model\mvc\DefaultUrlService;
 use tao_actions_Main;
 use tao_models_classes_UserService;
@@ -46,22 +47,25 @@ class Main extends tao_actions_Main
     public function index()
     {
         $this->defaultData();
+        $structure = $this->getRequestParameter('structure');
+        $extension = $this->getRequestParameter('ext');
+
         //redirect to the usual tao/Main/index
-        if ($this->hasRequestParameter('ext') || $this->hasRequestParameter('structure')) {
+        if ($extension || $structure) {
             //but before update the first time property
-
-            $user = $this->getServiceLocator()->get(tao_models_classes_UserService::SERVICE_ID)->getCurrentUser();
-
             if ($this->hasRequestParameter('nosplash')) {
                 TaoCe::becomeVeteran();
             }
 
-            //@todo use forward on cross-extension forward is supported
-            $this->redirect(_url('index', 'Main', 'tao', [
-                'ext' => $this->getRequestParameter('ext'),
-                'structure' => $this->getRequestParameter('structure'),
-            ]));
+            $this->redirectToStandardPage($extension, $structure);
         } else {
+            //redirect skipping help screen
+            if ($this->shouldSkipHelpSplash()) {
+                $this->redirectToStandardPage($extension, $structure);
+
+                return;
+            }
+
             //render the index but with the taoCe URL used by client side routes
             parent::index();
         }
@@ -81,5 +85,42 @@ class Main extends tao_actions_Main
         } else {
             $this->redirect(_url('entry', 'Main', 'tao'));
         }
+    }
+
+    private function redirectToStandardPage($extension = null, $structure = null)
+    {
+        $lastVisitedUri = TaoCe::getLastVisitedUrl();
+        if ($lastVisitedUri && strpos($lastVisitedUri, 'taoCe') === false) {
+            $this->redirect($lastVisitedUri);
+        }
+
+        if (!$extension || !$structure) {
+            $this->redirect(_url('index', 'Main', 'tao', [
+                'ext' => 'taoItems',
+                'structure' => 'items'
+            ]));
+        }
+
+        $this->redirect(_url('index', 'Main', 'tao', [
+            'ext' => $extension,
+            'structure' => $structure,
+        ]));
+    }
+
+    private function shouldSkipHelpSplash(): bool
+    {
+        return true;
+
+        $helpIsVisible = $this->getSectionVisibilityByRoleFilter()
+            ->isVisible(
+                $this->getUserRoles(),
+                'help'
+            );
+        return !$helpIsVisible;
+    }
+
+    private function getSectionVisibilityByRoleFilter(): SectionVisibilityByRoleFilter
+    {
+        return $this->getPsrContainer()->get(SectionVisibilityByRoleFilter::class);
     }
 }
