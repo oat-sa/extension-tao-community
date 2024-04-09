@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tao-open-source\n"
-"PO-Revision-Date: 2023-06-07 08:06\n"
+"PO-Revision-Date: 2024-04-09 09:04\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: pt\n"
@@ -100,7 +100,7 @@ msgid "Hint: You can access this overview at any time via the Help button."
 msgstr "Dica: Você pode acessar esta visão geral a qualquer momento através do botão de ajuda."
 
 msgid "Hotspot"
-msgstr ""
+msgstr "Hotspot"
 
 msgid "If your needs go beyond what the QTI standard allows, you can develop powerful and sophisticated item types using the TAO Open Web Item format."
 msgstr "Se suas necessidades vão além do que o padrão de QTI permite, você pode desenvolver tipos de itens poderosos e sofisticados usando o formato TAO Open Web Item."
