@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tao-open-source\n"
-"PO-Revision-Date: 2023-12-04 16:23\n"
+"PO-Revision-Date: 2023-12-07 16:22\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: ar\n"
@@ -94,7 +94,7 @@ msgid "Help"
 msgstr "مساعدة"
 
 msgid "Hint: \"Simple” tests without any hierarchy are also available. Note that Open Web Items (OWI) can be delivered in simple test mode only."
-msgstr "تلميح: تتوفر أيضا روائز \"بسيطة\" بدون أي تسلسل هرمي. لاحظ أنه يمكن تسليم بنود الويب المفتوحة (OWI) في وضع الرائز البسيط فقط."
+msgstr "تلميح: تتوفر أيضا روائز \"بسيطة\" دون أي تسلسل هرمي. لاحظ أنه يمكن تسليم بنود الويب المفتوحة (OWI) في وضع الرائز البسيط فقط."
 
 msgid "Hint: You can access this overview at any time via the Help button."
 msgstr "تلميح: يمكنك الوصول إلى هذه النظرة العامة في أي وقت عبر زر المساعدة."
