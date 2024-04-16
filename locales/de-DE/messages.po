@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tao-open-source\n"
-"PO-Revision-Date: 2023-12-04 16:23\n"
+"PO-Revision-Date: 2023-12-14 18:46\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: de\n"
@@ -24,10 +24,10 @@ msgid "Add test-takers to groups to assign tests, and measure group performance.
 msgstr "Füge Testteilnehmer zu Gruppen hinzu um Tests zuzuweisen und Gruppenleistung zu erfassen. Das Gruppieren von Testteilnehmern erlaubt es Populationen mit speziellen Eigenschaften zu erstellen. Diese Eigenschaften werden durch das Hinzufügen von Gruppendefinitionen definiert."
 
 msgid "Be aware that any subsequent modification to the test content will not be taken into account until you publish the test again and create a new delivery."
-msgstr "Zur Kenntnis, nachträgliche Änderungen am Testinhalt werden erst nach dem Veröffentlichen des Testinhalts und Erstellen einer neuen Bereitstellung wirksam."
+msgstr "Zur Kenntnis, nachträgliche Änderungen am Testinhalt werden erst nach dessen Veröffentlichung und Erstellen einer neuen Bereitstellung wirksam."
 
 msgid "Build a custom table with only the specific results data you are interested in and export it as a CSV file."
-msgstr "Erstellen Sie eine benutzerdefinierte Tabelle mit spezifischen Ergebnissen und exportiere als CSV-Datei."
+msgstr "Erstellen einer benutzerdefinierten Tabelle mit spezifischen Ergebnissen und Exportieren als CSV-Datei."
 
 msgid "Build and manage tests using items that you have previously created or imported."
 msgstr "Erstelle und verwalte Tests mit Hilfe von bereits erstellten oder importierten Elementen."
@@ -48,7 +48,7 @@ msgid "Create and define test-taker records"
 msgstr "Erstelle und Definiere Test-Teilnehmer Einträge"
 
 msgid "Create Items"
-msgstr "Erstelle Objekte"
+msgstr "Erstelle Elemente"
 
 msgid "Create QTI Tests"
 msgstr "Erstelle QTI Tests"

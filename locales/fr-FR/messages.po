@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tao-open-source\n"
-"PO-Revision-Date: 2023-06-07 08:06\n"
+"PO-Revision-Date: 2024-04-09 09:04\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: fr\n"
@@ -78,7 +78,7 @@ msgid "Export Test Results"
 msgstr "Exporter les résultats d'un test"
 
 msgid "For example:"
-msgstr "Par exemple : "
+msgstr "Par exemple :"
 
 msgid "Get started with TAO"
 msgstr "Premiers pas avec TAO"
@@ -124,7 +124,7 @@ msgid "In TAO, tests are assigned to groups."
 msgstr "Dans TAO, des tests sont assignés à des groupes."
 
 msgid "Item(s)"
-msgstr ""
+msgstr "Question(s)"
 
 msgid "Items"
 msgstr "Articles"
@@ -187,7 +187,7 @@ msgid "Store, manage, and analyze test results with ease."
 msgstr "Stockez, gérez and analysez les résultats de tests avec facilité."
 
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
 msgid "Test part(s)"
 msgstr "Partie(s) du test"
@@ -199,7 +199,7 @@ msgid "Test-takers"
 msgstr "Participants"
 
 msgid "Tests"
-msgstr ""
+msgstr "Tests"
 
 msgid "Text entry"
 msgstr "Saisie de texte"

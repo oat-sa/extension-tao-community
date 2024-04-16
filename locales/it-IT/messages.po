@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tao-open-source\n"
-"PO-Revision-Date: 2023-06-07 08:06\n"
+"PO-Revision-Date: 2024-04-09 09:04\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: it\n"
@@ -27,7 +27,7 @@ msgid "Be aware that any subsequent modification to the test content will not be
 msgstr "Fai attenzione che ogni ulteriore modifica al contenuto del test non verrà registrata nell'account finché non pubblichi il nuovamente il test crei una nuova somministrazione."
 
 msgid "Build a custom table with only the specific results data you are interested in and export it as a CSV file."
-msgstr "Costruisci una tabella adatta con solo i dati che ritieni importanti ed esportali in un file con formato CSV"
+msgstr "Costruisci una tabella adatta con solo i dati che ritieni importanti ed esportali in un file con formato CSV."
 
 msgid "Build and manage tests using items that you have previously created or imported."
 msgstr "Costruisci e gestisti i test usando item che hai in precedenza creato o importato."
@@ -51,7 +51,7 @@ msgid "Create Items"
 msgstr "Crea Item"
 
 msgid "Create QTI Tests"
-msgstr "Crea Test QTI "
+msgstr "Crea Test QTI"
 
 msgid "Create, preview and organize individual items before including them in your tests."
 msgstr "Crea, visualizza e organizza singolarmente gli item prima di inserirli nei tuoi test."
@@ -69,7 +69,7 @@ msgid "Determine the order of your items. Items can be displayed either randomly
 msgstr "Determina l'ordine dei tuoi item. Gli item possono essere rappresentati sia casualmente sia in uno specifico ordine."
 
 msgid "Discover how easy it is to create an assessment with TAO!"
-msgstr "Scopri quanto sia facile creare un test con TAO"
+msgstr "Scopri quanto sia facile creare un test con TAO!"
 
 msgid "Do not show this window again when TAO opens."
 msgstr "Non mostrare questa finestra nuovamente quando TAO si apre."
@@ -84,7 +84,7 @@ msgid "Get started with TAO"
 msgstr "Parti con TAO"
 
 msgid "Go to "
-msgstr "Vai a"
+msgstr "Vai a "
 
 msgid "Groups"
 msgstr "Gruppi"
@@ -112,7 +112,7 @@ msgid "Import and Export Items"
 msgstr "Importa ed esporta Item"
 
 msgid "Import any items that are compliant with the QTI (Question and Test Interoperability) 2.1 standard."
-msgstr "Importa gli item che sono conformi con lo standard QTI 2.1 (Question and Test Interoperability) "
+msgstr "Importa gli item che sono conformi con lo standard QTI 2.1 (Question and Test Interoperability)."
 
 msgid "Import test-takers"
 msgstr "Importa partecipanti"
@@ -172,7 +172,7 @@ msgid "Select the test you want to deliver to your group(s) of test-takers. Publ
 msgstr "Seleziona il test che vuoi somministrare al/ai tuo/oi gruppo/i di partecipanti. Pubblicalo per renderlo disponibile online."
 
 msgid "selection"
-msgstr "Selezione"
+msgstr "selezione"
 
 msgid "Single choice"
 msgstr "Scelta singola"
