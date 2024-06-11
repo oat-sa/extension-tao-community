@@ -1,6 +1,6 @@
-<h1>Deliveries</h1>
+<h1><?=__('Deliveries')?></h1>
 
-<p><?=__('Control how to publish and deliver tests.')?></p> 
+<p><?=__('Control how to publish and deliver tests.')?></p>
 
 <h2><?=__('Publish')?></h2>
 
@@ -14,5 +14,5 @@
     <li><?=__('Select the group(s) that will take the test. You can exclude individual test-takers even if they are part of the group.')?></li>
 </ul>
 
-<p><?=__('Be aware that any subsequent modification to the test content will not be taken into account until you publish the test again and create a new delivery.')?></p> 
+<p><?=__('Be aware that any subsequent modification to the test content will not be taken into account until you publish the test again and create a new delivery.')?></p>
 
