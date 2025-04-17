@@ -1,15 +1,10 @@
 name: Sonarqube_CI
 on:
 
-  pull_request:
-    types:
-      - labeled
-
-  push:
-    branches:
-      - master
-      - main
-      - release-*
+  pull_request: 
+    types: [opened, synchronize, reopened]
+    branches: 
+      - '**'
 
 jobs:
   build:
