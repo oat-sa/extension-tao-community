@@ -1,0 +1,233 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: tao-open-source\n"
+"PO-Revision-Date: 2025-12-05 09:28\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
+"MIME-Version: 1.0\n"
+"Language: sk\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: en-US\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 3;\n"
+"X-Crowdin-Project: tao-open-source\n"
+"X-Crowdin-Project-ID: 590867\n"
+"X-Crowdin-Language: sk\n"
+"X-Crowdin-File: /[oat-sa.extension-tao-community] develop/locales/en-US/messages.po\n"
+"X-Crowdin-File-ID: 489\n"
+"Language-Team: Slovak\n"
+
+msgid "Add test-takers to groups to assign tests, and measure group performance. Grouping test-takers enables you to specify populations with particular characteristics. You define these characteristics by adding your own group descriptors."
+msgstr "Pridajte účastníkov testu do skupín, aby ste im mohli priradiť testy a merať ich výkonnosť. Zoskupovanie účastníkov testu vám umožňuje špecifikovať populácie s konkrétnymi charakteristikami. Tieto charakteristiky definujete pridaním vlastných deskriptorov skupín."
+
+msgid "Be aware that any subsequent modification to the test content will not be taken into account until you publish the test again and create a new delivery."
+msgstr "Upozorňujeme, že akékoľvek následné úpravy obsahu testu sa nebudú brať do úvahy, kým test znova nepublikujete a nevytvoríte novú dodávku."
+
+msgid "Build a custom table with only the specific results data you are interested in and export it as a CSV file."
+msgstr "Vytvorte si vlastnú tabuľku iba s konkrétnymi výsledkami, ktoré vás zaujímajú, a exportujte ju ako súbor CSV."
+
+msgid "Build and manage tests using items that you have previously created or imported."
+msgstr "Vytvárajte a spravujte testy pomocou položiek, ktoré ste predtým vytvorili alebo importovali."
+
+msgid "Build your test by dragging and dropping the selected items into the test pane."
+msgstr "Vytvorte si test presunutím vybratých položiek do testovacej tably."
+
+msgid "Choose from 17 different interaction types, including:"
+msgstr "Vyberte si zo 17 rôznych typov interakcií vrátane:"
+
+msgid "Control how to publish and deliver tests."
+msgstr "Ovládajte spôsob publikovania a doručovania testov."
+
+msgid "Conversely, you can also export items from TAO and re-use them in other QTI-compliant tools."
+msgstr "Naopak, položky môžete exportovať aj z TAO a znova ich použiť v iných nástrojoch kompatibilných s QTI."
+
+msgid "Create and define test-taker records"
+msgstr "Vytvorenie a definovanie záznamov o účastníkoch testu"
+
+msgid "Create Items"
+msgstr "Vytvoriť položky"
+
+msgid "Create QTI Tests"
+msgstr "Vytvorte QTI testy"
+
+msgid "Create, preview and organize individual items before including them in your tests."
+msgstr "Pred zahrnutím do testov si jednotlivé položky vytvorte, zobrazte si ich ukážku a usporiadajte ich."
+
+msgid "Default properties of the test-takers are their name and the language of the test interface. You can customize these records by adding any data you need, such as date of birth, gender, etc."
+msgstr "Predvolené vlastnosti účastníkov testu sú ich meno a jazyk testovacieho rozhrania. Tieto záznamy si môžete prispôsobiť pridaním ľubovoľných potrebných údajov, ako je dátum narodenia, pohlavie atď."
+
+msgid "Define a Delivery"
+msgstr "Definovanie doručenia"
+
+msgid "Define the Test Parameters"
+msgstr "Definujte testovacie parametre"
+
+msgid "Determine the order of your items. Items can be displayed either randomly or in a specific order."
+msgstr "Určte poradie položiek. Položky sa môžu zobraziť buď náhodne, alebo v určitom poradí."
+
+msgid "Discover how easy it is to create an assessment with TAO!"
+msgstr "Zistite, aké jednoduché je vytvoriť hodnotenie s TAO!"
+
+msgid "Do not show this window again when TAO opens."
+msgstr "Toto okno už viac nezobrazovať po otvorení TAO."
+
+msgid "Export Test Results"
+msgstr "Výsledky exportu testov"
+
+msgid "For example:"
+msgstr "Napríklad:"
+
+msgid "Get started with TAO"
+msgstr "Začnite s TAO"
+
+msgid "Go to "
+msgstr "Prejsť na "
+
+msgid "Groups"
+msgstr "Skupiny"
+
+#, tao-public
+msgid "Help"
+msgstr "Pomocník"
+
+msgid "Hint: \"Simple” tests without any hierarchy are also available. Note that Open Web Items (OWI) can be delivered in simple test mode only."
+msgstr "Tip: K dispozícii sú aj „jednoduché“ testy bez akejkoľvek hierarchie. Upozorňujeme, že položky Open Web Items (OWI) je možné doručiť iba v režime jednoduchého testovania."
+
+msgid "Hint: You can access this overview at any time via the Help button."
+msgstr "Tip: K tomuto prehľadu sa môžete kedykoľvek dostať pomocou tlačidla Pomocník."
+
+msgid "Hotspot"
+msgstr "Hotspot"
+
+msgid "If your needs go beyond what the QTI standard allows, you can develop powerful and sophisticated item types using the TAO Open Web Item format."
+msgstr "Ak vaše potreby presahujú rámec toho, čo umožňuje štandard QTI, môžete vyvinúť sofistikované typy položiek pomocou formátu TAO Open Web Item."
+
+msgid "Import / Export Tests"
+msgstr "Testy importu/exportu"
+
+msgid "Import and Export Items"
+msgstr "Import a export položiek"
+
+msgid "Import any items that are compliant with the QTI (Question and Test Interoperability) 2.1 standard."
+msgstr "Importujte všetky položky, ktoré sú v súlade so štandardom QTI (Question and Test Interoperability) 2.1."
+
+msgid "Import test-takers"
+msgstr "Importovaní účastníci testov"
+
+msgid "In addition to creating test-takers individually by manually entering their corresponding data, you can mass-create test-taker records by importing them from a CSV file."
+msgstr "Okrem individuálneho vytvárania účastníkov testu manuálnym zadaním ich zodpovedajúcich údajov môžete hromadne vytvárať záznamy o účastníkoch testu ich importovaním zo súboru CSV."
+
+msgid "In TAO, tests are assigned to groups."
+msgstr "V TAO sú testy priradené skupinám."
+
+msgid "Item(s)"
+msgstr "Položka(y)"
+
+msgid "Items"
+msgstr "Položky"
+
+msgid "Manage Reports"
+msgstr "Spravovať prehľady"
+
+msgid "Multiple choice"
+msgstr "Viaceré možnosti výberu"
+
+msgid "Order of items – sequential or random"
+msgstr "Poradie položiek – sekvenčné alebo náhodné"
+
+msgid "Overview"
+msgstr "Prehľad"
+
+msgid "Preview Items"
+msgstr "Náhľad položiek"
+
+msgid "Publish"
+msgstr "Publikovať"
+
+msgid "QTI Test Structure"
+msgstr "Štruktúra testu QTI"
+
+msgid "Register your test-takers, manage their personal data, and assign them to groups."
+msgstr "Zaregistrujte svojich účastníkov testu, spravujte ich osobné údaje a priraďte ich do skupín."
+
+msgid "Results"
+msgstr "Výsledky"
+
+msgid "See how your items will appear to the test-taker before running the test. Previews are available for both desktop or mobile devices."
+msgstr "Pred spustením testu si pozrite, ako sa vaše položky budú zobrazovať testovanému. Ukážky sú k dispozícii pre počítače aj mobilné zariadenia."
+
+msgid "Select an icon on the left to find out more."
+msgstr "Viac informácií získate výberom ikony vľavo."
+
+msgid "Select the delivery dates."
+msgstr "Vyberte dátumy doručenia."
+
+msgid "Select the group(s) that will take the test. You can exclude individual test-takers even if they are part of the group."
+msgstr "Vyberte skupinu (skupiny), ktoré budú test absolvovať. Jednotlivých účastníkov testu môžete vylúčiť, aj keď sú súčasťou skupiny."
+
+msgid "Select the test you want to deliver to your group(s) of test-takers. Publish it to make it available online."
+msgstr "Vyberte test, ktorý chcete doručiť svojej skupine (skupinám) účastníkov testu. Zverejnite ho, aby bol dostupný online."
+
+msgid "selection"
+msgstr "výber"
+
+msgid "Single choice"
+msgstr "Jedna možnosť"
+
+msgid "Slider"
+msgstr "Posuvník"
+
+msgid "Specify how many times test-takers are allowed to repeat a test."
+msgstr "Uveďte, koľkokrát môžu účastníci testu opakovať."
+
+msgid "Store, manage, and analyze test results with ease."
+msgstr "Jednoducho ukladajte, spravujte a analyzujte výsledky testov."
+
+msgid "Test"
+msgstr "Test"
+
+msgid "Test part(s)"
+msgstr "Testovaná časť(i)"
+
+msgid "Test section(s)"
+msgstr "Testovacia(e) sekcia(e)"
+
+msgid "Test-takers"
+msgstr "Účastníci testov"
+
+msgid "Tests"
+msgstr "Testy"
+
+msgid "Text entry"
+msgstr "Zadávanie textu"
+
+msgid "Time limit"
+msgstr "Časový limit"
+
+msgid "To create a QTI test:"
+msgstr "Vytvorenie QTI testu:"
+
+msgid "Use Groups to Manage Test-Takers"
+msgstr "Používanie skupín na správu účastníkov testov"
+
+msgid "Videos"
+msgstr "Videá"
+
+msgid "View the performance of any individual test-taker – whether it’s on a single test or across a range of tests."
+msgstr "Pozrite si výkon každého jednotlivého účastníka testu – či už v jednom teste alebo v rámci viacerých testov."
+
+msgid "You can also add rich media content to your items, such as photos, math formulas and video."
+msgstr "K svojim položkám môžete pridať aj multimediálny obsah, ako sú fotografie, matematické vzorce a videá."
+
+msgid "You can create tests in compliance with the QTI 2.1 standard. A QTI test is structured as follows:"
+msgstr "Testy môžete vytvárať v súlade so štandardom QTI 2.1. Štruktúra testu QTI je nasledovná:"
+
+msgid "You can import tests created with any external tool that is QTI compliant. The items will be automatically added to the Items Library. Conversely, your QTI tests can be exported out of TAO for use with any QTI-compliant delivery engine."
+msgstr "Môžete importovať testy vytvorené pomocou ľubovoľného externého nástroja, ktorý je kompatibilný s QTI. Položky sa automaticky pridajú do knižnice položiek. Naopak, vaše testy QTI je možné exportovať z TAO na použitie s ľubovoľným nástrojom na doručovanie kompatibilným s QTI."
+
+msgid "You can specify test settings such as:"
+msgstr "Môžete zadať nastavenia testu, ako napríklad:"
+
