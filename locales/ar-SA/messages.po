@@ -230,4 +230,3 @@ msgstr "يمكنك استيراد الروائز التي تم إنشاؤها ب
 
 msgid "You can specify test settings such as:"
 msgstr "يمكنك تحديد إعدادات الاختبار مثل:"
-
